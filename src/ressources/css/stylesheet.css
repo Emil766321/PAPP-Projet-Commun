@@ -1,0 +1,42 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    
+}
+
+h1 {
+
+
+
+  font-family: "Roboto", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings:
+
+}
+    
+    
+    
+h2 {
+
+
+
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-variation-settings:
+    
+  }
+  button{
+      width: 230px;
+      height: 230px;
+  }
+  .description{
+      font-size: large;
+      font-family: 'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+      width: 650px;
+      height: 250px;
+  }
