@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+body {
+    margin-top: 25%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #63997a; 
+    border-radius: 15px;
+    border: 4px solid;
+    border-color: #8db1a0;
+    width: 80vw;
+    gap: 40px; 
+    max-width: 360px;
+    height: 60vh; 
+    max-height: 400px;
+    flex: content;
+
+}
+.connection{
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: bolder;
+    font-size: large;
+    color: white;
+    letter-spacing: 1px;
+    margin-top: -20px;
+    text-shadow: #4E785F 2px 2px;
+
+    
+
+}
+.info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+.femail{
+    width: 100%;
+    background-color: #8DB1A0;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-shadow: #4E785F 2px 2px;
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: bolder;
+    cursor: pointer;
+
+}
+.fpass{
+    width: 100%;
+    background-color: #8DB1A0;
+    color: white;
+    padding: 14px 20px;
+    margin: -5px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: black;
+    cursor: pointer;
+    
+    
+
+}
+}
+.enter{
+    background-color: #15834F;
+    font-size: 20px;
+    border-radius: 17px;
+    border: none;
+    font-family: 'Lexend Deca', sans-serif;
+    padding: 8px 60px;
+    color: white;
+    font-weight: bolder;
+    text-shadow: #4E785F 2px 2px;
+
+}
+::placeholder {
+    color: white;
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    text-shadow: #4E785F 2px 2px;
+  }
+
+
