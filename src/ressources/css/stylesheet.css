@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
 
 body {
-    margin-top: 25%;
+    margin-top: 15%;
     display: flex;
     justify-content: center; 
-    align-items: center; 
-    
+    align-items: center;
+    background-image: url("../images/macro-wallpaper-preview.jpg");
+    background-size: cover;
 }
 .container{
     display: flex;
