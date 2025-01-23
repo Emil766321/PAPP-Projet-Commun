@@ -16,10 +16,11 @@
             <h1>Connexion</h1>
         </div>
         <div class="info">
-            <input type="email" class="femail" name="femail" placeholder="email"><br><br>
-            <input type="password" class="fpass" name="fpass" placeholder="Password"> <br><br>
-            <div><button class="enter">Entrer</button></div>
-            
+            <form action="/success.html" method="POST">
+                <input type="email" class="femail" name="femail" placeholder="email" required><br><br>
+                <input type="password" class="fpass" name="fpass" placeholder="Password" required> <br><br>
+                <div><button type="submit" class="enter">Entrer</button></div>
+            </form>            
         </div>
     </div>
 
