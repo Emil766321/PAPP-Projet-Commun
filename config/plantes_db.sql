@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 21 jan. 2025 à 13:58
+-- Généré le : jeu. 23 jan. 2025 à 08:56
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -22,11 +22,9 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-
 DROP DATABASE IF EXISTS `plantes_db`;
 CREATE DATABASE `plantes_db`;
 USE `plantes_db`;
-
 --
 -- Structure de la table `plante`
 --
@@ -58,6 +56,7 @@ INSERT INTO `plante` (`id`, `Nom`, `Type_plante`, `Humidité`, `Arrosage`, `Temp
 --
 
 CREATE TABLE `utilisateur` (
+  `Id` int(11) NOT NULL,
   `Nom d'Utilisateur` varchar(10) NOT NULL,
   `Mot de passe` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -66,8 +65,8 @@ CREATE TABLE `utilisateur` (
 -- Déchargement des données de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`Nom d'Utilisateur`, `Mot de passe`) VALUES
-('COFOP', 'cofopplante');
+INSERT INTO `utilisateur` (`Id`, `Nom d'Utilisateur`, `Mot de passe`) VALUES
+(1, 'COFOP', 'cofopplante');
 
 --
 -- Index pour les tables déchargées
@@ -80,6 +79,12 @@ ALTER TABLE `plante`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `utilisateur`
+--
+ALTER TABLE `utilisateur`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -88,6 +93,12 @@ ALTER TABLE `plante`
 --
 ALTER TABLE `plante`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT pour la table `utilisateur`
+--
+ALTER TABLE `utilisateur`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
