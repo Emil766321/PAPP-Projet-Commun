@@ -1,113 +1,78 @@
-
-.okaybien img{
-    width: 300px;
-    border-radius:  500px;
-    position: relative;
-    text-align: center;
-    align-items: center;
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+.okaybien{
+    display:flex;
+    flex-direction: column;
+    margin-left: 415px;
+}
+#img {
+    border-radius: 200px;
     width: 230px;
     height: 222px;
-    left: 21px;
-    top: 170px;
 }
-
-
 
 body
 {
-    text-align: center;
-    position: relative;
     background-image: url("../images/image.jpg");
-    
-
-
-
+    background-size: 1240px;     
 }
-
-.Fond{
-    background-image: url("../images/image.jpg");
-    background-size: cover;
-}
-
 h1
 {
-    text-align: center;
+
+    color: aliceblue;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          
 }
 
-img
-{
-    background-image: url("https://plus.unsplash.com/premium_photo-1661953124438-3959644bbcb4?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Rm9yJUMzJUFBdCUyMHBhbm9yYW1pcXVlfGVufDB8fDB8fHww. png");
-    position: center;
+h1 {
+    font-family: 'Lexend Deca', sans-serif;
 }
-
-
-
 
 .Titre
 {
-    height: 222px;
+    margin-left: -50px;
     display: flex;
-    text-align: center;
-    align-items: center;
-    margin:23px;
-    position: absolute;
-  
+    font-family: 'Lexend Deca', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
 }
-
+#TXT {
+    font-size: 20px;
+    font-family: 'Lexend Deca', sans-serif;
+    position: absolute;
+}
+#Cofop{
+    display:flex;
+    justify-content: center;
+    margin-left: -160px;
+    margin-top: 20px;
+}
 .Plantes
 {
-    height: 23px; 
-    margin-top: 230px;
     background-color: #8DB1A0;
-    border-radius: 20px;
+    border-radius: 13px;
     bottom: 20px;
     display:flex;
-    align-items: center;
-    text-align: center;
+    justify-content: center;
     right:250px;
-    width: 150px;
+    width:300px;
+    height: 50px;
+    font-size: 24px;
+    font-family: 'Lexend Deca', sans-serif;
     
 }
 
-.Connexion
-{
-    height: 23px; 
-    margin-top: 23px;
-    background-color: #8DB1A0;
-    border-radius: 20px;
-    bottom: 200px;
-    text-align: center;
-    align-items: center;
-    width: 86px;
-    
-}
+
 .Déconnexion
 {
-    height: 23px; 
-    margin-top: 23px;
-    text-align: center;
-    background-color: #8DB1A0;
-    border-radius: 20px;
-    text-align: center;
-    margin-bottom: 20px;
-    display:flex;
-    align-items: center;
-    width: 95px;
-
+    height: 57px; 
+    width: 262px;
+    margin-top: 20px;
+    background-color: #569A73;
+    border-radius: 90px;
+    color: aliceblue;
+    font-family: 'Lexend Deca', sans-serif;
+    margin-left: 405px;
+    font-size: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
  
-}
-
-.Tqui
-{
-    color:aquamarine;
-
-}
-#tout 
-{
-    display: flex;
-    flex-direction: column;
-    margin:23px;
-    text-align: center;
-    align-items: center;
 }
