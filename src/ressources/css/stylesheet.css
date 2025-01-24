@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+h1, h2 {
+    color: #4CAF50; /* Green color for headings */
+}
+header, footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+section {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    background: #e7f3fe;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+footer p {
+    margin: 0;
+}
