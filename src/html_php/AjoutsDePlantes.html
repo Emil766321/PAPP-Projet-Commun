@@ -8,53 +8,58 @@
     <link rel="stylesheet" href="/src/ressources/css/stylesheet.css">
 </head>
 <body>
-    <div class="hautdepage">
-        <h1>Ajouts de plantes</h1>
-    </div>
     <div class="bulle">
-        <h2 class="description2">Description:</h2>
-        <div class="description">
-            <textarea class="description" placeholder="Description"></textarea>
+        <div class="hautdepage">
+            <h1>Ajout de Plantes</h1>
+            <input placeholder="Nom de la plante" name="NomDePlante">
         </div>
-        
-        <button name="Insertionimg" onclick="insertImage()">Insérer une image</button>
 
-        <div id="image-container">
-            <input type="file" id="file-input" name="file" onchange="previewImage(event)">
-            <div id="image-preview"></div>
+        <div class="description">
+            <textarea placeholder="Description" name="description"></textarea>
+        </div>
+
+        <div class="inser">
+            <button id="insert-image-btn" onclick="triggerFileInput()">Insérer une image</button>
         </div>
 
         <input placeholder="Temperature minimum" name="TempMin" type="text">
         <input placeholder="Temperature maximum" name="Tempmax" type="text">
         <input placeholder="Arrosage" name="Arrosage" type="text">
         <input placeholder="Humidité" name="Humidite" type="text">
+
+        <div class="accept">
+            <button name="accepter">Accepter</button>
+        </div>
+
+        <input type="file" id="file-input" name="file" style="display: none;" onchange="previewImage(event)">
     </div>
 
     <script>
-        function previewImage(event) {
-            const file = event.target.files[0];
-            const reader = new FileReader();
-            reader.onload = function() {
-                const img = document.createElement('img');
-                img.src = reader.result;
-                img.alt = 'Image Preview';
-                document.getElementById('image-preview').innerHTML = ''; // Clear any previous image
-                document.getElementById('image-preview').appendChild(img);
-            };
-            reader.readAsDataURL(file);
+        // Trigger file input when the button is clicked
+        function triggerFileInput() {
+            const fileInput = document.getElementById('file-input');
+            fileInput.click(); // Trigger the file input click
         }
 
-        function insertImage() {
-            const fileInput = document.getElementById('file-input');
-            const file = fileInput.files[0];
+        // Preview the image once selected
+        function previewImage(event) {
+            const file = event.target.files[0];
             if (file) {
-                const img = document.createElement('img');
-                img.src = URL.createObjectURL(file); // Use URL.createObjectURL for local files
-                img.alt = 'Uploaded Image';
-                document.getElementById('image-container').appendChild(img);
+                const reader = new FileReader();
+                reader.onload = function() {
+                    const img = document.createElement('img');
+                    img.src = reader.result;
+                    img.alt = 'Image Preview';
+                    
+                    const button = document.getElementById('insert-image-btn');
+                    button.innerHTML = ''; // Clear any previous content
+                    button.appendChild(img); // Add the image inside the button
+                    button.style.backgroundImage = 'none'; // Remove any previous background image
+                    button.style.backgroundColor = 'transparent'; // Make background transparent
+                };
+                reader.readAsDataURL(file);
             }
         }
     </script>
-    
 </body>
 </html>
