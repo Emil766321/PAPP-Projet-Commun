@@ -31,13 +31,13 @@ body
 
 h1
 {
-    position: absolute;
+    text-align: center;
 }
 
 img
 {
     background-image: url("https://plus.unsplash.com/premium_photo-1661953124438-3959644bbcb4?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Rm9yJUMzJUFBdCUyMHBhbm9yYW1pcXVlfGVufDB8fDB8fHww. png");
-    position: center ;
+    position: center;
 }
 
 
@@ -50,7 +50,7 @@ img
     text-align: center;
     align-items: center;
     margin:23px;
-    
+    position: absolute;
   
 
 }
@@ -89,13 +89,11 @@ img
     text-align: center;
     background-color: #8DB1A0;
     border-radius: 20px;
-
     text-align: center;
     margin-bottom: 20px;
     display:flex;
     align-items: center;
     width: 95px;
-
 
  
 }
@@ -104,9 +102,9 @@ img
 {
     color:aquamarine;
 
-
 }
-#tout {
+#tout 
+{
     display: flex;
     flex-direction: column;
     margin:23px;
