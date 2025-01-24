@@ -1,3 +1,4 @@
+
 .okaybien img{
     width: 300px;
     border-radius:  500px;
@@ -27,15 +28,6 @@ h1
     position: absolute;
 }
 
-
-    
-
-.vsy
-{
-    position:absolute;
-    
-
-}
 img
 {
     background-image: url("https://plus.unsplash.com/premium_photo-1661953124438-3959644bbcb4?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Rm9yJUMzJUFBdCUyMHBhbm9yYW1pcXVlfGVufDB8fDB8fHww. png");
@@ -45,22 +37,23 @@ img
 
 .okaybien img
 {
-position: center;
-
-width: 230px;
-height: 222px;
-left: 21px;
-top: 170px;
+    text-align: center;
+    align-items: center;
+    width: 230px;
+    height: 222px;
+    left: 21px;
+    top: 170px;
 }
 
 .Titre
 {
     height: 222px;
-    text-align: center;
     display: flex;
+    position: center;
+    text-align: center;
     align-items: center;
-    margin-right: 23px;
-    right: 530px;
+    margin:23px;
+    
   
 
 }
@@ -72,30 +65,31 @@ top: 170px;
     background-color: #8DB1A0;
     border-radius: 20px;
     bottom: 20px;
-
     display:flex;
     align-items: center;
     text-align: center;
     right:250px;
+    width: 150px;
     
 }
 
 .Connexion
 {
     height: 23px; 
-    margin-top: 230px;
+    margin-top: 23px;
     background-color: #8DB1A0;
     border-radius: 20px;
     bottom: 200px;
     text-align: center;
-    display:flex;
     align-items: center;
-    justify-content: center;
+    width: 86px;
+    
 }
 .Déconnexion
 {
     height: 23px; 
-    margin-top: 230px;
+    margin-top: 23px;
+    text-align: center;
     background-color: #8DB1A0;
     border-radius: 20px;
 
@@ -103,9 +97,22 @@ top: 170px;
     margin-bottom: 20px;
     display:flex;
     align-items: center;
-    justify-content: center;
+    width: 95px;
 
 
  
 }
 
+.Tqui
+{
+    color:aquamarine;
+
+
+}
+#tout {
+    display: flex;
+    flex-direction: column;
+    margin:23px;
+    text-align: center;
+    align-items: center;
+}
