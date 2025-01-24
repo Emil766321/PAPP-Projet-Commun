@@ -3,6 +3,12 @@
     width: 300px;
     border-radius:  500px;
     position: relative;
+    text-align: center;
+    align-items: center;
+    width: 230px;
+    height: 222px;
+    left: 21px;
+    top: 170px;
 }
 
 
@@ -35,21 +41,12 @@ img
 }
 
 
-.okaybien img
-{
-    text-align: center;
-    align-items: center;
-    width: 230px;
-    height: 222px;
-    left: 21px;
-    top: 170px;
-}
+
 
 .Titre
 {
     height: 222px;
     display: flex;
-    position: center;
     text-align: center;
     align-items: center;
     margin:23px;
