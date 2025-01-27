@@ -1,11 +1,6 @@
 <?php
 session_start();
-include('db.php'); // Connexion à la base de données
-// Vérification que l'utilisateur est admin
-/*if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
-    header('Location: login.php'); // Redirige vers la page de login si ce n'est pas un admin
-    exit();
-}*/
+include('db.php');
 //-----------------------------------------------------------------------------------------------------------------------
 // Ajouter une plante
 if (isset($_POST['add_plante'])) {

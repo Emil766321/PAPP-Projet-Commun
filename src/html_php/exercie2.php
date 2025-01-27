@@ -80,7 +80,7 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
         echo "</form>";
         echo "<form action='exercie.2.1.php' method='POST' style='display:inline;'>";
         echo "<input type='hidden' name='id' value='" . $plante['id'] . "'>";
-        echo "<button type='submit' name='delete_plante'>Modifier</button>";
+        echo "<button type='submit' name='edit_plante'>Modifier</button>";
         echo "</form>";
         echo "</div><hr>";
     }

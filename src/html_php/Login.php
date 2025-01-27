@@ -16,8 +16,8 @@ if($data===false)
 
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
-    $username=$_POST["username"];
-    $password=$_POST["password"];
+    $username = mysqli_real_escape_string($data, $_POST['username']);
+    $password= mysqli_real_escape_string($data, $_POST['password']);
 
     $sql="select * from user where username='".$username."' AND password='".$password."'";
 
@@ -32,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     }
     else
     {
-        echo"username or password incorrect!";
+        echo"Pseudo ou mot de passe incorrecte";
     }
 
 }
@@ -44,11 +44,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Page de connection</title>
 </head>
 <body>
     <center>
-        <h1>Login Form</h1>
+        <h1>Connection</h1>
         <br>
         <br>
         <br>
@@ -62,22 +62,19 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             </style>
             <br>
             <br>
-
             <form action="#" method="POST">
                 <div>
-                    <label>username</label>
-                    <input type="text" name="username" required>
+                    <input type="text" name="username" placeholder="Entrez votre Pseudo"required>
                 </div>
                 <br>
                 <br>
                 <div>
-                    <label>password</label>
-                    <input type="password" name="password" requiered>
+                    <input type="password" name="password" placeholder="Entrez votre mot de passe"requiered>
                 </div>
                 <br>
                 <br>
                 <div>
-                    <input type="submit" value="Login">
+                    <input type="submit" value="Se connecter">
                 </div>
             </form>
 
