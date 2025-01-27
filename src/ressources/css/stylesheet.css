@@ -96,5 +96,9 @@ body {
     font-size: 15px;
     text-shadow: #4E785F 2px 2px;
   }
-
-
+.enterasnonadmin{
+    font-size: 15px;
+    font-family: 'Lexend Deca', sans-serif;
+    margin-left: 45px;
+    color: white;
+}
