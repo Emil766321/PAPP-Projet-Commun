@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
 h1{
     color: white;
     font-size:  45px; 
     text-align: center;
+    font-family: "Lexend Deca", sans-serif;
+
 }
 body{
     background-image:url(../images/tableau_projet.jpg);
@@ -10,4 +13,5 @@ p{
     color: white;
     font-size: 39px;
     text-align: center;
+    font-family: "Lexend Deca", sans-serif;
 }
