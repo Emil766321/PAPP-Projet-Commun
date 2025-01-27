@@ -25,6 +25,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 
     $row=mysqli_fetch_array($result);
 
+    echo $sql;
+
     if($row["usertype"]=="COFOP")
     {
         $_SESSION["username"]=$username;

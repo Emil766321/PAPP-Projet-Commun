@@ -1,37 +1,34 @@
 <?php
 session_start();
 include ('db.php');
-/*include('db.php'); // Connexion à la base de données
-// Vérification que l'utilisateur est admin
-if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
-    header('Location: login.php'); // Redirige vers la page de login si ce n'est pas un admin
-    exit();
-}*/
-//-----------------------------------------------------------------------------------------------------------------------
-// Ajouter une plante
+
 if (isset($_POST['add_plante'])) {
-    $nom = $_POST['nom'];
-    $type = $_POST['type'];
-    $humidite = $_POST['humidite'];
-    $arrosage = $_POST['arrosage'];
-    $temp_min = $_POST['temp_min'];
-    $temp_max = $_POST['temp_max'];
-    $description = $_POST['description'];
-//-----------------------------------------------------------------------------------------------------------------------
-    // Requête pour insérer une plante
-    $query = "INSERT INTO plante (Nom, Type_plante, Humidité, Arrosage, Temperateur_min, Temperateur_max, Description)
-              VALUES (:nom, :type, :humidite, :arrosage, :temp_min, :temp_max, :description)";
-    $stmt = $conn->prepare($query);
-    $stmt->bindParam(':nom', $nom);
-    $stmt->bindParam(':type', $type);
-    $stmt->bindParam(':humidite', $humidite);
-    $stmt->bindParam(':arrosage', $arrosage);
-    $stmt->bindParam(':temp_min', $temp_min);
-    $stmt->bindParam(':temp_max', $temp_max);
-    $stmt->bindParam(':description', $description);
-    $stmt->execute();
+    $nom = trim($_POST['nom']);
+    $type = trim($_POST['type']);
+    $humidite = trim($_POST['humidite']);
+    $arrosage = trim($_POST['arrosage']);
+    $temp_min = trim($_POST['temp_min']);
+    $temp_max = trim($_POST['temp_max']);
+    $description = trim($_POST['description']);
+    
+    // Validation simple
+    if (empty($nom) || empty($type) || empty($humidite) || empty($arrosage)) {
+        echo "Tous les champs sont obligatoires.";
+    } else {
+        // Requête d'insertion
+        $query = "INSERT INTO plante (Nom, Type_plante, Humidité, Arrosage, Temperateur_min, Temperateur_max, Description)
+                  VALUES (:nom, :type, :humidite, :arrosage, :temp_min, :temp_max, :description)";
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(':nom', $nom);
+        $stmt->bindParam(':type', $type);
+        $stmt->bindParam(':humidite', $humidite);
+        $stmt->bindParam(':arrosage', $arrosage);
+        $stmt->bindParam(':temp_min', $temp_min);
+        $stmt->bindParam(':temp_max', $temp_max);
+        $stmt->bindParam(':description', $description);
+        $stmt->execute();
+    }
 }
-//-----------------------------------------------------------------------------------------------------------------------
 
 // Supprimer une plante
 if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
