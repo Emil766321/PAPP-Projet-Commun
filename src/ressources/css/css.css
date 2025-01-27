@@ -1,112 +1,97 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
-.okaybien{
-    display:flex;
-    flex-direction: column;
-    cursor:progress;
 
-   
-}
-#img {
-    border-radius: 200px;
-    width: 230px;
-    height: 222px;
-    cursor:progress;
-
-}
-
-body
-{
+/* Global */
+body {
     background-image: url("../images/image.jpg");
-    background-size: 1240px; 
-    cursor:progress;
-
-}
-h1
-{
-    color: aliceblue;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    cursor:progress;
-
-}
-
-#button{
-    display: flex;
-    flex-direction: column;
-    cursor:progress;
-
-}
-.Titre
-{
-
-    display: flex;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    cursor:progress;
-
-
-}
-#TXT {
-    font-size: 20px;
+    background-size: cover;
+    background-position: center;
     font-family: 'Lexend Deca', sans-serif;
-    position: absolute;
-    cursor:progress;
-
-
-}
-.cofop{
-    height: 57px; 
-    width: 262px; 
-    margin-top: 20px;
-    background-color: #569A73;
-    border-radius: 90px;
     color: aliceblue;
-    font-family: 'Lexend Deca', sans-serif;
-    font-size: 30px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    cursor:progress;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
 }
-#Plantes
-{
+.Déconnexione{
     background-color: #8DB1A0;
-    border-radius: 13px;
-    width:300px;
-    height: 50px;
-    font-family: 'Lexend Deca', sans-serif;
-    cursor:progress;
-
+    border-radius: 99px;
 }
 #tout {
     display: flex;
-    align-items: center;
     flex-direction: column;
-    cursor:progress;
-
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
 }
-.Déconnexion
-{
-    height: 57px; 
-    width: 262px; 
-    margin-top: 20px;
-    background-color: #569A73;
-    border-radius: 90px;
-    color: aliceblue;
-    font-family: 'Lexend Deca', sans-serif;
-   
-    font-size: 30px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    cursor:progress;
 
+/* Titre */
+h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
 }
-.Déconnexion{
-    height: 57px; 
-    width: 262px; 
-    margin-top: 20px;
-    margin-left: 50px;
-    background-color: #569A73;
-    border-radius: 90px;
-    color: aliceblue;
-    font-family: 'Lexend Deca', sans-serif;
-    font-size: 30px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    cursor:progress;
 
+.Titre {
+    font-size: 2.5rem;
+    margin-top: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Image du profil */
+#img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Style des boutons */
+.Déconnexion, .cofop {
+    background-color: #569A73;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Lexend Deca', sans-serif;
+    padding: 15px 30px;
+    border-radius: 30px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.Déconnexion:hover, .cofop:hover {
+    background-color: #3f7a5a;
+    transform: scale(1.05);
+}
+
+.Déconnexion:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Flexbox pour centrer les éléments */
+.okaybien {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style du bouton "Déconnexion" */
+.cofop {
+    background-color: #8DB1A0;
+    border-radius: 20px;
+    color: aliceblue;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    width: 250px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+/* Texte descriptif */
+#TXT {
+    font-size: 1rem;
+    font-family: 'Lexend Deca', sans-serif;
+    position: absolute;
 }
