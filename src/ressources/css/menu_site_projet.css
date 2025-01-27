@@ -142,40 +142,40 @@ body {
     width: 1280px;
     position: absolute; 
 }
-#provo {
+#brocoli2 {
     margin-top: 100px;
     margin-left: 90px;
     z-index: 3;
     width: 160px; position: absolute;
 }
 
-#provo1 {
+#brocoli1 {
     margin-top: 400px;
     margin-left: 90px;
     z-index: 3;
     width: 160px; position: absolute;
 }
-#provo2 {
+#croix1 {
     margin-top: 340px;
     margin-left: 280px;
     z-index: 4;
     width: 15px; position: absolute;
 }
-#provo3 {
+#croix2 {
     margin-top: 40px;
     margin-left: 280px;
     z-index: 4;
     width: 15px; position: absolute;
 }
 
-#provo4 {
+#crayon1 {
     margin-top: 360px;
     margin-left: 280px;
     z-index: 4;
     width: 20px; 
     position: absolute;
 }
-#provo5 {
+#crayon2 {
     margin-top: 60px;
     margin-left: 280px;
     z-index: 4;
