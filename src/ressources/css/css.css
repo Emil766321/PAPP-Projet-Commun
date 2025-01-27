@@ -2,77 +2,111 @@
 .okaybien{
     display:flex;
     flex-direction: column;
-    margin-left: 415px;
+    cursor:progress;
+
+   
 }
 #img {
     border-radius: 200px;
     width: 230px;
     height: 222px;
+    cursor:progress;
+
 }
 
 body
 {
     background-image: url("../images/image.jpg");
-    background-size: 1240px;     
+    background-size: 1240px; 
+    cursor:progress;
+
 }
 h1
 {
-
     color: aliceblue;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-          
+    cursor:progress;
+
 }
 
-h1 {
-    font-family: 'Lexend Deca', sans-serif;
-}
+#button{
+    display: flex;
+    flex-direction: column;
+    cursor:progress;
 
+}
 .Titre
 {
-    margin-left: -50px;
+
     display: flex;
-    font-family: 'Lexend Deca', sans-serif;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    cursor:progress;
+
 
 }
 #TXT {
     font-size: 20px;
     font-family: 'Lexend Deca', sans-serif;
     position: absolute;
-}
-#Cofop{
-    display:flex;
-    justify-content: center;
-    margin-left: -160px;
-    margin-top: 20px;
-}
-.Plantes
-{
-    background-color: #8DB1A0;
-    border-radius: 13px;
-    bottom: 20px;
-    display:flex;
-    justify-content: center;
-    right:250px;
-    width:300px;
-    height: 50px;
-    font-size: 24px;
-    font-family: 'Lexend Deca', sans-serif;
-    
-}
+    cursor:progress;
 
 
-.Déconnexion
-{
+}
+.cofop{
     height: 57px; 
-    width: 262px;
+    width: 262px; 
     margin-top: 20px;
     background-color: #569A73;
     border-radius: 90px;
     color: aliceblue;
     font-family: 'Lexend Deca', sans-serif;
-    margin-left: 405px;
     font-size: 30px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
- 
+    cursor:progress;
+}
+#Plantes
+{
+    background-color: #8DB1A0;
+    border-radius: 13px;
+    width:300px;
+    height: 50px;
+    font-family: 'Lexend Deca', sans-serif;
+    cursor:progress;
+
+}
+#tout {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    cursor:progress;
+
+}
+.Déconnexion
+{
+    height: 57px; 
+    width: 262px; 
+    margin-top: 20px;
+    background-color: #569A73;
+    border-radius: 90px;
+    color: aliceblue;
+    font-family: 'Lexend Deca', sans-serif;
+   
+    font-size: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    cursor:progress;
+
+}
+.Déconnexion{
+    height: 57px; 
+    width: 262px; 
+    margin-top: 20px;
+    margin-left: 50px;
+    background-color: #569A73;
+    border-radius: 90px;
+    color: aliceblue;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    cursor:progress;
+
 }
