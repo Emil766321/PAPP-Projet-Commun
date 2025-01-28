@@ -14,7 +14,7 @@
         $crayon = "../ressources/images/crayon.png";
         $croix = "../ressources/images/croix.png";
         $Nom_Plante = "Plant Name";
-        $image_food = "../ressources/images/oip.png";
+        $image_food = "../ressources/images/brocoli.png";
 
         $elements = [
             ['name' => 'crayon1', 'id' => 'crayon1', 'src' => $crayon, 'alt' => 'abc'],
