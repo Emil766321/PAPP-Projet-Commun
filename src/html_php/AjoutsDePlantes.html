@@ -10,10 +10,12 @@
 </head>
 
 <body>
+    <form action="exercice2.1.php" method="post">
     <div class="bulle">
         <div class="hautdepage">
             <h1>Ajout de Plantes</h1>
             <input placeholder="Nom de la plante" name="NomDePlante">
+
         </div>
 
         <div class="description">
@@ -24,13 +26,14 @@
             <button id="insert-image-btn" name="buttonimg" onclick="triggerFileInput()">Insérer une image</button>
         </div>
 
-        <input placeholder="Temperature minimum" name="TempMin" type="text">
-        <input placeholder="Temperature maximum" name="Tempmax" type="text">
-        <input placeholder="Arrosage" name="Arrosage" type="text">
-        <input placeholder="Humidité" name="Humidite" type="text">
+        <input placeholder="Temperature minimum" name="temp_min" id="temp_min" type="text">
+        <input placeholder="Temperature maximum" name="temp_max" id="temp_max" type="text">
+        <input placeholder="Arrosage" name="arrosage" id="arrosage" type="text">
+        <input placeholder="Humidité" name="humidite" id="humidite" type="text">
+
 
         <div class="accept">
-            <button name="accepter">Accepter</button>
+            <button name="accepter" id="accepter" >Accepter</button>
         </div>
 
         <input type="file" id="file-input" name="file" style="display: none;" onchange="previewImage(event)">
@@ -39,6 +42,7 @@
     <script src="..\ressources\js\js.js">
 
     </script>
+    </form>
 </body>
 
 </html>
