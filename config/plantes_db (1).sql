@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 28 jan. 2025 à 11:19
+-- Généré le : mar. 28 jan. 2025 à 13:12
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -22,6 +22,10 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
+
+DROP DATABASE IF EXISTS `plantes_db`;
+CREATE DATABASE `plantes_db`;
+USE `plantes_db`;
 
 --
 -- Structure de la table `plante`
