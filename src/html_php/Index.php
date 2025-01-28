@@ -31,10 +31,9 @@ include ('db.php');
     foreach ($plantes as $plante) {
         echo "<div class='plante'>";
         echo "<h3>" . htmlspecialchars($plante['Nom']) . "</h3>";
-        echo "<p><strong>Type :</strong> " . htmlspecialchars($plante['Type_plante']) . "</p>";
         echo "<p><strong>Humidité :</strong> " . htmlspecialchars($plante['Humidité']) . "</p>";
         echo "<p><strong>Arrosage :</strong> " . htmlspecialchars($plante['Arrosage']) . "</p>";
-        echo "<p><strong>Température :</strong> " . htmlspecialchars($plante['Temperateur_min']) . " à " . htmlspecialchars($plante['Temperateur_max']) . "</p>";
+        echo "<p><strong>Température :</strong> " . htmlspecialchars($plante['Temperature_min']) . " à " . htmlspecialchars($plante['Temperature_max']) . "</p>";
         echo "<p><strong>Description :</strong> " . nl2br(htmlspecialchars($plante['Description'])) . "</p>";
         echo "</div><hr>";
     }

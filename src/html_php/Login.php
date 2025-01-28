@@ -1,4 +1,5 @@
 <?php
+include("db.php");
 
 $host="localhost";
 $user="root";
@@ -24,8 +25,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     $result=mysqli_query($data, $sql);
 
     $row=mysqli_fetch_array($result);
-
-    echo $sql;
 
     if($row["usertype"]=="COFOP")
     {
