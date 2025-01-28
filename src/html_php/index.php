@@ -20,10 +20,10 @@
             </div>
 
             <div class="cofop" name="div_name">
-                <div  id="Déconnexione" name="name"><h1 id ="cofop">COFOP</h1></div>
+                <div id="Déconnexione" name="name"><h1 id ="cofop">COFOP</h1></div>
             </div>
                 <button class="Déconnexion" name="Déconnexion">Déconnexion</button>
-        </div>
+        </div>    
 </body>
 
 
