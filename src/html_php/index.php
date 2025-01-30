@@ -25,7 +25,11 @@
             </div>
             <a href="connect.html" class="Déconnexion">Déconnexion</a>
         </div>   
-        
+        <?php
+        session_start();
+        session_destroy();
+        header("location:index.php");
+        ?>
        
        
     </form>
