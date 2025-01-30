@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 30 jan. 2025 à 16:03
+-- Généré le : jeu. 30 jan. 2025 à 16:19
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -45,13 +45,9 @@ CREATE TABLE `plante` (
 --
 
 INSERT INTO `plante` (`id`, `Nom`, `Humidité`, `Arrosage`, `Temperature_min`, `Temperature_max`, `Description`, `libelle`) VALUES
-(2, 'Persil', '55%', 'Sol modérément humide, arrosage', ' -10°C.', '21°C', 'le persil est une plante assez adaptable, mais il préfère des températures modérées, une exposition à la lumière indirecte, et un sol légèrement humide. Lorsqu\'il est bien entretenu, il peut être une plante aromatique très productive.', ''),
+(2, 'Persil', '55%', 'Sol modérément humide, arrosage', ' -10°C.', '21°C', 'le persil est une plante assez adaptable, mais il préfère des températures modérées, une exposition à la lumière indirecte, et un sol légèrement humide. Lorsqu\'il est bien entretenu, il peut être une plante aromatique très productive.', 'R.jpg'),
 (3, 'Tomate', '65%', 'Sol modérément humide, arrosage', '10°C', '25°C', 'La tomate préfère une exposition au plein soleil, un sol humide mais bien drainé, et des températures chaudes pour bien se développer.', 'tomates-mures-tomate-verte.jpg'),
-(37, 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', ''),
-(38, 'cat', 'cat', 'cat', 'cat', 'cat', 'cat', 'OIP_20250130_153509.jpg'),
-(39, 'fsdfaf', 'asd', 'asd', 'asd', 'asd', 'asdadad', 'R_20250130_154104.jpg'),
-(40, 'fsdfaffdsafd', 'dfasdfasdfd', 'fsadfasdfa', 'sdfaasdfsa', 'sdfaasdfsa', '12334', 'tomates-mures-tomate-verte_20250130_154510.jpg'),
-(41, 'fsdfaffdsafd', 'asd', 'asd', 'asd', '123', '123', 'tomates-mures-tomate-verte_20250130_154917.jpg');
+(42, 'Cactus', '40%', 'peu d\'arrosage', '5°C', '35°C', 'Le cactus est une plante succulente de la famille des Cactacées, souvent caractérisée par des tiges épaisses et épineuses qui lui permettent de stocker de l\\\'eau. Il préfère les environnements chauds et ensoleillés, avec un sol bien drainé et peu d\\\'', 'OIP.jpg');
 
 -- --------------------------------------------------------
 
@@ -97,7 +93,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `plante`
 --
 ALTER TABLE `plante`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT pour la table `user`
