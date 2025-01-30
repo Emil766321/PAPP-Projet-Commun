@@ -66,8 +66,6 @@ if (isset($_POST["modifierPlante"])) {
             mysqli_stmt_close($stmt2);
         }
             updatethis($nom, $humidite, $arrosage, $temp_min, $temp_max, $description, $id, $data);
-}else{
-    echo"bug";
 }
 ?>
 
