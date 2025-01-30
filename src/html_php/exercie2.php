@@ -4,7 +4,6 @@ include ('db.php');
 
 if (isset($_POST['add_plante'])) {
     $nom = trim($_POST['nom']);
-    $type = trim($_POST['type']);
     $humidite = trim($_POST['humidite']);
     $arrosage = trim($_POST['arrosage']);
     $temp_min = trim($_POST['temp_min']);
@@ -16,11 +15,10 @@ if (isset($_POST['add_plante'])) {
         echo "Tous les champs sont obligatoires.";
     } else {
         // Requête d'insertion
-        $query = "INSERT INTO plante (Nom, Type_plante, Humidité, Arrosage, Temperateur_min, Temperateur_max, Description)
+        $query = "INSERT INTO plante (Nom, Humidité, Arrosage, Temperature_min, Temperature_max, Description)
                   VALUES (:nom, :type, :humidite, :arrosage, :temp_min, :temp_max, :description)";
         $stmt = $conn->prepare($query);
         $stmt->bindParam(':nom', $nom);
-        $stmt->bindParam(':type', $type);
         $stmt->bindParam(':humidite', $humidite);
         $stmt->bindParam(':arrosage', $arrosage);
         $stmt->bindParam(':temp_min', $temp_min);
@@ -66,10 +64,9 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
     foreach ($plantes as $plante) {
         echo "<div class='plante'>";
         echo "<h3>" . htmlspecialchars($plante['Nom']) . "</h3>";
-        echo "<p><strong>Type :</strong> " . htmlspecialchars($plante['Type_plante']) . "</p>";
         echo "<p><strong>Humidité :</strong> " . htmlspecialchars($plante['Humidité']) . "</p>";
         echo "<p><strong>Arrosage :</strong> " . htmlspecialchars($plante['Arrosage']) . "</p>";
-        echo "<p><strong>Température :</strong> " . htmlspecialchars($plante['Temperateur_min']) . " à " . htmlspecialchars($plante['Temperateur_max']) . "</p>";
+        echo "<p><strong>Température :</strong> " . htmlspecialchars($plante['Temperature_min']) . " à " . htmlspecialchars($plante['Temperature_max']) . "</p>";
         echo "<p><strong>Description :</strong> " . nl2br(htmlspecialchars($plante['Description'])) . "</p>";
         echo "<form method='POST' style='display:inline;'>";
         echo "<input type='hidden' name='id' value='" . $plante['id'] . "'>";

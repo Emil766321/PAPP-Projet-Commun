@@ -5,7 +5,6 @@ include('db.php');
 // Ajouter une plante
 if (isset($_POST['add_plante'])) {
     $nom = $_POST['nom'];
-    $type = $_POST['type'];
     $humidite = $_POST['humidite'];
     $arrosage = $_POST['arrosage'];
     $temp_min = $_POST['temp_min'];
@@ -14,11 +13,10 @@ if (isset($_POST['add_plante'])) {
     
 //-----------------------------------------------------------------------------------------------------------------------
     // Requête pour insérer une plante
-    $query = "INSERT INTO plante (Nom, Type_plante, Humidité, Arrosage, Temperateur_min, Temperateur_max, Description)
-              VALUES (:nom, :type, :humidite, :arrosage, :temp_min, :temp_max, :description)";
+    $query = "INSERT INTO plante (Nom, Humidité, Arrosage, Temperature_min, Temperature_max, Description)
+              VALUES (:nom, :humidite, :arrosage, :temp_min, :temp_max, :description)";
     $stmt = $conn->prepare($query);
     $stmt->bindParam(':nom', $nom);
-    $stmt->bindParam(':type', $type);
     $stmt->bindParam(':humidite', $humidite);
     $stmt->bindParam(':arrosage', $arrosage);
     $stmt->bindParam(':temp_min', $temp_min);
@@ -38,7 +36,6 @@ if (isset($_POST['add_plante'])) {
      <!-- Formulaire pour ajouter une plante -->
      <form method="POST">
         <input type="text" name="nom" placeholder="Nom de la plante" required>
-        <input type="text" name="type" placeholder="Type de plante" required>
         <input type="text" name="humidite" placeholder="Humidité" required>
         <input type="text" name="arrosage" placeholder="Arrosage" required>
         <input type="text" name="temp_min" placeholder="Température min" required>
