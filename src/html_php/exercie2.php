@@ -10,6 +10,7 @@ if (isset($_POST['add_plante'])) {
     $temp_max = trim($_POST['temp_max']);
     $description = trim($_POST['description']);
     
+    
     // Validation simple
     if (empty($nom) || empty($type) || empty($humidite) || empty($arrosage)) {
         echo "Tous les champs sont obligatoires.";
@@ -68,6 +69,7 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
         echo "<p><strong>Arrosage :</strong> " . htmlspecialchars($plante['Arrosage']) . "</p>";
         echo "<p><strong>Température :</strong> " . htmlspecialchars($plante['Temperature_min']) . " à " . htmlspecialchars($plante['Temperature_max']) . "</p>";
         echo "<p><strong>Description :</strong> " . nl2br(htmlspecialchars($plante['Description'])) . "</p>";
+        echo "<p><strong>Image :</strong> " . nl2br(htmlspecialchars($plante['libelle'])) . "</p>";
         echo "<form method='POST' style='display:inline;'>";
         echo "<input type='hidden' name='id' value='" . $plante['id'] . "'>";
         echo "<button type='submit' name='delete_plante'>Supprimer</button>";
