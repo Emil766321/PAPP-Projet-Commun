@@ -11,7 +11,7 @@
 
 
 <body>
-    <form action="Login.php" method="POST">
+    <form action="connect.html" method="POST">
         <div name="tout"id ="tout">
             <div name="base" class="base">
                 <div name ="title_fond"class="okaybien">
@@ -23,7 +23,7 @@
             <div class="cofop" name="div_name">
                 <div id="Déconnexione" name="name"><h1 id ="cofop">COFOP</h1></div>
             </div>
-            <a href="siteProjet-Commun.html" class="Déconnexion">Déconnexion</a>
+            <a href="connect.html" class="Déconnexion">Déconnexion</a>
         </div>   
         
        
