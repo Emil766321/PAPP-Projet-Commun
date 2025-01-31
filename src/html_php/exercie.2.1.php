@@ -28,6 +28,7 @@ if (isset($_POST["modifierPlante"])) {
     $temp_min = $_POST['temp_min'];
     $temp_max = $_POST['temp_max'];
     $description = $_POST['description'];
+    $libelle = $_POST['libelle'];
     $id = $_POST['id'];
     
     echo $id;
@@ -76,17 +77,7 @@ if (isset($_POST["modifierPlante"])) {
 ?>
 
 <?php
-// echo"non";
-// $stmt2 = $data->prepare("UPDATE plante SET nom=':nom', type=':type', humidite=':humidite', arrosage=':arrosage', temp_min=':temp_min', temp_max=':temp_max', description=':description' WHERE id='$id'");
-// $stmt2->bindParam(':nom', $nom, PDO::PARAM_STR);
-// echo"après execute";
-// $stmt2->bindParam(':humidite', $humidite, PDO::PARAM_STR);
-// $stmt2->bindParam(':arrosage', $arrosage, PDO::PARAM_STR);
-// $stmt2->bindParam(':temp_min', $temp_min, PDO::PARAM_INT);
-// $stmt2->bindParam(':temp_max', $temp_max, PDO::PARAM_INT);
-// $stmt2->bindParam(':description', $description, PDO::PARAM_STR);
-// $stmt2->bindParam(':id', $id, PDO::PARAM_INT);
-// $stmt2->execute();
+
     if(isset($_POST['edit_plante'])){
         $id = $_POST['id'];
         $sql="SELECT * FROM plante WHERE id='$id'";
@@ -116,10 +107,10 @@ if (isset($_POST["modifierPlante"])) {
         <input type="text" name="temp_min" placeholder="Température min" required value="<?php echo $row["Temperature_min"];?>"/>
         <input type="text" name="temp_max" placeholder="Température max" required value="<?php echo $row["Temperature_max"];?>"/>
         <input type="text" name="description" placeholder="Description" required value="<?php echo $row["Description"];?>"/>
+        <input type="file" name="image_file" accept="image/*" required <?php echo $row["libelle"]?>>
         <input type="hidden" name="id" required value="<?php echo $row["id"];?>"/>
         <input type="submit" name="modifierPlante" placeholder="wdd">
-
-        </form>
+    </form>
         <a href="exercie2.php">Retour!</a>
 </body>
 </html>
