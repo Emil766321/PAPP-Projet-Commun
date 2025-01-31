@@ -10,39 +10,35 @@
 </head>
 
 <body>
-    <form action="exercice2.1.php" method="post">
-    <div class="bulle">
-        <div class="hautdepage">
-            <h1>Ajout de Plantes</h1>
-            <input placeholder="Nom de la plante" name="NomDePlante">
+    <form action="exercice2.1.php" method="post" id="plant-form">
+        <div class="bulle">
+            <div class="hautdepage">
+                <h1>Ajout de Plantes</h1>
+                <input placeholder="Nom de la plante" name="NomDePlante">
+            </div>
 
+            <div class="description">
+                <textarea placeholder="Description" name="description"></textarea>
+            </div>
+
+            <div class="inser">
+                <button type="button" id="insert-image-btn" name="buttonimg" onclick="triggerFileInput()">Insérer une image</button>
+            </div>
+
+            <input placeholder="Temperature minimum" name="temp_min" id="temp_min" type="text">
+            <input placeholder="Temperature maximum" name="temp_max" id="temp_max" type="text">
+            <input placeholder="Arrosage" name="arrosage" id="arrosage" type="text">
+            <input placeholder="Humidité" name="humidite" id="humidite" type="text">
+
+            <div class="accept">
+                <button type="submit" name="accepter" id="accepter">Accepter</button>
+            </div>
+
+            <input type="file" id="file-input" name="file" style="display: none;" onchange="previewImage(event)">
         </div>
-
-        <div class="description">
-            <textarea placeholder="Description" name="description"></textarea>
-        </div>
-
-        <div class="inser">
-            <button id="insert-image-btn" name="buttonimg" onclick="triggerFileInput()">Insérer une image</button>
-        </div>
-
-        <input placeholder="Temperature minimum" name="temp_min" id="temp_min" type="text">
-        <input placeholder="Temperature maximum" name="temp_max" id="temp_max" type="text">
-        <input placeholder="Arrosage" name="arrosage" id="arrosage" type="text">
-        <input placeholder="Humidité" name="humidite" id="humidite" type="text">
-
-
-        <div class="accept">
-            <button name="accepter" id="accepter" >Accepter</button>
-        </div>
-
-        <input type="file" id="file-input" name="file" style="display: none;" onchange="previewImage(event)">
-    </div>
-
-    <script src="..\ressources\js\js.js">
-
-    </script>
     </form>
+
+    <script src="..\ressources\js\js.js"></script>
 </body>
 
 </html>
