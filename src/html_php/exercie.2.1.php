@@ -1,18 +1,16 @@
 <?php
-$host="localhost";
-$user="root";
-$password="";
-$db="plantes_db";
-
+$host = "localhost";
+$user = "root";
+$password = "";
+$db = "plantes_db";
 
 session_start();
 require("db.php");
 
-$data=mysqli_connect($host,$user,$password,$db);
+$data = mysqli_connect($host, $user, $password, $db);
 
-if($data===false)
-{
-    die("connection error");
+if ($data === false) {
+    die("Erreur de connexion à la base de données");
 }
 
 if (isset($_POST["modifierPlante"])) {
@@ -22,89 +20,110 @@ if (isset($_POST["modifierPlante"])) {
     $temp_min = $_POST['temp_min'];
     $temp_max = $_POST['temp_max'];
     $description = $_POST['description'];
-    $libelle = $_POST['libelle'];
     $id = $_POST['id'];
-    
-    echo $id;
-    $sql="SELECT * FROM plante WHERE id='$id'";
-    
-    $result=mysqli_query($data, $sql);
 
-    $row=mysqli_fetch_array($result);
+    // Récupérer l'ancienne image si aucune nouvelle image n'est uploadée
+    $sql = "SELECT libelle FROM plante WHERE id=?";
+    $stmt = mysqli_prepare($data, $sql);
+    mysqli_stmt_bind_param($stmt, "i", $id);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    $row = mysqli_fetch_assoc($result);
+    $image_path = $row['libelle']; // On garde l'ancienne image par défaut
+    mysqli_stmt_close($stmt);
 
-    //$query = ("UPDATE plante SET nom=':nom'AND type=':type'AND humidite=':humidite'AND arrosage=':arrosage'AND temp_min=':temp_min'AND temp_max=':temp_max'AND description=':description' WHERE id='$id'");
-    function updatethis($nom, $humidite, $arrosage, $temp_min, $temp_max, $description, $id, $data){
-            // SQL pour la mise à jour
-            $sql = "UPDATE plante SET nom=?, humidité=?, arrosage=?, Temperature_min=?, Temperature_max=?, description=? WHERE id=?";
-                
-            // Préparation de la requête
-            $stmt2 = mysqli_prepare($data, $sql);
-            
-            // Vérification de l'échec de préparation
-            if ($stmt2 === false) {
-                die('Erreur de préparation de la requête : ' . mysqli_error($data));  // Affiche l'erreur de préparation
+    // Vérifier si une nouvelle image est envoyée
+    if (!empty($_FILES['image_file']['name'])) {
+        $image_name = basename($_FILES['image_file']['name']);
+        $image_tmp = $_FILES['image_file']['tmp_name'];
+        $image_path = "image/" . $image_name; // On ajoute un timestamp pour éviter les doublons
+        
+        // Déplacer l'image vers le dossier uploads/
+        if (!move_uploaded_file($image_tmp, $image_path)) {
+            $upload_dir = "image/";
+
+            // Vérifier si le dossier existe, sinon le créer
+            if (!is_dir($upload_dir)) {
+                mkdir($upload_dir, 0777, true);
             }
 
-            // Liaison des paramètres
-            $bind_result = mysqli_stmt_bind_param($stmt2, "ssssssi", $nom, $humidite, $arrosage, $temp_min, $temp_max, $description, $id);
-            
-            // Vérification de l'échec de la liaison
-            if ($bind_result === false) {
-                die('Erreur lors de la liaison des paramètres : ' . mysqli_error($data));
-            }
+                if (!empty($_FILES['image_file']['name'])) {
+                    $image_name = basename($_FILES['image_file']['name']);
+                    $image_tmp = $_FILES['image_file']['tmp_name'];
+                    $image_path = $upload_dir . time() . "_" . $image_name; // Ajout d'un timestamp pour éviter les doublons
 
-            // Exécution de la requête
-            $execute_result = mysqli_stmt_execute($stmt2);
-            
-            // Vérification de l'échec de l'exécution
-            if ($execute_result) {
-                header('Location: exercie2.php');
-            } else {
-                echo "Une erreur est survenue lors de la mise à jour : " . mysqli_error($data); // Affiche l'erreur d'exécution
+                    if (!move_uploaded_file($image_tmp, $image_path)) {
+                        die("Erreur lors de l'upload de l'image.");
+                    }
             }
-            
-            // Fermeture de la requête préparée
-            mysqli_stmt_close($stmt2);
         }
-            updatethis($nom, $humidite, $arrosage, $temp_min, $temp_max, $description, $id, $data);
+    }
+
+    // Mise à jour des informations de la plante
+    $sql = "UPDATE plante SET nom=?, humidité=?, arrosage=?, Temperature_min=?, Temperature_max=?, description=?, libelle=? WHERE id=?";
+    $stmt2 = mysqli_prepare($data, $sql);
+    
+    if ($stmt2 === false) {
+        die('Erreur de préparation de la requête : ' . mysqli_error($data));
+    }
+
+    mysqli_stmt_bind_param($stmt2, "sssssssi", $nom, $humidite, $arrosage, $temp_min, $temp_max, $description, $image_path, $id);
+
+    if (mysqli_stmt_execute($stmt2)) {
+        header('Location: exercie2.php'); // Redirection après mise à jour réussie
+        exit();
+    } else {
+        echo "Erreur lors de la mise à jour : " . mysqli_error($data);
+    }
+    mysqli_stmt_close($stmt2);
 }
 ?>
 
 <?php
-
-    if(isset($_POST['edit_plante'])){
-        $id = $_POST['id'];
-        $sql="SELECT * FROM plante WHERE id='$id'";
-        
-        $result=mysqli_query($data, $sql);
-        
-        $row=mysqli_fetch_array($result);
-    } 
-    // else {
-        //header("location:exercie2.php");
-        //}
-        ?>
+if (isset($_POST['edit_plante'])) {
+    $id = $_POST['id'];
+    $sql = "SELECT * FROM plante WHERE id=?";
+    $stmt = mysqli_prepare($data, $sql);
+    mysqli_stmt_bind_param($stmt, "i", $id);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    $row = mysqli_fetch_assoc($result);
+    mysqli_stmt_close($stmt);
+}
+?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Modifier une Plante</title>
 </head>
-
 <body>
-    <form action="" method= "POST" class="form-group m-2">
-        <input type="text" name="nom" placeholder="Nom de la plante" required value="<?php echo $row["Nom"];?>"/>
+    <form action="" method="POST" enctype="multipart/form-data" class="form-group m-2">
+    <input type="text" name="nom" placeholder="Nom de la plante" required value="<?php echo $row["Nom"];?>"/>
         <input type="text" name="humidite" placeholder="Humidité" required value="<?php echo $row["Humidité"];?>"/>
         <input type="text" name="arrosage" placeholder="Arrosage" required value="<?php echo $row["Arrosage"];?>"/>
         <input type="text" name="temp_min" placeholder="Température min" required value="<?php echo $row["Temperature_min"];?>"/>
         <input type="text" name="temp_max" placeholder="Température max" required value="<?php echo $row["Temperature_max"];?>"/>
         <input type="text" name="description" placeholder="Description" required value="<?php echo $row["Description"];?>"/>
-        <input type="file" name="image_file" accept="image/*" required <?php echo $row["libelle"]?>>
-        <input type="hidden" name="id" required value="<?php echo $row["id"];?>"/>
-        <input type="submit" name="modifierPlante" placeholder="wdd">
+        <br>
+        <br>
+        <br>
+        <label>Image actuelle :</label>
+        <?php if (!empty($row["libelle"])) : ?>
+            <img src="<?php echo htmlspecialchars($row["libelle"]); ?>" alt="Image actuelle" width="150">
+        <?php endif; ?>
+
+        <input type="file" name="image_file" accept="libelle"/>
+        
+        <input type="hidden" name="id" value="<?php echo htmlspecialchars($row["id"]); ?>"/>
+        <input type="submit" name="modifierPlante" value="Modifier">
     </form>
-        <a href="exercie2.php">Retour!</a>
+    <br>
+    <br>
+    <a href="exercie2.php">
+        <button>Retour</button>
+    </a>
 </body>
 </html>

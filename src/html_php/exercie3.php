@@ -3,42 +3,81 @@ session_start();
 include('db.php'); // Connexion à la base de données
 
 if (isset($_POST['submit'])) {
+    $id = isset($_POST['id']) ? $_POST['id'] : null; // Vérifier si on modifie une plante existante
     $nom = $_POST['nom'];
     $humidite = $_POST['humidite'];
     $arrosage = $_POST['arrosage'];
     $temp_min = $_POST['temp_min'];
     $temp_max = $_POST['temp_max'];
     $description = $_POST['description'];
-    
-    // Vérifier si une image a été téléchargée
+
+    $target_directory = "image/"; // Dossier où stocker les images
+
+    // Vérifier et créer le dossier si nécessaire
+    if (!is_dir($target_directory)) {
+        mkdir($target_directory, 0777, true);
+    }
+
+    // Vérifier si on est en mode modification et récupérer l'image existante
+    if ($id) {
+        $stmt = $conn->prepare("SELECT libelle FROM plante WHERE id = :id");
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        $existing_image = $stmt->fetchColumn();
+    } else {
+        $existing_image = null;
+    }
+
+    // Vérifier si une nouvelle image est envoyée
     if (!empty($_FILES["image_file"]["tmp_name"])) {
         $file_basename = pathinfo($_FILES["image_file"]["name"], PATHINFO_FILENAME);
         $file_extension = pathinfo($_FILES["image_file"]["name"], PATHINFO_EXTENSION);
         $new_image_name = $file_basename . '_' . date("Ymd_His") . '.' . $file_extension;
-        $target_directory = "images/";
-        $target_path = $target_directory . $new_image_name;
+        $target_path = $target_directory . $new_image_name; // Chemin complet
+
+        // Supprimer l'ancienne image si elle existe et éviter la répétition
+        if ($existing_image && file_exists($existing_image)) {
+            unlink($existing_image);
+        }
+
+        // Enregistrer le nouveau chemin d'image dans la base de données
+        $image_path_db = $target_path;
+
+        // Déplacer la nouvelle image
+        if (!move_uploaded_file($_FILES["image_file"]["tmp_name"], $target_path)) {
+            header("Location:exercie3.php?message=er"); // Erreur d'upload
+            exit();
+        }
     } else {
-        $new_image_name = NULL;
+        // Si aucune nouvelle image n'est envoyée, conserver l'ancienne
+        $image_path_db = $existing_image;
     }
-    
-    // Requête pour insérer une plante avec l'image
-    $query = "INSERT INTO plante (Nom, Humidité, Arrosage, Temperature_min, Temperature_max, Description, libelle) 
-              VALUES (:nom, :humidite, :arrosage, :temp_min, :temp_max, :description, :image)";
-    $stmt = $conn->prepare($query);
+
+    // Vérifier si on est en mode modification ou ajout
+    if ($id) {
+        // Mettre à jour la plante existante
+        $query = "UPDATE plante SET Nom = :nom, Humidité = :humidite, Arrosage = :arrosage, 
+                  Temperature_min = :temp_min, Temperature_max = :temp_max, 
+                  Description = :description, libelle = :image WHERE id = :id";
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(':id', $id);
+    } else {
+        // Insérer une nouvelle plante
+        $query = "INSERT INTO plante (Nom, Humidité, Arrosage, Temperature_min, Temperature_max, Description, libelle) 
+                  VALUES (:nom, :humidite, :arrosage, :temp_min, :temp_max, :description, :image)";
+        $stmt = $conn->prepare($query);
+    }
+
+    // Liaison des paramètres
     $stmt->bindParam(':nom', $nom);
     $stmt->bindParam(':humidite', $humidite);
     $stmt->bindParam(':arrosage', $arrosage);
     $stmt->bindParam(':temp_min', $temp_min);
     $stmt->bindParam(':temp_max', $temp_max);
     $stmt->bindParam(':description', $description);
-    $stmt->bindParam(':image', $new_image_name);
-    
+    $stmt->bindParam(':image', $image_path_db);
+
     if ($stmt->execute()) {
-        // Déplacer l'image vers le dossier "images" si elle existe
-        if (!empty($new_image_name) && !move_uploaded_file($_FILES["image_file"]["tmp_name"], $target_path)) {
-            header("Location:exercie3.php?message=er");
-            exit();
-        }
         header("Location:exercie3.php?message=ok");
         exit();
     } else {
@@ -47,6 +86,7 @@ if (isset($_POST['submit'])) {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
