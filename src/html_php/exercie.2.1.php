@@ -5,10 +5,16 @@ $password="";
 $db="plantes_db";
 
 
-session_start();
+
 require("db.php");
 
 $data=mysqli_connect($host,$user,$password,$db);
+
+session_start();
+if(!isset($_SESSION["username"])){
+    header("location:login.php");
+    exit();
+    }
 
 if($data===false)
 {

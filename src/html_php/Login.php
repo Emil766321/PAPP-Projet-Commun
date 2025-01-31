@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("db.php");
 
 $host="localhost";
@@ -6,7 +7,6 @@ $user="root";
 $password="";
 $db="plantes_db";
 
-session_start();
 
 $data=mysqli_connect($host,$user,$password,$db);
 
@@ -26,10 +26,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 
     $row=mysqli_fetch_array($result);
 
-    if($row["usertype"]=="COFOP")
+    if($result->num_rows == 1)
     {
-        $_SESSION["username"]=$username;
+        $_SESSION['username'] = $username;
+        $_SESSION['password'] = $password;
         header("location:exercie2.php");
+         exit();
     }
     else
     {
