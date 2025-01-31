@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- css = fichier "menu_site_projet.css" et js = "menu_Projet-Commun.js"-->
         <link name="css" rel="stylesheet" href="..\ressources\css\menu_site_projet.css">
         <script name="js" src="..\ressources\js\menu_Projet-Commun.js"></script>
     </head>
     <body>
-        <div name="petitVert_titre" id="titel">
+        <!-- petitVert = petit carré en haut à droite et titre = "Répertoire de plantes" -->
+        <div name="petitVert_titre" id="title">
             <h1 name="titre" id="titre">R&#233;pertoire de plantes</h1>
             <div name="petit_vert" id="mini"></div>
         </div>
 
         <?php
-        $crayon = "../ressources/images/crayon.png";
-        $croix = "../ressources/images/croix.png";
-        $Nom_Plante = "Plant Name";
-        $image_food = "../ressources/images/oip.png";
-
+        //tableau php
         $elements = [
             ['name' => 'crayon1', 'id' => 'crayon1', 'src' => $crayon, 'alt' => 'abc'],
             ['name' => 'brocoli1', 'id' => 'brocoli1', 'src' => $image_food, 'alt' => 'abc'],
@@ -29,21 +27,151 @@
             ['name' => 'Plante3', 'id' => 'carre3', 'content' => $Nom_Plante . ' 3'],
             ['name' => 'Plante4', 'id' => 'carre4', 'content' => $Nom_Plante . ' 4'],
         ];
+            //image de brocoli
+            ['name' => 'Plante1', 'image' => '../ressources/images/brocoli.png'],
+        ]
         ?>
+        <!-- div grandVert = fond vert -->
+        <div name="grandVert" class="vert">
+
 
         <div name="grandVert" id="vert">
-            <?php
-            // Loop to generate image elements
-            foreach ($elements as $element) {
-                echo '<img name="' . $element['name'] . '" id="' . $element['id'] . '" src="' . $element['src'] . '" alt="' . $element['alt'] . '">';
-            }
 
-            // Loop to generate plant divs
-            foreach ($plantes as $plant) {
-                echo '<div name="' . $plant['name'] . '" id="' . $plant['id'] . '"><h1>' . $plant['content'] . '</h1></div>';
+
+            <?php
+            foreach ($elements as $item) {
+                ?>
+                <!-- une dive = une carte de plante -->
+                <div class="card">
+                    <div class="title-card">
+                        <p><?php echo $item['name'];?></p>
+                    </div>
+                    <div class="img-card">
+                        <img class="img" src="<?php echo $item['image'];?>" alt="image plante">
+                    </div>
+                    <div class="crayon">
+                        <img class="img-crayon" src="../ressources/images/crayon.png" alt="image plante">
+                    </div>
+                    <div class="croix">
+                        <img class="img-croix" src="../ressources/images/croix.png" alt="image plante">
+                    </div>
+                </div>
+                
+
+                <div class="card">
+                    <div class="title-card">
+                        <p><?php echo $item['name'];?></p>
+                    </div>
+                    <div class="img-card">
+                        <img class="img" src="<?php echo $item['image'];?>" alt="image plante">
+                    </div>
+                    <div class="crayon">
+                        <img class="img-crayon" src="../ressources/images/crayon.png" alt="image plante">
+                    </div>
+                    <div class="croix">
+                        <img class="img-croix" src="../ressources/images/croix.png" alt="image plante">
+                    </div>
+                </div>
+                
+
+                <div class="card">
+                    <div class="title-card">
+                        <p><?php echo $item['name'];?></p>
+                    </div>
+                    <div class="img-card">
+                        <img class="img" src="<?php echo $item['image'];?>" alt="image plante">
+                    </div>
+                    <div class="crayon">
+                        <img class="img-crayon" src="../ressources/images/crayon.png" alt="image plante">
+                    </div>
+                    <div class="croix">
+                        <img class="img-croix" src="../ressources/images/croix.png" alt="image plante">
+                    </div>
+                </div>
+                
+
+                <div class="card">
+                    <div class="title-card">
+                        <p><?php echo $item['name'];?></p>
+                    </div>
+                    <div class="img-card">
+                        <img class="img" src="<?php echo $item['image'];?>" alt="image plante">
+                    </div>
+                    <div class="crayon">
+                        <img class="img-crayon" src="../ressources/images/crayon.png" alt="image plante">
+                    </div>
+                    <div class="croix">
+                        <img class="img-croix" src="../ressources/images/croix.png" alt="image plante">
+                    </div>
+                </div>
+                
+
+                <div class="card">
+                    <div class="title-card">
+                        <p><?php echo $item['name'];?></p>
+                    </div>
+                    <div class="img-card">
+                        <img class="img" src="<?php echo $item['image'];?>" alt="image plante">
+                    </div>
+                    <div class="crayon">
+                        <img class="img-crayon" src="../ressources/images/crayon.png" alt="image plante">
+                    </div>
+                    <div class="croix">
+                        <img class="img-croix" src="../ressources/images/croix.png" alt="image plante">
+                    </div>
+                </div>
+                
+
+                <div class="card">
+                    <div class="title-card">
+                        <p><?php echo $item['name'];?></p>
+                    </div>
+                    <div class="img-card">
+                        <img class="img" src="<?php echo $item['image'];?>" alt="image plante">
+                    </div>
+                    <div class="crayon">
+                        <img class="img-crayon" src="../ressources/images/crayon.png" alt="image plante">
+                    </div>
+                    <div class="croix">
+                        <img class="img-croix" src="../ressources/images/croix.png" alt="image plante">
+                    </div>
+                </div>
+                
+
+                <div class="card">
+                    <div class="title-card">
+                        <p><?php echo $item['name'];?></p>
+                    </div>
+                    <div class="img-card">
+                        <img class="img" src="<?php echo $item['image'];?>" alt="image plante">
+                    </div>
+                    <div class="crayon">
+                        <img class="img-crayon" src="../ressources/images/crayon.png" alt="image plante">
+                    </div>
+                    <div class="croix">
+                        <img class="img-croix" src="../ressources/images/croix.png" alt="image plante">
+                    </div>
+                </div>
+                
+
+                <div class="card">
+                    <div class="title-card">
+                        <p><?php echo $item['name'];?></p>
+                    </div>
+                    <div class="img-card">
+                        <img class="img" src="<?php echo $item['image'];?>" alt="image plante">
+                    </div>
+                    <div class="crayon">
+                        <img class="img-crayon" src="../ressources/images/crayon.png" alt="image plante">
+                    </div>
+                    <div class="croix">
+                        <img class="img-croix" src="../ressources/images/croix.png" alt="image plante">
+                    </div>
+                </div>
+                <?php
             }
             ?>
         </div>
-            
+
     </body>
 </html>
