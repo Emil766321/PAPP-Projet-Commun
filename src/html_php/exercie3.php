@@ -1,6 +1,11 @@
 <?php
-session_start();
 include("db.php");
+
+session_start();
+if(!isset($_SESSION["username"])){
+    header("location:login.php");
+    exit();
+    }
 
 if (isset($_POST['submit'])) {
     $id = isset($_POST['id']) ? $_POST['id'] : null; // Vérifier si on modifie une plante existante
