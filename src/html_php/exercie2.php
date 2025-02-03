@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+if(!isset($_SESSION["username"])){
+    header("location:login.php");
+    exit();
+    }
+
 include ('db.php');
 
 if (isset($_POST['add_plante'])) {
@@ -38,6 +44,7 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
     $stmt->execute();
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
