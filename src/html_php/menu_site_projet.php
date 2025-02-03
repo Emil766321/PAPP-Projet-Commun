@@ -6,6 +6,10 @@
         <script name="js" src="..\ressources\js\menu_Projet-Commun.js"></script>
     </head>
     <body>
+        <a href="Ta direction.php">
+        
+    <img id="plus" src ="..\ressources\images\plus.png" alt ="plantes">
+        </a>
         <!-- petitVert = petit carré en haut à droite et titre = "Répertoire de plantes" -->
         <div name="petitVert_titre" id="title">
             <h1 name="titre" id="titre">R&#233;pertoire de plantes</h1>
