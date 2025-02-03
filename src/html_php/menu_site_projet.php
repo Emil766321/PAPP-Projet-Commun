@@ -15,12 +15,28 @@
         <?php
         //tableau php
         $elements = [
+            ['name' => 'crayon1', 'id' => 'crayon1', 'src' => $crayon, 'alt' => 'abc'],
+            ['name' => 'brocoli1', 'id' => 'brocoli1', 'src' => $image_food, 'alt' => 'abc'],
+            ['name' => 'croix1', 'id' => 'croix1', 'src' => $croix, 'alt' => 'abc'],
+        ];
+
+        // Modified to have unique IDs for each plant
+        $plantes = [
+            ['name' => 'Plante1', 'id' => 'carre1', 'content' => $Nom_Plante . ' 1'],
+            ['name' => 'Plante2', 'id' => 'carre2', 'content' => $Nom_Plante . ' 2'],
+            ['name' => 'Plante3', 'id' => 'carre3', 'content' => $Nom_Plante . ' 3'],
+            ['name' => 'Plante4', 'id' => 'carre4', 'content' => $Nom_Plante . ' 4'],
+        ];
             //image de brocoli
             ['name' => 'Plante1', 'image' => '../ressources/images/brocoli.png'],
         ]
         ?>
         <!-- div grandVert = fond vert -->
         <div name="grandVert" class="vert">
+
+
+        <div name="grandVert" id="vert">
+
 
             <?php
             foreach ($elements as $item) {
@@ -209,5 +225,6 @@
             }
             ?>
         </div>
+
     </body>
 </html>
