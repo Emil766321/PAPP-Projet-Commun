@@ -1,26 +1,15 @@
 <?php
 session_start();
+include("db.php");
 
-<<<<<<< HEAD
 if (isset($_POST['submit'])) {
     $id = isset($_POST['id']) ? $_POST['id'] : null; // Vérifier si on modifie une plante existante
-=======
-if(!isset($_SESSION["username"])){
-    header("location:login.php");
-    exit();
-    }
-include('db.php');
-//-----------------------------------------------------------------------------------------------------------------------
-// Ajouter une plante
-if (isset($_POST['add_plante'])) {
->>>>>>> 9cbbc31b23105f50733aa65f1f5cb4461ad75cbf
     $nom = $_POST['nom'];
     $humidite = $_POST['humidite'];
     $arrosage = $_POST['arrosage'];
     $temp_min = $_POST['temp_min'];
     $temp_max = $_POST['temp_max'];
     $description = $_POST['description'];
-<<<<<<< HEAD
 
     $target_directory = "image/"; // Dossier où stocker les images
 
@@ -40,12 +29,6 @@ if (isset($_POST['add_plante'])) {
     }
 
     // Vérifier si une nouvelle image est envoyée
-=======
-    
-//-----------------------------------------------------------------------------------------------------------------------
-    
-    // Vérifier si une image a été téléchargée
->>>>>>> 9cbbc31b23105f50733aa65f1f5cb4461ad75cbf
     if (!empty($_FILES["image_file"]["tmp_name"])) {
         $file_basename = pathinfo($_FILES["image_file"]["name"], PATHINFO_FILENAME);
         $file_extension = pathinfo($_FILES["image_file"]["name"], PATHINFO_EXTENSION);

@@ -9,20 +9,8 @@ require("db.php");
 
 $data = mysqli_connect($host, $user, $password, $db);
 
-<<<<<<< HEAD
 if ($data === false) {
     die("Erreur de connexion à la base de données");
-=======
-session_start();
-if(!isset($_SESSION["username"])){
-    header("location:login.php");
-    exit();
-    }
-
-if($data===false)
-{
-    die("connection error");
->>>>>>> 9cbbc31b23105f50733aa65f1f5cb4461ad75cbf
 }
 
 if (isset($_POST["modifierPlante"])) {
