@@ -137,6 +137,59 @@
                     </div>
                 </div>
                 
+                <div class="card">
+                    <div class="title-card">
+                        <p><?php echo $item['name'];?></p>
+                    </div>
+                    <div class="img-card">
+                        <img class="img" src="<?php echo $item['image'];?>" alt="image plante">
+                    </div>
+                    <div class="crayon">
+                        <img class="img-crayon" src="../ressources/images/crayon.png" alt="image plante">
+                    </div>
+                    <div class="croix">
+                        <img class="img-croix" src="../ressources/images/croix.png" alt="image plante">
+                    </div>
+                </div><div class="card">
+                    <div class="title-card">
+                        <p><?php echo $item['name'];?></p>
+                    </div>
+                    <div class="img-card">
+                        <img class="img" src="<?php echo $item['image'];?>" alt="image plante">
+                    </div>
+                    <div class="crayon">
+                        <img class="img-crayon" src="../ressources/images/crayon.png" alt="image plante">
+                    </div>
+                    <div class="croix">
+                        <img class="img-croix" src="../ressources/images/croix.png" alt="image plante">
+                    </div>
+                </div><div class="card">
+                    <div class="title-card">
+                        <p><?php echo $item['name'];?></p>
+                    </div>
+                    <div class="img-card">
+                        <img class="img" src="<?php echo $item['image'];?>" alt="image plante">
+                    </div>
+                    <div class="crayon">
+                        <img class="img-crayon" src="../ressources/images/crayon.png" alt="image plante">
+                    </div>
+                    <div class="croix">
+                        <img class="img-croix" src="../ressources/images/croix.png" alt="image plante">
+                    </div>
+                </div><div class="card">
+                    <div class="title-card">
+                        <p><?php echo $item['name'];?></p>
+                    </div>
+                    <div class="img-card">
+                        <img class="img" src="<?php echo $item['image'];?>" alt="image plante">
+                    </div>
+                    <div class="crayon">
+                        <img class="img-crayon" src="../ressources/images/crayon.png" alt="image plante">
+                    </div>
+                    <div class="croix">
+                        <img class="img-croix" src="../ressources/images/croix.png" alt="image plante">
+                    </div>
+                </div>
 
                 <div class="card">
                     <div class="title-card">
