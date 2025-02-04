@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
 body {
     background-image:url(../images/feuil.jpg);
-    background-size: cover;
     width: 100%;
     margin:0;
 }
@@ -13,6 +12,29 @@ body {
     margin-top: 58px;
     margin-left: 400px;
     position: absolute;
+}
+#br {
+    text-decoration: none;
+    color: black;
+    font-family: 'Lexend Deca', sans-serif;
+}
+#Deconnexion {
+background-color: #569A73;
+width: 140px;
+color: white;
+border-radius: 20px;
+height: 30px;
+font-family: 'Lexend Deca', sans-serif;
+font-size: 10px;
+display: flex;
+justify-content: center;
+position: absolute;
+left:85%;
+top: 6%;
+
+}
+#decoTxt {
+    margin-top: 2px;
 }
 .vert {
     width: 100%;
@@ -33,10 +55,6 @@ body {
     position: relative;
     border-radius: 15px;
     
-}
-a {
-    text-decoration: none;
-    color: black;
 }
 .title-card{
     width: 100%;

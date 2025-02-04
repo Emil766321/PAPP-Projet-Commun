@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+#Déconnexion {
+    background-color: #569A73;
+width: 210px;
+color: white;
+border-radius: 20px;
+height: 30px;
+font-family: 'Lexend Deca', sans-serif;
+font-size: 10px;
+display: flex;
+justify-content: center;
+
+}
+#decoTxt {
+    margin-top: 2px;
+}
