@@ -153,5 +153,11 @@ textarea {
 .rretour{
     max-width: 50px;
     max-height: 25px;
-    align-self:flex-end;
+
+    padding-bottom: 30px;
+}
+#plant-form{
+    text-align: center;
+    margin-top: 8%;
+    margin-left: 45%;
 }
