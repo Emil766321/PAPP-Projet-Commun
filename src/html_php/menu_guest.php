@@ -5,19 +5,16 @@
         <link name="css" rel="stylesheet" href="..\ressources\css\menu_site_projet.css"/>
     </head>
     <body>
-        <a href="AjoutsDePlantes.html">
-        <img id ="plus"src="..\ressources\images\plus.png">
-        </a>
+        
 
             <!-- petitVert = petit carré en haut à droite et titre = "Répertoire de plantes" -->
             <div id="heade">
                 <a id="Deconnexion" href="connect.html "><h1 id ="decoTxt">D&#233;connexion</h1></a>
                 <div name="petitVert_titre" id="title">
                     <h1 name="titre" id="titre">R&#233;pertoire de plantes</h1>
-                    <div name="petit_vert" id="mini"><a href="menu_site_on.php"><img id="menuBarre"src="..\ressources\images\menuprojet.png"></a></div>
+                    <div name="petit_vert" id="mini"></div>
                 </div>
             </div>
-            <a href="menu_site_on.php"><img id="profil"src="..\ressources\images\profil.png"></a>
 
             <?php
             
@@ -66,16 +63,6 @@
                                 </div>
                                 <div class="img-card">
                                     <img class="img" src="<?php echo $item['image'];?>" alt="image plante">
-                                </div>
-                                <div class="crayon">
-                                    <a href="..\ressources\images\crayon.png">
-                                        <img class="img-crayon" src="../ressources/images/crayon.png" alt="image plante">
-                                    </a>
-                                </div>
-                                <div class="croix">
-                                    <a href="..\ressources\images\croix.png">
-                                        <img class="img-croix" src="../ressources/images/croix.png" alt="image plante">
-                                    </a>
                                 </div>
                             </a>
                         </div>
