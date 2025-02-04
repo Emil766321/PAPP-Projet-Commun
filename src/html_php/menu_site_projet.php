@@ -5,13 +5,13 @@
         <link name="css" rel="stylesheet" href="..\ressources\css\menu_site_projet.css"/>
     </head>
     <body>
-        <a href="..\ressources\images\plus.png">
+        <a href="AjoutsDePlantes.html">
         <img id ="plus"src="..\ressources\images\plus.png">
         </a>
 
             <!-- petitVert = petit carré en haut à droite et titre = "Répertoire de plantes" -->
             <div id="heade">
-                <div id="Deconnexion"><h1 id ="decoTxt">D&#233;connexion</h1></div>
+                <a id="Deconnexion" href="connect.html"><h1 id ="decoTxt">D&#233;connexion</h1></a>
                 <div name="petitVert_titre" id="title">
                     <h1 name="titre" id="titre">R&#233;pertoire de plantes</h1>
                     <div name="petit_vert" id="mini"></div>
@@ -44,7 +44,7 @@
                     ?>
                         <!-- une dive = une carte de plante -->
                         <div class="card">
-                            <a id="br"class="card" href="..\ressources\images\brocoli.png">
+                            <a id="br"class="card" href="description.html">
                                 <div class="title-card">
                                     <p><?php echo $item['name'];?></p>
                                 </div>
