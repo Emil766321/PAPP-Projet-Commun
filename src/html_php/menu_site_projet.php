@@ -22,7 +22,7 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
         <link name="css" rel="stylesheet" href="..\ressources\css\menu_site_projet.css"/>
     </head>
     <body>
-        <a href="..\ressources\images\plus.png">
+        <a href="AjoutsDePlantes.php">
             <img id ="plus"src="..\ressources\images\plus.png">
         </a>
 
@@ -46,7 +46,7 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
                     $query = "SELECT * FROM plante";
                     $stmt = $conn->query($query);
                     $plantes = $stmt->fetchAll();
-                    
+
                     foreach ($plantes as $plante) {
                         ?>
                         <!-- une dive = une carte de plante -->
