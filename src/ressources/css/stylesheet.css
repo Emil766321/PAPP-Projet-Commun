@@ -33,3 +33,22 @@ li {
 footer p {
     margin: 0;
 }
+.button{
+    background-color: #4CAF50;
+    margin-left: 500px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+
+}
+.position{
+    margin-left: 1500px;
+}
