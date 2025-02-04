@@ -3,9 +3,12 @@
     <head>
         <!-- css = fichier "menu_site_projet.css" et js = "menu_Projet-Commun.js"-->
         <link name="css" rel="stylesheet" href="..\ressources\css\menu_site_projet.css"/>
-        <script name="js" src="..\ressources\js\menu_Projet-Commun.js"></script>
     </head>
     <body>
+    <a href="..\ressources\images\plus.png">
+    
+    <img id ="plus"src="..\ressources\images\plus.png">
+    </a>
         <!-- petitVert = petit carré en haut à droite et titre = "Répertoire de plantes" -->
         <div name="petitVert_titre" id="title">
             <h1 name="titre" id="titre">R&#233;pertoire de plantes</h1>
@@ -24,6 +27,10 @@
                 'name' => 'Plante2', 
                 'image' => '../ressources/images/brocoli.png'
             ],
+            [
+                'name' => 'Plante3', 
+                'image' => '../ressources/images/brocoli.png'
+            ],
         ];
         ?>
         <!-- div grandVert = fond vert -->
@@ -34,7 +41,7 @@
                 ?>
                     <!-- une dive = une carte de plante -->
                     <div class="card">
-                        <a href="test.php">
+                        <a class="card" href="..\ressources\images\brocoli.png">
                             <div class="title-card">
                                 <p><?php echo $item['name'];?></p>
                             </div>
@@ -42,12 +49,12 @@
                                 <img class="img" src="<?php echo $item['image'];?>" alt="image plante">
                             </div>
                             <div class="crayon">
-                                <a href="test.php">
+                                <a href="..\ressources\images\crayon.png">
                                     <img class="img-crayon" src="../ressources/images/crayon.png" alt="image plante">
                                 </a>
                             </div>
                             <div class="croix">
-                                <a href="test.php">
+                                <a href="..\ressources\images\croix.png">
                                     <img class="img-croix" src="../ressources/images/croix.png" alt="image plante">
                                 </a>
                             </div>
