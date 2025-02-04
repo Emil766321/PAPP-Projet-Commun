@@ -29,8 +29,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 
     if($result->num_rows == 1)
     {
-        $_SESSION['username'] = $username;
-        $_SESSION['password'] = $password;
+        $_SESSION['user'] = $username;
+        $_SESSION['fpass'] = $password;
         header("Location: menu_site_projet.php");
         exit();
     }

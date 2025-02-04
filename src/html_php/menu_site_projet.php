@@ -1,7 +1,8 @@
 <?php
 include("db.php");
 session_start();
-if(!isset($_SESSION["username"])){
+
+if(!isset($_SESSION["user"])){
     header("location:index.php");
     exit();
     }
@@ -61,7 +62,7 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
                             }
                                 ?>
                                     <div class="crayon">
-                                        <a href="..\ressources\images\crayon.png">
+                                        <a href="ModifierPlantes.php">
                                             <img class="img-crayon" src="../ressources/images/crayon.png" alt="image plante">
                                         </a>
                                     </div>
