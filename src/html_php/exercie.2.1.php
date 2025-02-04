@@ -10,7 +10,7 @@ $data = mysqli_connect($host, $user, $password, $db);
 
 session_start();
 if(!isset($_SESSION["username"])){
-    header("location:login.php");
+    header("location:Login.php");
     exit();
     }
 

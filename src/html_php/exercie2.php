@@ -2,7 +2,7 @@
 
 session_start();
 if(!isset($_SESSION["username"])){
-    header("location:login.php");
+    header("location:Login.php");
     exit();
     }
 
@@ -76,7 +76,13 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
         echo "<p><strong>Arrosage :</strong> " . htmlspecialchars($plante['Arrosage']) . "</p>";
         echo "<p><strong>Température :</strong> " . htmlspecialchars($plante['Temperature_min']) . " à " . htmlspecialchars($plante['Temperature_max']) . "</p>";
         echo "<p><strong>Description :</strong> " . nl2br(htmlspecialchars($plante['Description'])) . "</p>";
-        echo "<p><strong>Image :</strong> " . nl2br(htmlspecialchars($plante['libelle'])) . "</p>";
+        
+        // Vérifier si une image existe et l'afficher
+        if (!empty($plante['libelle'])) {
+            echo '<img src="' . htmlspecialchars($plante['libelle']) . '" alt="Image de la plante" width="200">';
+        } else {
+            echo '<p>Aucune image disponible.</p>';
+        }
         echo "<form method='POST' style='display:inline;'>";
         echo "<input type='hidden' name='id' value='" . $plante['id'] . "'>";
         echo "<button type='submit' name='delete_plante'>Supprimer</button>";
@@ -95,6 +101,7 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
     </style> 
     Pour deplacer le bouton -->
 
+    
     <br>
     <br>
     <a href="logout.php">Logout</a>
@@ -102,5 +109,10 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
     <br>
     <br>
 </body>
+<style>
+    button{
+        margin-left:10px;
+    }
+</style>
 </html>
 
