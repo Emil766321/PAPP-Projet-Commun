@@ -67,7 +67,7 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
                                         </a>
                                     </div>
                                     <div class="croix">
-                                        <a href="..\ressources\images\croix.png">
+                                        <a href="deletePlante.php?id=<?php echo $plante['id']?>">
                                             <img class="img-croix" src="../ressources/images/croix.png" alt="image plante">
                                         </a>
                                     </div>
