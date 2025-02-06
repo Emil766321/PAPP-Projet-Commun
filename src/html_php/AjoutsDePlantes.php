@@ -1,5 +1,3 @@
-
-
 <?php
 include("db.php");
 
@@ -18,11 +16,11 @@ if (isset($_POST['accepter'])) {
     $temp_max = $_POST['temp_max'];
     $description = $_POST['description'];
 
-    $target_directory = "..\ressource\images"; // Dossier où stocker les images
+    $target_directory = "image/"; // Dossier où stocker les images
 
     // Vérifier et créer le dossier si nécessaire
     if (!is_dir($target_directory)) {
-        
+        mkdir($target_directory, 0777, true);
     }
 
     // Vérifier si on est en mode modification et récupérer l'image existante
@@ -133,15 +131,15 @@ if (isset($_POST['accepter'])) {
             </div>
             <input type="file" id="file-input" name="image_file" style="display: none;" onchange="previewImage(event)">
             <!-- retour -->
-            <div class="rretour">
+        </div>
+    </form>
+    <div class="rretour">
                 <a href="menu_site_projet.php">
                     <button class="retour">Retour</button>
                 </a>
             </div>
-        </div>
-    </form>
             
     <script src="..\ressources\js\jsAjoutsPlantes.js"></script>
 </body>
 
-</html>
+</html>  
