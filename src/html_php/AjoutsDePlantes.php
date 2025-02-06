@@ -18,11 +18,11 @@ if (isset($_POST['accepter'])) {
     $temp_max = $_POST['temp_max'];
     $description = $_POST['description'];
 
-    $target_directory = "image/"; // Dossier où stocker les images
+    $target_directory = "..\ressource\images"; // Dossier où stocker les images
 
     // Vérifier et créer le dossier si nécessaire
     if (!is_dir($target_directory)) {
-        mkdir($target_directory, 0777, true);
+        
     }
 
     // Vérifier si on est en mode modification et récupérer l'image existante
