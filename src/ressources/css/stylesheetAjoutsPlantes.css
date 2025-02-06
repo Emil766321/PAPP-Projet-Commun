@@ -29,6 +29,7 @@ body {
     align-items: center;
     justify-content: space-between;
     box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.5);
+    padding-bottom: 7%;
 }
 
 .hautdepage h1 {
@@ -148,10 +149,11 @@ textarea {
     max-width: 50px;
     max-height: 25px;
     text-decoration: none;
-    color: white;
+    color: rgb(245, 240, 240);
+    margin-bottom: 250px;
 }
-.rretour{
-    max-width: 50px;
-    max-height: 25px;
-    align-self:flex-end;
+#plant-form{
+    text-align: center;
+    margin-top: 8%;
+    margin-left: 45%;
 }
