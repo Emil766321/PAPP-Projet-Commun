@@ -17,6 +17,7 @@ if (isset($_POST['accepter'])) {
     $temp_min = $_POST['temp_min'];
     $temp_max = $_POST['temp_max'];
     $description = $_POST['description'];
+    
 
     $target_directory = "image/"; // Dossier où stocker les images
 
@@ -85,7 +86,8 @@ if (isset($_POST['accepter'])) {
     $stmt->bindParam(':image', $image_path_db);
 
     if ($stmt->execute()) {
-        header("Location:AjoutsDePlantes.php?message=ok");
+      //  header("Location:AjoutsDePlantes.php?message=ok");
+      header("Location: menu_site_projet.php");
         exit();
     } else {
         header("Location:AjoutsDePlantes.php?message=no");
@@ -129,7 +131,7 @@ if (isset($_POST['accepter'])) {
                         <!-- accepter -->
                         <div class="accept">
                             <a href="menu_site_projet.php">
-                                <button type="submit" name="accepter" id="accepter">Accepter</button>
+                                <button type="submit" name="accepter" id="accepter">Ajouter</button>
                             </a>
                         </div>
                         <input type="file" id="file-input" name="image_file" style="display: none;" onchange="previewImage(event)">
