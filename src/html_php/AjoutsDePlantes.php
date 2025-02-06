@@ -44,11 +44,11 @@ if(!isset($_SESSION["user"])){
                     <button type="submit" name="accepter" id="accepter">Accepter</button>
                 </a>
             </div>
-            <div class="rretour">
+            
                 <a href="menu_site_projet.php">
                     <button class="retour">Retour</button>
                 </a>
-            </div>
+            
             <input type="file" id="file-input" name="file" style="display: none;" onchange="previewImage(event)">
         </div>
     </form>
