@@ -6,6 +6,33 @@ if(!isset($_SESSION["user"])){
     header("location:index.php");
     exit();
     }
+ 
+    if (isset($_POST['add_plante'])) {
+        $nom = trim($_POST['nom']);
+        $humidite = trim($_POST['humidite']);
+        $arrosage = trim($_POST['arrosage']);
+        $temp_min = trim($_POST['temp_min']);
+        $temp_max = trim($_POST['temp_max']);
+        $description = trim($_POST['description']);
+        
+        
+        // Validation simple
+        if (empty($nom) || empty($type) || empty($humidite) || empty($arrosage)) {
+            echo "Tous les champs sont obligatoires.";
+        } else {
+            // Requête d'insertion
+            $query = "INSERT INTO plante (Nom, Humidité, Arrosage, Temperature_min, Temperature_max, Description)
+                      VALUES (:nom, :type, :humidite, :arrosage, :temp_min, :temp_max, :description)";
+            $stmt = $conn->prepare($query);
+            $stmt->bindParam(':nom', $nom);
+            $stmt->bindParam(':humidite', $humidite);
+            $stmt->bindParam(':arrosage', $arrosage);
+            $stmt->bindParam(':temp_min', $temp_min);
+            $stmt->bindParam(':temp_max', $temp_max);
+            $stmt->bindParam(':description', $description);
+            $stmt->execute();
+        }
+    }
 
     // Supprimer une plante
 if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
@@ -24,7 +51,7 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
     </head>
     <body>
         <a href="AjoutsDePlantes.php">
-            <img id ="plus"src="..\ressources\images\plus.png">
+            <img id ="plus" name="add_plante" src="..\ressources\images\plus.png">
         </a>
 
             <!-- petitVert = petit carré en haut à droite et titre = "Répertoire de plantes" -->
@@ -63,12 +90,12 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
                                 ?>
                                     <div class="crayon">
                                         <a href="ModifierPlantes.php">
-                                            <img class="img-crayon" src="../ressources/images/crayon.png" alt="image plante">
+                                            <img class="img-crayon" name="edit_plante" src="../ressources/images/crayon.png" alt="image plante">
                                         </a>
                                     </div>
                                     <div class="croix">
                                         <a href="..\ressources\images\croix.png">
-                                            <img class="img-croix" src="../ressources/images/croix.png" alt="image plante">
+                                            <img class="img-croix" name="delete_plante" src="../ressources/images/croix.png" alt="image plante">
                                         </a>
                                     </div>
                                 </a>
