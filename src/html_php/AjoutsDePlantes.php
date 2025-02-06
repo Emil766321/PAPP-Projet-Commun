@@ -33,9 +33,9 @@ if(!isset($_SESSION["user"])){
         }
     
         // Vérifier si une nouvelle image est envoyée
-        if (!empty($_FILES["image_file"]["tmp_name"])) {
-            $file_basename = pathinfo($_FILES["image_file"]["name"], PATHINFO_FILENAME);
-            $file_extension = pathinfo($_FILES["image_file"]["name"], PATHINFO_EXTENSION);
+        if (!empty($_FILES["file"]["tmp_name"])) {
+            $file_basename = pathinfo($_FILES["file"]["name"], PATHINFO_FILENAME);
+            $file_extension = pathinfo($_FILES["file"]["name"], PATHINFO_EXTENSION);
             $new_image_name = $file_basename . '_' . date("Ymd_His") . '.' . $file_extension;
             $target_path = $target_directory . $new_image_name; // Chemin complet
     
@@ -48,7 +48,7 @@ if(!isset($_SESSION["user"])){
             $image_path_db = $target_path;
     
             // Déplacer la nouvelle image
-            if (!move_uploaded_file($_FILES["image_file"]["tmp_name"], $target_path)) {
+            if (!move_uploaded_file($_FILES["file"]["tmp_name"], $target_path)) {
                 header("Location:AjoutsDePlantes.php?message=er"); // Erreur d'upload
                 exit();
             }
@@ -103,11 +103,11 @@ if(!isset($_SESSION["user"])){
 </head>
 
 <body>
-    <form action="menu_site_projet.php" method="post" id="plant-form">
+    <form action="menu_site_projet.php" method="POST" id="plant-form" enctype="multipart/form-data">
         <div class="bulle">
             <div class="hautdepage">
                 <h1>Ajout de Plantes</h1>
-                <input placeholder="Nom de la plante" name="nom" required>
+                <input type="text" placeholder="Nom de la plante" name="nom" required>
             </div>
             
             <div class="description">
@@ -118,10 +118,10 @@ if(!isset($_SESSION["user"])){
                 <button type="button" id="insert-image-btn" name="buttonimg" onclick="triggerFileInput()">Insérer une image</button>
             </div>
 
-            <input placeholder="Temperature minimum" name="temp_min" id="temp_min" type="text" required>
-            <input placeholder="Temperature maximum" name="temp_max" id="temp_max" type="text" required>
-            <input placeholder="Arrosage" name="arrosage" id="arrosage" type="text" required>
-            <input placeholder="Humidité" name="humidite" id="humidite" type="text" required>
+            <input type="text" placeholder="Temperature minimum" name="temp_min" id="temp_min" type="text" required>
+            <input type="text" placeholder="Temperature maximum" name="temp_max" id="temp_max" type="text" required>
+            <input type="text" placeholder="Arrosage" name="arrosage" id="arrosage" type="text" required>
+            <input type="text" placeholder="Humidité" name="humidite" id="humidite" type="text" required>
 
             <div class="accept">
                 <a href="menu_site_projet.php">
@@ -133,7 +133,7 @@ if(!isset($_SESSION["user"])){
                     <button class="retour">Retour</button>
                 </a>
             </div>
-            <input type="file" id="file-input" name="image_file" accept="image/*" style="display: none;" onchange="previewImage(event)" required>
+            <input type="file" id="file-input" name="file" accept="image/*" style="display: none;" onchange="previewImage(event)" required>
         </div>
     </form>
 
