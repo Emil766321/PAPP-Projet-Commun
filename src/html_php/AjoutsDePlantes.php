@@ -132,21 +132,15 @@ if (isset($_POST['accepter'])) {
                 </a>
             </div>
             <input type="file" id="file-input" name="image_file" style="display: none;" onchange="previewImage(event)">
-        </div>
-    </form>
             <!-- retour -->
             <div class="rretour">
                 <a href="menu_site_projet.php">
                     <button class="retour">Retour</button>
                 </a>
             </div>
-<<<<<<< HEAD
-            <input type="file" id="file-input" name="file" accept="image/*" style="display: none;" onchange="previewImage(event)" required>
         </div>
     </form>
-
-=======
->>>>>>> 1a5c4f47517380b9d30ffb50a268a28cd5226413
+            
     <script src="..\ressources\js\jsAjoutsPlantes.js"></script>
 </body>
 
