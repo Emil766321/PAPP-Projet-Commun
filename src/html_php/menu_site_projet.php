@@ -13,7 +13,7 @@
                 </a>
             </div>
             <div class="menuLeft">
-                <a id="Deconnexion" href="connect.html "><h1 class ="decotxt"id ="decoTxt">D&#233;connexion</h1></a>
+                <a class="Deconnexion" href="connect.html "><h1 class ="decotxt"id ="decoTxt">D&#233;connexion</h1></a>
                 <div name="petit_vert" class="mini">
                     <!-- petitVert = petit carré en haut à droite et titre = "Répertoire de plantes" -->
                     <div class="menuIcon">

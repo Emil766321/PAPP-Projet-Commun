@@ -10,7 +10,7 @@ body {
     color: black;
     font-family: 'Lexend Deca', sans-serif;
 }
-#Deconnexion {
+.Deconnexion {
     background-color: #569A73;
     width: 140px;
     border-radius: 20px;
@@ -18,18 +18,14 @@ body {
     font-size: 10px;
     display: flex;
     justify-content: center;
-    transform: translateX(100%);
+    transition: all 0.2s ease-in-out;
+    transform: translateX(0%);
 }
 #DeconnexionActive {
 
-    background-color: #569A73;
-    width: 140px;
-    border-radius: 20px;
-    height: 30px;
-    font-size: 10px;
-    display: flex;
-    justify-content: center;
-    transform: translateX(0%);
+    
+    transition: all 0.2s ease-in-out;
+    transform: translateX(100%);
 }
 #menuTurn {
     width: 110px;
