@@ -11,7 +11,7 @@
 
             <!-- petitVert = petit carré en haut à droite et titre = "Répertoire de plantes" -->
             <div id="heade">
-                <a id="Deconnexion" href="connect.html "><h1 id ="decoTxtTurn">D&#233;connexion</h1></a>
+                <a id="Deconnexion" href="connect.html "><h1 class ="decoTxt"id ="decoTxtTurn">D&#233;connexion</h1></a>
                 <div name="petitVert_titre" id="title">
                     <h1 name="titre" id="titre">R&#233;pertoire de plantes</h1>
                     <div name="petit_vert" id="mini"><a href="menu_site_Projet.php"><img id="menuTurn"src="..\ressources\images\menuTurn.png"></a></div>

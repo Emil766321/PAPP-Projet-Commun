@@ -9,7 +9,7 @@
 
             <!-- petitVert = petit carré en haut à droite et titre = "Répertoire de plantes" -->
             <div id="heade">
-                <a id="Deconnexion" href="connect.html "><h1 id ="decoTxt">D&#233;connexion</h1></a>
+                <a id="Deconnexion" href="connect.html "><h1 class ="decoTxt"id ="decoTxt">D&#233;connexion</h1></a>
                 <div name="petitVert_titre" id="title">
                     <h1 name="titre" id="titre">R&#233;pertoire de plantes</h1>
                     <div name="petit_vert" id="mini"></div>

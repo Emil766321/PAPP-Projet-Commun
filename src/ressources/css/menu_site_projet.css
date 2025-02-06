@@ -1,37 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
 body {
     background-image:url(../images/feuil.jpg);
-    width: 100%;
     margin:0;
 }
 
 /* MENU SITE */
-#plus {
-    width: 50px;
-    height: 50px;
-    margin-top: 58px;
-    margin-left: 400px;
-    position: absolute;
-}
 #br {
     text-decoration: none;
     color: black;
     font-family: 'Lexend Deca', sans-serif;
 }
 #Deconnexion {
-background-color: #569A73;
-width: 140px;
-color: white;
-border-radius: 20px;
-height: 30px;
-font-family: 'Lexend Deca', sans-serif;
-font-size: 10px;
-display: flex;
-justify-content: center;
-position: absolute;
-left:75%;
-top: 6%;
+    background-color: #569A73;
+    width: 140px;
+    border-radius: 20px;
+    height: 30px;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    transform: translateX(100%);
+}
+#DeconnexionActive {
 
+    background-color: #569A73;
+    width: 140px;
+    border-radius: 20px;
+    height: 30px;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    transform: translateX(0%);
 }
 #menuTurn {
     width: 110px;
@@ -41,17 +39,14 @@ top: 6%;
     top: 5px;
 }
 #decoTxtTurn {
+    margin-top: 100px;
+}
+.decotxt {
+    font-family: 'Lexend Deca', sans-serif;
+    color: white;
     margin-top: 2px;
 }
-#menuBarre {
-    width: 120px;
-    height: 120px;
-    position: absolute;
-    right:-74px
-}
 .vert {
-    width: 100%;
-    min-height: 639px;
     background-color: #569A73;
     display: flex;
     
@@ -60,6 +55,9 @@ top: 6%;
     justify-content: space-around;
     gap: 50px;
     padding: 25px;
+}
+a {
+    text-decoration: none;
 }
 .card{
     width: 250px;
@@ -116,196 +114,129 @@ top: 6%;
     object-fit: cover;
 }
 
-/* FIN MENU SITE */
-
-
-
-#carre {
-    width: 280px;
-    height: 280px;
-    background-color: white;
-    display: flex;
-    position: absolute;
-    box-shadow: 0px 10px 6px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    margin-top: 30px;
-    margin-left: 30px;
-    font-family: 'Lexend Deca', sans-serif;
-    justify-content: center ;
-    
-}
-#carre1{
-    width: 280px;
-    height: 280px;
-    background-color: white;
-    display: flex;
-    position: absolute;
-    border-radius: 10px;
-    margin-top: 330px;
-    box-shadow: 0px 10px 6px rgba(0, 0, 0, 0.3);
-    margin-left: 30px;
-    
-    font-family: 'Lexend Deca', sans-serif;
-    justify-content: center ;
-}
-.blanc {
-    display: flex;
-    flex-direction: column  ;
-    font-size: 10px;
-}
-#carre2 {
-    width: 280px;
-    height: 280px;
-    background-color: white;
-    display: flex;
-    position: absolute;
-    box-shadow: 0px 10px 6px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    margin-top: 30px;
-    margin-left: 30px;
-    
-    font-family: 'Lexend Deca', sans-serif;
-    justify-content: center ;
-}
-#carre3{
-    width: 280px;
-    height: 280px;
-    background-color: white;
-    display: flex;
-    position: absolute;
-    border-radius: 10px;
-    box-shadow: 0px 10px 6px rgba(0, 0, 0, 0.3);
-    margin-top: 330px;
-    margin-left: 30px;
-    
-    font-family: 'Lexend Deca', sans-serif;
-    justify-content: center ;
-}
-#blanc1 {
-    margin-left: 450px;
-    display: flex;
-    font-size: 10px;
-    flex-direction: column  ;
-}
-#carre4 {
-    width: 280px;
-    height: 280px;
-    background-color: white;
-    display: flex;
-    position: absolute;
-    border-radius: 10px;
-    margin-top: 30px;
-    margin-left: 30px;
-    
-    font-family: 'Lexend Deca', sans-serif;
-    z-index: 1;
-    box-shadow: 0px 10px 6px rgba(0, 0, 0, 0.3);
-    justify-content: center ;
-}
-#carre5{
-    width: 280px;
-    height: 280px;
-    background-color: white;
-    display: flex;
-    position: absolute;
-    border-radius: 10px;
-    margin-top: 330px;
-    margin-left: 30px;
-    
-    font-family: 'Lexend Deca', sans-serif;
-    z-index: 2;
-    justify-content: center ;
-    box-shadow: 0px 10px 6px rgba(0, 0, 0, 0.3);
-
-}
-#blanc2 {
-    margin-left: 900px;
-    display: flex;
-    font-size: 10px;
-    flex-direction: column;
-}
-#barre {
-    background-color: grey;
-    margin-left: 1280px;
-    height: 800px;
-    width: 20px;
-    position: absolute;
-    margin-top: -60px;
-}
-#barr {
-    background-color: grey;
-    margin-top: 740px;
-    margin-left: 200px;
-    height: 20px;
-    width: 1280px;
-    position: absolute; 
-}
-#brocoli2 {
-    margin-top: 100px;
-    margin-left: 90px;
-    z-index: 3;
-    width: 160px; position: absolute;
-}
-
-#brocoli1 {
-    margin-top: 400px;
-    margin-left: 90px;
-    z-index: 3;
-    width: 160px; position: absolute;
-}
-#croix1 {
-    margin-top: 340px;
-    margin-left: 280px;
-    z-index: 4;
-    width: 15px; position: absolute;
-}
-#croix2 {
-    margin-top: 40px;
-    margin-left: 280px;
-    z-index: 4;
-    width: 15px; position: absolute;
-}
-
-#crayon1 {
-    margin-top: 360px;
-    margin-left: 280px;
-    z-index: 4;
-    width: 20px; 
-    position: absolute;
-}
-#crayon2 {
-    margin-top: 60px;
-    margin-left: 280px;
-    z-index: 4;
-    width: 20px; 
-    position: absolute;
-}
-#profil {
-    width: 80px;
-    height: 100px;
-    left: 10px;
-    position: absolute;
-}
 
 #title{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-top: 40px;
-    padding-left: 40px;
-    width: 100%;
+    padding: 40px;
 }
-#titre {
+.menuRight{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
+}
+#pageTitle {
     color: white;
-    height: 100px;
     text-decoration: underline;
     font-family: 'Lexend Deca', sans-serif;
     z-index: 2;
 }
-#mini {
-    background-color:#569A73 ;
-    width: 210px;
+.menuLeft{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 50px;
+}
+#menuContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+.mini {
+    width: 50px;
     height: 50px;
     z-index: 1;
     border-radius: 3px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
 }
+.miniActive {
+    width: 200px;
+}
+.menuIcon {
+    position: absolute;
+    display: flex;
+    background-color:#569A73;
+    width: 50px;
+    transform: translateX(100%);
+    opacity: 0;
+    top: 0;
+    left: 0;
+    gap: 10px;
+    z-index: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+#histoire {
+    width: 30px;
+    height: 50px;
+}
+#credits {
+    
+    width: 40px;
+    
+    height: 40px;
+}
+.menuIconActive{
+    transform: translateX(0%);
+    width: 200px;
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+}
+.menuItem{
+    width: 50px;
+    height: 50px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.menuItemImage{
+    max-width: 50px;
+    max-height: 50px;
+    object-fit: contain;
+}
+.menuItemButton{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.menuItemButtonImage{
+    max-width: 50px;
+    max-height: 50px;
+    object-fit: contain;
+}
+.menuBarreIconContainer{
+    background-color:#569A73 ;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+}
+.menuBarre {
+    width: 50px;
+    height: 50px;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease;
+    z-index: 2;
+}
+.menuBarreActive{
+    transform: rotate(90deg);
+    transition: transform 0.2s ease;
+}
+
+/* FIN MENU SITE */
