@@ -103,43 +103,45 @@ if (isset($_POST['accepter'])) {
 </head>
 
 <body>
-    <form method="POST" enctype="multipart/form-data">
+    <div class="formm">
         <div class="bulle">
-            <!-- Nom de la plante -->
-            <div class="hautdepage">
-                <h1>Ajout de Plantes</h1>
-                <input type="text" name="nom" placeholder="Nom de la plante" required>
+                <form method="POST" enctype="multipart/form-data">
+                        <!-- Nom de la plante -->
+                        <div class="hautdepage">
+                            <h1>Ajout de Plantes</h1>
+                            <input type="text" name="nom" placeholder="Nom de la plante" required>
+                        </div>
+                        <!-- Description de la plante -->
+                        <div class="description">
+                            <textarea name="description" placeholder="Description" required></textarea>
+                        </div>
+                        <!-- Image de la plante -->
+                        <div class="inser">
+                            <button type="button" id="insert-image-btn" name="buttonimg" onclick="triggerFileInput()">Insérer une image</button>
+                        </div>
+                        <!-- Température, arrosage et humidité de la plante -->
+                        <input type="text" name="temp_min" placeholder="Température min"required>
+                        <input type="text" name="temp_max" placeholder="Température max"required>
+                        <input type="text" name="arrosage" placeholder="Arrosage"required>
+                        <input type="text" name="humidite" placeholder="Humidité"required>
+                        <!-- accepter -->
+                        <div class="accept">
+                            <a href="menu_site_projet.php">
+                                <button type="submit" name="accepter" id="accepter">Accepter</button>
+                            </a>
+                        </div>
+                        <input type="file" id="file-input" name="image_file" style="display: none;" onchange="previewImage(event)">
+                    
+                </form>
+                <!-- retour -->
+                <div class="rretour">
+                    <a href="menu_site_projet.php">
+                        <button class="retour">Retour</button>
+                    </a>
+                </div>
             </div>
-            <!-- Description de la plante -->
-            <div class="description">
-                <textarea name="description" placeholder="Description" required></textarea>
-            </div>
-            <!-- Image de la plante -->
-            <div class="inser">
-                <button type="button" id="insert-image-btn" name="buttonimg" onclick="triggerFileInput()">Insérer une image</button>
-            </div>
-            <!-- Température, arrosage et humidité de la plante -->
-            <input type="text" name="temp_min" placeholder="Température min"required>
-            <input type="text" name="temp_max" placeholder="Température max"required>
-            <input type="text" name="arrosage" placeholder="Arrosage"required>
-            <input type="text" name="humidite" placeholder="Humidité"required>
-            <!-- accepter -->
-            <div class="accept">
-                <a href="menu_site_projet.php">
-                    <button type="submit" name="accepter" id="accepter">Accepter</button>
-                </a>
-            </div>
-            <input type="file" id="file-input" name="image_file" style="display: none;" onchange="previewImage(event)">
-            <!-- retour -->
-        </div>
-    </form>
-    <div class="rretour">
-                <a href="menu_site_projet.php">
-                    <button class="retour">Retour</button>
-                </a>
-            </div>
-            
+    </div>        
     <script src="..\ressources\js\jsAjoutsPlantes.js"></script>
 </body>
 
-</html>  
+</html>
