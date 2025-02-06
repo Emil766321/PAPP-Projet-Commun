@@ -132,13 +132,8 @@ if(!isset($_SESSION["user"])){
                 <a href="menu_site_projet.php">
                     <button class="retour">Retour</button>
                 </a>
-<<<<<<< HEAD
-            
-            <input type="file" id="file-input" name="file" style="display: none;" onchange="previewImage(event)">
-=======
             </div>
             <input type="file" id="file-input" name="file" accept="image/*" style="display: none;" onchange="previewImage(event)" required>
->>>>>>> cb768778e138c74e942e6032d170ee210f8bf471
         </div>
     </form>
 
