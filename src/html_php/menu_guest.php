@@ -14,7 +14,7 @@
                 <div name="petit_vert" class="mini">
                     <!-- petitVert = petit carré en haut à droite et titre = "Répertoire de plantes" -->
                     <div class="menuIcon">
-                        <a href="credits.html" class="menuItem">
+                        <a href="creditsVisiteur.html" class="menuItem">
                             <img id="credits" src="..\ressources\images\Copyright.svg.png">
                         </a>
                         <a href="histoire.html" class="menuItem">
