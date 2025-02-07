@@ -17,7 +17,7 @@
                         <a href="creditsVisiteur.html" class="menuItem">
                             <img id="credits" src="..\ressources\images\Copyright.svg.png">
                         </a>
-                        <a href="histoire.html" class="menuItem">
+                        <a href="histoire_Visiteur.html" class="menuItem">
                             <img id="histoire"src="..\ressources\images\book.png" class="menuItemImage">
                         </a>
                     </div>
@@ -69,7 +69,7 @@
                 ?>
                     <!-- une dive = une carte de plante -->
                     <div class="card">
-                        <a id="br"class="card" href="description.html">
+                        <a id="br"class="card" href="description_Visiteur.html">
                             <div class="title-card">
                                 <p><?php echo $item['name'];?></p>
                             </div>
