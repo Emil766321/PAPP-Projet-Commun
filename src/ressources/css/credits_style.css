@@ -30,6 +30,13 @@ li {
     padding: 0.5rem;
     border-radius: 5px;
 }
+.position {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
 footer p {
     margin: 0;
 }
@@ -49,15 +56,14 @@ footer p {
     transition: background-color 0.3s;
 
 }
-.position{
-    margin-left: 1500px;
-}
 .menuLeft{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
     gap: 50px;
+    width: 200px;
+    margin-right: 10px;
 }
 #menuContainer{
     display: flex;
