@@ -2,10 +2,10 @@
 include("db.php");
 session_start();
 
-/*if(!isset($_SESSION["user"])){
+if(!isset($_SESSION["user"])){
     header("location:index.php");
     exit();
-    }*/
+    }
  
     if (isset($_POST['add_plante'])) {
         $nom = trim($_POST['nom']);
