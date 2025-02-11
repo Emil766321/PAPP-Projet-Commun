@@ -2,10 +2,10 @@
 include("db.php");
 session_start();
 
-if(!isset($_SESSION["user"])){
+/*if(!isset($_SESSION["user"])){
     header("location:index.php");
     exit();
-    }
+    }*/
  
     if (isset($_POST['add_plante'])) {
         $nom = trim($_POST['nom']);
@@ -50,9 +50,10 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
         <link name="css" rel="stylesheet" href="..\ressources\css\menu_site_projet.css"/>
     </head>
     <body>
-        <a href="AjoutsDePlantes.php">
-            <img id ="plus" name="add_plante" src="..\ressources\images\plus.png">
-        </a>
+        <div class="boddy">
+            <a href="AjoutsDePlantes.php">
+                <img id ="plus" name="add_plante" src="..\ressources\images\plus.png">
+            </a>
 
             <!-- petitVert = petit carré en haut à droite et titre = "Répertoire de plantes" -->
             <div id="heade">
@@ -83,7 +84,7 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
                                 echo "<h3>" . htmlspecialchars($plante['Nom']) . "</h3>";
                                 // Vérifier si une image existe et l'afficher
                             if (!empty($plante['libelle'])) {
-                                echo '<img src="' . htmlspecialchars($plante['libelle']) . '" alt="Image de la plante" width="200">';
+                                echo '<img src="' . htmlspecialchars($plante['libelle']) . '" alt="Image de la plante" width=180px height=150px>';
                             } else {
                                 echo '<p>Aucune image disponible.</p>';
                             }
@@ -104,5 +105,6 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
                     }
                 ?>
             </div>
+        </div>
     </body>
 </html>

@@ -27,13 +27,22 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.5);
-    padding-bottom: 7%;
+    padding-bottom: 5%;
+    margin-top: 15%;
+    margin-left: 35rem;
+}
+.formm{
+    display: flex;
+    flex-direction: c;
+    align-items: center;
+    justify-content: center;
 }
 
 .hautdepage h1 {
-    margin-top: -30px;
+    text-align: center;
+    
     font-size: 36px;
     color: #333;
     margin-bottom: 20px;
@@ -96,7 +105,7 @@ h2 {
     font-size: 18px;
     padding: 10px 20px;
     background-color: #17a017;
-    color: #fff;
+    color: rgb(17, 17, 17);
     border-radius: 8px;
     border: none;
     cursor: pointer;
@@ -149,11 +158,16 @@ textarea {
     max-width: 50px;
     max-height: 25px;
     text-decoration: none;
-    color: rgb(245, 240, 240);
-    margin-bottom: 250px;
+    
+    
 }
 #plant-form{
     text-align: center;
     margin-top: 8%;
-    margin-left: 45%;
+
+    
+}
+.accept {
+    margin-left: 35%;
+    
 }

@@ -1,11 +1,11 @@
+/*
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
 body {
     background-image:url(../images/feuil.jpg);
     width: 100%;
-    margin:0;
 }
 
-/* MENU SITE */
+
 #plus {
     width: 50px;
     height: 50px;
@@ -39,15 +39,11 @@ text-decoration: none;
 }
 .vert {
     width: 100%;
-    min-height: 639px;
-    background-color: #569A73;
+    min-height: 600px;
+    background-color: #5a569a;
     display: flex;
-    
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-around;
-    gap: 50px;
-    padding: 25px;
 }
 
 .img{
@@ -81,7 +77,7 @@ text-decoration: none;
     object-fit: cover;
 }
 
-/* FIN MENU SITE */
+
 
 
 
@@ -268,6 +264,8 @@ text-decoration: none;
     height: 50px;
     z-index: 1;
     border-radius: 3px;
+    margin-right: 5%;
+
 }
 .plante{
     background-color: white;
@@ -278,6 +276,7 @@ text-decoration: none;
     border-radius: 15px;
     font-size: 20px;
     font-family: 'Lexend Deca', sans-serif;
+    margin: 3%;
 }
 
 .img-card{
@@ -288,3 +287,152 @@ text-decoration: none;
     flex-direction: row;    
     justify-content: center;
 }
+
+*/
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+body {
+    background-image: url(../images/feuil.jpg); /* Set the background image */
+    background-size: cover; /* Ensure the image covers the whole viewport */
+    background-position: center; /* Center the background image */
+    width: 100%;
+    margin: 0; /* Remove default margin to avoid scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto; /* Enable vertical scrolling only if necessary */
+    height: 100vh; /* Ensure the body takes full viewport height */
+}
+
+
+/* MENU SITE */
+#plus {
+    width: 50px;
+    height: 50px;
+    margin-top: 58px;
+    margin-left: 400px;
+    position: absolute;
+}
+#Deconnexion {
+    background-color: #569A73;
+    width: 140px;
+    color: white;
+    border-radius: 20px;
+    height: 30px;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 85%;
+    top: 6%;
+    text-decoration: none;
+}
+#decoTxt {
+    margin-top: 2px;
+}
+.vert {
+    width: 80%;
+    min-height: 600px;
+    background-color: #569A73;
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping of plant cards */
+    justify-content: space-evenly; /* Distributes the space evenly */
+    padding: 20px;
+    box-sizing: border-box;
+    margin-left: 10%; /* Prevent overflow */
+    border-radius: 3%;
+}
+
+.plante {
+    background-color: white;
+    width: 220px; /* Reduced width to save space */
+    height: 250px;
+    text-align: center;
+    position: relative;
+    border-radius: 15px;
+    font-size: 18px; /* Slightly smaller font size */
+    font-family: 'Lexend Deca', sans-serif;
+    margin: 10px 5px; /* Adjusted margin to avoid overflow */
+    box-sizing: border-box;
+    overflow: hidden; /* Prevents content overflow */
+}
+
+.img-card {
+    width: 100%;
+    height: 80px;
+    margin-top: -20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+}
+
+.crayon,
+.croix {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.img-crayon, .img-croix {
+    width: 15px;
+    height: 15px;
+    object-fit: cover;
+}
+
+#title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-left: 40px;
+    width: 100%;
+}
+#titre {
+    color: white;
+    height: 100px;
+    text-decoration: underline;
+    font-family: 'Lexend Deca', sans-serif;
+    z-index: 2;
+}
+#mini {
+    background-color: #569A73;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    border-radius: 3px;
+    margin-right: 5%;
+}
+
+/* Fixing the "floating" effect of plant cards */
+#carre, #carre1, #carre2, #carre3, #carre4, #carre5 {
+    width: 220px; /* Adjusted size for all elements */
+    height: 220px;
+    background-color: white;
+    display: flex;
+    position: absolute;
+    box-shadow: 0px 10px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-left: 30px;
+    font-family: 'Lexend Deca', sans-serif;
+    justify-content: center;
+}
+
+/* Handle any fixed elements */
+#brocoli2, #brocoli1, #croix1, #croix2, #crayon1, #crayon2 {
+    z-index: 3;
+    width: 160px;
+    position: absolute;
+}
+
+#barre, #barr {
+    background-color: grey;
+    position: absolute;
+    margin-top: -60px;
+    width: 100%;
+}
+
