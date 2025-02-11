@@ -136,7 +136,7 @@ if (isset($_POST['accepter'])) {
                     
                 </form>
                 <!-- retour -->
-                <div class="rretour">
+                <div class="retour">
                     <a href="menu_site_projet.php">
                         <button class="retour">Retour</button>
                     </a>

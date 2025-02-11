@@ -45,7 +45,7 @@
             <h2>Bois</h2>
             <ul>
                 <li>Bejarano Justin</li>
-                <li>Catota Ortega Maurice Daniel/li>
+                <li>Catota Ortega Maurice Daniel </li>
                 <li>Conversano Alessio</li>
                 <li>Jafari Mahdi</li>
                 <li>Meneses Louis Tores</li>

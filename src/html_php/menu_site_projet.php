@@ -89,9 +89,10 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
                                 echo '<p>Aucune image disponible.</p>';
                             }
                                 ?>
+                                    
                                     <div class="crayon">
-                                        <a href="ModifierPlantes.php">
-                                            <img class="img-crayon" name="edit_plante" src="../ressources/images/crayon.png" alt="image plante">
+                                        <a href="ModifierPlantes.php?id=<?php echo $plante['id']?>">
+                                            <img class="img-https://lens.usercontent.google.com/image?vsrid=CNzLrZ76_____wEQAhgBIiQzZTAyNGViZC1iZTIwLTRmZWItYjI0Yy1mN2VlZjdjMjMzOTQ&gsessionid=c2qH-_eh2IIVTHabrVzW9TWGYzI9MYeSEKEwx8P7ArsedYbkKtxBPQcrayon" width = 25px name="edit_plante" src="../ressources/images/crayon.png" alt="image plante">
                                         </a>
                                     </div>
                                     <div class="croix">
