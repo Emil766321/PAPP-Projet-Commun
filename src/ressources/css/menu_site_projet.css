@@ -1,56 +1,241 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
 body {
-    background-image: url(../images/feuil.jpg); /* Set the background image */
-    background-size: cover; /* Ensure the image covers the whole viewport */
-    background-position: center; /* Center the background image */
-    width: 100%;
-    margin: 0; /* Remove default margin to avoid scrolling */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    overflow-y: auto; /* Enable vertical scrolling only if necessary */
-    height: 100vh; /* Ensure the body takes full viewport height */
+    background-image:url(../images/feuil.jpg);
+    margin:0;
 }
-
 
 /* MENU SITE */
-#plus {
-    width: 50px;
-    height: 50px;
-    margin-top: 58px;
-    margin-left: 400px;
-    position: absolute;
+#br {
+    text-decoration: none;
+    color: black;
+    font-family: 'Lexend Deca', sans-serif;
 }
-#Deconnexion {
+.Deconnexion {
     background-color: #569A73;
     width: 140px;
-    color: white;
     border-radius: 20px;
     height: 30px;
-    font-family: 'Lexend Deca', sans-serif;
     font-size: 10px;
     display: flex;
     justify-content: center;
-    position: absolute;
-    left: 85%;
-    top: 6%;
-    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    transform: translateX(0%);
 }
-#decoTxt {
+#DeconnexionActive {
+    transition: all 0.2s ease-in-out;
+    transform: translateX(100%);
+}
+#menuTurn {
+    width: 110px;
+    height: 120px;
+    position: absolute;
+    right:-70px;
+    top: 5px;
+}
+#decoTxtTurn {
+    margin-top: 100px;
+}
+.decotxt {
+    font-family: 'Lexend Deca', sans-serif;
+    color: white;
     margin-top: 2px;
 }
 .vert {
-    width: 80%;
-    min-height: 600px;
     background-color: #569A73;
     display: flex;
-    flex-wrap: wrap; /* Allows wrapping of plant cards */
-    justify-content: space-evenly; /* Distributes the space evenly */
-    padding: 20px;
-    box-sizing: border-box;
-    margin-left: 10%; /* Prevent overflow */
-    border-radius: 3%;
+    
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 50px;
+    padding: 25px;
+}
+a {
+    text-decoration: none;
+}
+.card{
+    width: 250px;
+    height: 250px;
+    background-color: white;
+    position: relative;
+    border-radius: 15px;
+    
+}
+.title-card{
+    width: 100%;
+    font-size: 35px;
+    text-align: center;
+    font-family: 'Lexend Deca', sans-serif;
+    
+}
+.img-card{
+    width: 100%;
+    height: 80px;
+    margin-top: -20px;
+    display: flex;
+    flex-direction: row;    
+    justify-content: center;
 }
 
+.img{
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+}
+
+
+.crayon{
+    position: absolute;
+    top: 40px;
+    right: 10px;
+}
+
+.croix{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.img-crayon{
+    max-width: 10px;
+    max-height: 10px;
+    min-width: 10px;
+    min-height: 10px;
+    object-fit: cover;
+}
+
+.img-croix{
+    min-width: 15px;
+    min-height: 15px;
+    max-width: 15px;
+    max-height: 15px;
+    object-fit: cover;
+}
+
+
+#title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px;
+}
+.menuRight{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
+}
+#pageTitle {
+    color: white;
+    text-decoration: underline;
+    font-family: 'Lexend Deca', sans-serif;
+    z-index: 2;
+}
+.menuLeft{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 50px;
+}
+#menuContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+.mini {
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.miniActive {
+    width: 200px;
+}
+.menuIcon {
+    position: absolute;
+    display: flex;
+    background-color:#569A73;
+    width: 50px;
+    transform: translateX(100%);
+    opacity: 0;
+    top: 0;
+    left: 0;
+    gap: 10px;
+    z-index: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+#histoire {
+    width: 30px;
+    height: 50px;
+}
+#credits {
+    
+    width: 40px;
+    
+    height: 40px;
+}
+.menuIconActive{
+    transform: translateX(0%);
+    width: 200px;
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+}
+.menuItem{
+    width: 50px;
+    height: 50px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.menuItemImage{
+    max-width: 50px;
+    max-height: 50px;
+    object-fit: contain;
+}
+.menuItemButton{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.menuItemButtonImage{
+    max-width: 50px;
+    max-height: 50px;
+    object-fit: contain;
+}
+.menuBarreIconContainer{
+    background-color:#569A73 ;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+}
+.menuBarre {
+    width: 50px;
+    height: 50px;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease;
+    z-index: 2;
+}
+.menuBarreActive{
+    transform: rotate(90deg);
+    transition: transform 0.2s ease;
+}
 .plante {
     background-color: white;
     width: 220px; /* Reduced width to save space */
@@ -64,90 +249,4 @@ body {
     box-sizing: border-box;
     overflow: hidden; /* Prevents content overflow */
 }
-
-.img-card {
-    width: 100%;
-    height: 80px;
-    margin-top: -20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.img {
-    width: 140px;
-    height: 140px;
-    object-fit: cover;
-}
-
-.crayon{
-    position:absolute;
-    top: 5px;
-    right: 190px;
-}
-.croix {
-    position:absolute;
-    top: 5px;
-    right: 10px;
-}
-
-.img-crayon, .img-croix {
-    width: 15px;
-    height: 15px;
-    object-fit: cover;
-}
-
-#title {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-top: 40px;
-    padding-left: 40px;
-    width: 100%;
-}
-#titre {
-    color: white;
-    height: 100px;
-    text-decoration: underline;
-    font-family: 'Lexend Deca', sans-serif;
-    z-index: 2;
-}
-#mini {
-    background-color: #569A73;
-    width: 50px;
-    height: 50px;
-    z-index: 1;
-    border-radius: 3px;
-    margin-right: 5%;
-}
-
-/* Fixing the "floating" effect of plant cards */
-#carre, #carre1, #carre2, #carre3, #carre4, #carre5 {
-    width: 220px; /* Adjusted size for all elements */
-    height: 220px;
-    background-color: white;
-    display: flex;
-    position: absolute;
-    box-shadow: 0px 10px 6px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    margin-top: 30px;
-    margin-left: 30px;
-    font-family: 'Lexend Deca', sans-serif;
-    justify-content: center;
-}
-
-/* Handle any fixed elements */
-#brocoli2, #brocoli1, #croix1, #croix2, #crayon1, #crayon2 {
-    z-index: 3;
-    width: 160px;
-    position: absolute;
-}
-
-#barre, #barr {
-    background-color: grey;
-    position: absolute;
-    margin-top: -60px;
-    width: 100%;
-}
-
-
+/* FIN MENU SITE */

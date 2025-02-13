@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION["user"])){
+    header("location:index.php");
+    exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +15,28 @@
 </head>
 <body>
     <div>
-        <h1>Droits d'auteur 🌿</h1>
-            <div class="position">
-                <button class="button" onclick="window.location.href='invite.php'">Retour à l'accueil</button>
+        <div class="position">
+
+            <h1 id="Ctxt">Droits d'auteur 🌿</h1>
+                <div class="menuLeft">
+                    
+                    <div name="petit_vert" class="mini">
+                        <!-- petitVert = petit carré en haut à droite et titre = "Répertoire de plantes" -->
+                        <div class="menuIcon">
+                            <a href="creditsADMIN.html" class="menuItem">
+                                <img id="credits" src="..\ressources\images\Copyright.svg.png">
+                            </a>
+                            <a href="histoire.html" class="menuItem">
+                                <img id="histoire"src="..\ressources\images\book.png" class="menuItemImage">
+                            </a>
+                        </div>
+                        <a href="#" class="menuBarreIconContainer">
+                            <img class="menuBarre" src="..\ressources\images\menuprojet.png">
+                        </a>
+                    </div>
+                </div>
+        </div>
+            <button class="button" onclick="window.location.href='menu_site_projet.php'">Retour à l'accueil</button>
             </div>
             <h1>Site de Répertoire des Plantes © 2025 - Tous droits réservés</h1>
             <p>
@@ -30,7 +56,8 @@
                 <li>Alexandre Marro</li>
                 <li>Thomas Lucking</li>
                 <li>Mustafa Kamal</li>
-                <li>Juliana Mendes Baptista</li>
+                <li>Juliana Mendes Baptista
+                    </li>
                 <li>Eros Corona</li>
                 <li>Tsybulevskyi Maksym</li>
             </ul>
@@ -45,7 +72,7 @@
             <h2>Bois</h2>
             <ul>
                 <li>Bejarano Justin</li>
-                <li>Catota Ortega Maurice Daniel </li>
+                <li>Catota Ortega Maurice Daniel</li>
                 <li>Conversano Alessio</li>
                 <li>Jafari Mahdi</li>
                 <li>Meneses Louis Tores</li>
@@ -56,11 +83,8 @@
                 <li>Ribeiro Killian</li>
                 <li>Mohamadi Satar</li>
                 <li>Nagendran Sujithnagendran</li>
-                <li>Lopez Solarte</li>
+                <li>Lopez Solarte Lucas</li>
             </ul>
-    </div>
-    <div>
-
-    </div>  
+    <script src="..\ressources\js\menu.js"></script>
 </body>
 </html>

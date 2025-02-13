@@ -41,6 +41,7 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
     $stmt = $conn->prepare($query);
     $stmt->bindParam(':id', $id);
     $stmt->execute();
+    
 }
 ?>
 <!DOCTYPE html>
@@ -113,6 +114,6 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
                     }
                 ?>
         </div>
-        <script src="..\ressources\js\menu.js"></script>
+        <script src="..\ressources\js\menu_Projet-Commun.js"></script>
     </body>
 </html>
