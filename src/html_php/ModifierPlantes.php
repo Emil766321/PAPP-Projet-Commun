@@ -130,12 +130,20 @@ if (isset($_POST["modifierPlante"])) {
 
                 <div class="inser">
                     <button type="button" id="insert-image-btn" onclick="triggerFileInput()">Insérer une image</button>
+                    <?php
+                     if (!empty($plante['libelle'])) {
+                        echo '<img src="' . htmlspecialchars($plante['libelle']) . '" alt="Image de la plante" width=180px height=150px>';
+                    } else {
+                        echo '<p>Aucune image disponible.</p>';
+                    }
+                    ?>
                 </div>
 
                 <input type="text" name="temp_min" placeholder="Température min" required value="<?php echo htmlspecialchars($row["Temperature_min"]); ?>">
                 <input type="text" name="temp_max" placeholder="Température max" required value="<?php echo htmlspecialchars($row["Temperature_max"]); ?>">
                 <input type="text" name="arrosage" placeholder="Arrosage" required value="<?php echo htmlspecialchars($row["Arrosage"]); ?>">
                 <input type="text" name="humidite" placeholder="Humidité" required value="<?php echo htmlspecialchars($row["Humidité"]); ?>">
+
 
                 <div class="accept">
                     <button type="submit" name="modifierPlante" id="accepter">Modifier</button>

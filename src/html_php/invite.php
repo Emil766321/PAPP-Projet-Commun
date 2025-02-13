@@ -41,6 +41,7 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
     $stmt = $conn->prepare($query);
     $stmt->bindParam(':id', $id);
     $stmt->execute();
+    
 }
 ?>
 <!DOCTYPE html>
