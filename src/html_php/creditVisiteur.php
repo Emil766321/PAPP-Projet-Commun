@@ -29,7 +29,7 @@
                     </div>
                 </div>
         </div>
-            <button class="button" onclick="window.location.href='menu_guest.php'">Retour à l'accueil</button>
+            <button class="button" onclick="window.location.href='invite.php'">Retour à l'accueil</button>
             </div>
             <h1>Site de Répertoire des Plantes © 2025 - Tous droits réservés</h1>
             <p>
