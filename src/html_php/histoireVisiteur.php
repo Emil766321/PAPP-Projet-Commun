@@ -1,13 +1,3 @@
-<?php
-include("db.php");
-session_start();
-
-if(!isset($_SESSION["user"])){
-    header("location:index.php");
-    exit();
-    }
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,13 +10,13 @@ if(!isset($_SESSION["user"])){
         <div name="petit_vert" class="mini">
             <!-- petitVert = petit carré en haut à droite et titre = "Répertoire de plantes" -->
             <div class="menuIcon">
-                <a href="creditADMIN.php" class="menuItem">
+                <a href="creditVisiteur.php" class="menuItem">
                     <img id="credits" src="..\ressources\images\Copyright.svg.png" class="menuItemImage">
                 </a>
-                <a href="histoire.php" class="menuItem">
+                <a href="histoireVisiteur.php" class="menuItem">
                     <img id="histoire"src="..\ressources\images\book.png" class="menuItemImage">
                 </a>
-                <a href="menu_site_projet.php"class="menuItem">
+                <a href="invite.php"class="menuItem">
                         <img id="House" src="..\ressources\images\maison.png" class="menuItemImage">
                 </a>
             </div>

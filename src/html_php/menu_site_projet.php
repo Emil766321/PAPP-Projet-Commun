@@ -50,6 +50,7 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
         <link name="css" rel="stylesheet" href="..\ressources\css\menu_site_projet.css"/>
     </head>
     <body>  
+        
         <div name="petitVert_titre" id="title">
             <div class="menuRight">
                 <h1 name="titre" id="pageTitle">R&#233;pertoire de plantes</h1>
@@ -86,6 +87,7 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
                     foreach ($plantes as $plante) {
                         ?>
                         <!-- une dive = une carte de plante -->
+                       <a href="description.php">
                         <?php 
                             echo "<div class='plante'>";
                                 echo "<h3>" . htmlspecialchars($plante['Nom']) . "</h3>";
@@ -96,7 +98,7 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
                                 echo '<p>Aucune image disponible.</p>';
                             }
                                 ?>
-                                    
+                        </a>   
                                     <div class="crayon">
                                         <a href="ModifierPlantes.php?id=<?php echo $plante['id']?>">
                                             <img class="img-https://lens.usercontent.google.com/image?vsrid=CNzLrZ76_____wEQAhgBIiQzZTAyNGViZC1iZTIwLTRmZWItYjI0Yy1mN2VlZjdjMjMzOTQ&gsessionid=c2qH-_eh2IIVTHabrVzW9TWGYzI9MYeSEKEwx8P7ArsedYbkKtxBPQcrayon" width = 25px name="edit_plante" src="../ressources/images/crayon.png" alt="image plante">

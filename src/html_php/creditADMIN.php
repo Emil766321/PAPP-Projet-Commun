@@ -1,3 +1,13 @@
+<?php
+include("db.php");
+session_start();
+
+if(!isset($_SESSION["user"])){
+    header("location:index.php");
+    exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
