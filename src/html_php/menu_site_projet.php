@@ -51,6 +51,7 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
         <link name="css" rel="stylesheet" href="..\ressources\css\menu_site_projet.css"/>
     </head>
     <body>  
+        
         <div name="petitVert_titre" id="title">
             <div class="menuRight">
                 <h1 name="titre" id="pageTitle">R&#233;pertoire de plantes</h1>
