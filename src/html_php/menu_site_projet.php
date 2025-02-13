@@ -57,7 +57,7 @@ if (isset($_POST['add_plante'])) {
             </a>
         </div>
         <div class="menuLeft">
-            <a class="Deconnexion" href="index.php"><h1 id="decoTxt">Déconnexion</h1></a>
+        <a class="Deconnexion" href="index.php"><h1 class ="decotxt"id ="decoTxt">D&#233;connexion</h1></a>
             <div class="mini">
                 <div class="menuIcon">
                     <a href="creditADMIN.php" class="menuItem">
