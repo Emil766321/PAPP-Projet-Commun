@@ -49,29 +49,36 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
         <!-- css = fichier "menu_site_projet.css" et js = "menu_Projet-Commun.js"-->
         <link name="css" rel="stylesheet" href="..\ressources\css\menu_site_projet.css"/>
     </head>
-    <body>
-        <div class="boddy">
-            <a href="AjoutsDePlantes.php">
-                <img id ="plus" name="add_plante" src="..\ressources\images\plus.png">
-            </a>
-
-            <!-- petitVert = petit carré en haut à droite et titre = "Répertoire de plantes" -->
-            <div id="heade">
-                <div>
-                    <a id="Deconnexion" href="index.php">
-                        <h1 id ="decoTxt">D&#233;connexion</h1>
+    <body>  
+        <div name="petitVert_titre" id="title">
+            <div class="menuRight">
+                <h1 name="titre" id="pageTitle">R&#233;pertoire de plantes</h1>
+                <a href="AjoutsDePlantes.php" class="menuItemButton">
+                    <img src="..\ressources\images\plus.png"  class="menuItemButtonImage">
+                </a>
+            </div>
+            <div class="menuLeft">
+                <a class="Deconnexion" href="index.php"><h1 class ="decotxt"id ="decoTxt">D&#233;connexion</h1></a>
+                <div name="petit_vert" class="mini">
+                    <!-- petitVert = petit carré en haut à droite et titre = "Répertoire de plantes" -->
+                    <div class="menuIcon">
+                        <a href="creditsADMIN.php" class="menuItem">
+                            <img id="credits" src="..\ressources\images\Copyright.svg.png">
+                        </a>
+                        <a href="histoire.php" class="menuItem">
+                            <img id="histoire"src="..\ressources\images\book.png" class="menuItemImage">
+                        </a>
+                    </div>
+                    <a href="#" class="menuBarreIconContainer">
+                        <img class="menuBarre" src="..\ressources\images\menuprojet.png">
                     </a>
                 </div>
-                <div name="petitVert_titre" id="title">
-                    <h1 name="titre" id="titre">R&#233;pertoire de plantes</h1>
-                    <div name="petit_vert" id="mini"></div>
-                </div>
             </div>
+        </div>
+        <!-- div grandVert = fond vert -->
+        <div name="grandVert" class="vert">
 
-            <!-- div grandVert = fond vert -->
-            <div name="grandVert" class="vert">
-
-                <?php
+        <?php
                     $query = "SELECT * FROM plante";
                     $stmt = $conn->query($query);
                     $plantes = $stmt->fetchAll();
@@ -89,9 +96,10 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
                                 echo '<p>Aucune image disponible.</p>';
                             }
                                 ?>
+                                    
                                     <div class="crayon">
-                                        <a href="ModifierPlantes.php">
-                                            <img class="img-crayon" name="edit_plante" src="../ressources/images/crayon.png" alt="image plante">
+                                        <a href="ModifierPlantes.php?id=<?php echo $plante['id']?>">
+                                            <img class="img-https://lens.usercontent.google.com/image?vsrid=CNzLrZ76_____wEQAhgBIiQzZTAyNGViZC1iZTIwLTRmZWItYjI0Yy1mN2VlZjdjMjMzOTQ&gsessionid=c2qH-_eh2IIVTHabrVzW9TWGYzI9MYeSEKEwx8P7ArsedYbkKtxBPQcrayon" width = 25px name="edit_plante" src="../ressources/images/crayon.png" alt="image plante">
                                         </a>
                                     </div>
                                     <div class="croix">
@@ -104,7 +112,7 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
                         <?php
                     }
                 ?>
-            </div>
         </div>
+        <script src="..\ressources\js\menu.js"></script>
     </body>
 </html>

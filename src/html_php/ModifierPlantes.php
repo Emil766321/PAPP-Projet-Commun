@@ -8,131 +8,150 @@ require("db.php");
 
 $data = mysqli_connect($host, $user, $password, $db);
 
-session_start();
+if (!$data) {
+    die("Erreur de connexion : " . mysqli_connect_error());
+}
 
-// Vérifier si l'utilisateur est connecté
-/*if(!isset($_SESSION["user"])){
+session_start();
+if (!isset($_SESSION["user"])) {
     header("location:index.php");
     exit();
-}*/
+}
 
-// Modifier une plante
-if (isset($_POST["accepter"])) {
+$row = null; // Évite les erreurs si aucune plante n'est trouvée
+
+if (isset($_GET['id']) && !empty($_GET['id'])) {
+    $id = intval($_GET['id']);  // Convertir en entier
+
+    // Récupérer les infos de la plante
+    $sql = "SELECT * FROM plante WHERE id=?";
+    $stmt = mysqli_prepare($data, $sql);
+    
+    if ($stmt) {
+        mysqli_stmt_bind_param($stmt, "i", $id);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        $row = mysqli_fetch_assoc($result);
+        mysqli_stmt_close($stmt);
+    } else {
+        die("Erreur de requête : " . mysqli_error($data));
+    }
+
+    if (!$row) {
+        die("Plante introuvable.");
+    }
+} else {
+    die("ID de la plante non spécifié.");
+}
+
+if (isset($_POST["modifierPlante"])) {
     $nom = $_POST['nom'];
     $humidite = $_POST['humidite'];
     $arrosage = $_POST['arrosage'];
     $temp_min = $_POST['temp_min'];
     $temp_max = $_POST['temp_max'];
     $description = $_POST['description'];
-    $id = $_POST['id'];
+    $id = intval($_POST['id']); // ID bien récupéré du formulaire
 
-    // Récupérer l'ancienne image si aucune nouvelle n'est envoyée
+    // Récupérer l'ancienne image si aucune nouvelle n'est uploadée
     $sql = "SELECT libelle FROM plante WHERE id=?";
     $stmt = mysqli_prepare($data, $sql);
-    mysqli_stmt_bind_param($stmt, "i", $id);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-    $row = mysqli_fetch_assoc($result);
-    $image_path = $row['libelle']; // Par défaut, garder l'ancienne image
-    mysqli_stmt_close($stmt);
+    
+    if ($stmt) {
+        mysqli_stmt_bind_param($stmt, "i", $id);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        $row = mysqli_fetch_assoc($result);
+        $image_path = $row['libelle']; // Garder l'ancienne image par défaut
+        mysqli_stmt_close($stmt);
+    } else {
+        die("Erreur de requête : " . mysqli_error($data));
+    }
 
     // Vérifier si une nouvelle image est envoyée
     if (!empty($_FILES['image_file']['name'])) {
         $upload_dir = "image/";
+
+        // Créer le dossier s'il n'existe pas
         if (!is_dir($upload_dir)) {
             mkdir($upload_dir, 0777, true);
         }
 
-        $image_name = time() . "_" . basename($_FILES['image_file']['name']); // Unique filename
+        $image_name = basename($_FILES['image_file']['name']);
         $image_tmp = $_FILES['image_file']['tmp_name'];
-        $image_path = $upload_dir . $image_name;
+        $image_path = $upload_dir . time() . "_" . $image_name; // Ajout timestamp pour éviter les doublons
 
         if (!move_uploaded_file($image_tmp, $image_path)) {
             die("Erreur lors de l'upload de l'image.");
         }
     }
 
-    // Mettre à jour les informations de la plante
-    $sql = "UPDATE plante SET nom=?, humidite=?, arrosage=?, Temperature_min=?, Temperature_max=?, description=?, libelle=? WHERE id=?";
+    // Mise à jour des infos de la plante
+    $sql = "UPDATE plante SET Nom=?, Humidité=?, Arrosage=?, Temperature_min=?, Temperature_max=?, Description=?, libelle=? WHERE id=?";
     $stmt2 = mysqli_prepare($data, $sql);
-
-    if ($stmt2 === false) {
+    
+    if ($stmt2) {
+        mysqli_stmt_bind_param($stmt2, "sssssssi", $nom, $humidite, $arrosage, $temp_min, $temp_max, $description, $image_path, $id);
+        if (mysqli_stmt_execute($stmt2)) {
+            header('Location: menu_site_projet.php'); // Redirection après succès
+            exit();
+        } else {
+            echo "Erreur lors de la mise à jour : " . mysqli_error($data);
+        }
+        mysqli_stmt_close($stmt2);
+    } else {
         die('Erreur de préparation de la requête : ' . mysqli_error($data));
     }
-
-    mysqli_stmt_bind_param($stmt2, "sssssssi", $nom, $humidite, $arrosage, $temp_min, $temp_max, $description, $image_path, $id);
-
-    if (mysqli_stmt_execute($stmt2)) {
-        header('Location: exercie2.php'); // Redirection après mise à jour réussie
-        exit();
-    } else {
-        echo "Erreur lors de la mise à jour : " . mysqli_error($data);
-    }
-
-    mysqli_stmt_close($stmt2);
-}
-
-// Récupérer les informations d'une plante pour modification
-if (isset($_POST['edit_plante'])) {
-    $id = $_POST['id'];
-    $sql = "SELECT * FROM plante WHERE id=?";
-    $stmt = mysqli_prepare($data, $sql);
-    mysqli_stmt_bind_param($stmt, "i", $id);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-    $row = mysqli_fetch_assoc($result);
-    mysqli_stmt_close($stmt);
 }
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modifier une plante</title>
+    <title>Modifier la plante</title>
     <link rel="stylesheet" href="../ressources/css/stylesheetAjoutsPlantes.css">
 </head>
-
 <body>
-    <form action="menu_site_projet.php" method="post" id="plant-form">
+    <div class="formm">
         <div class="bulle">
-            <div class="hautdepage">
-                <h1>Modifier la plante</h1>
-                <input placeholder="Nom de la plante" name="nom">
-            </div>
-            
-            <div class="description">
-                <textarea placeholder="Description" name="description"></textarea>
-            </div>
+            <form method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                
+                <div class="hautdepage">
+                    <h1>Modifier la plante</h1>
+                    <input type="text" name="nom" placeholder="Nom de la plante" required value="<?php echo htmlspecialchars($row["Nom"]); ?>">
+                </div>
 
-            <div class="inser">
-                <button type="button" id="insert-image-btn" name="buttonimg" onclick="triggerFileInput()">Insérer une image</button>
-            </div>
+                <div class="description">
+                    <textarea name="description" placeholder="Description" required><?php echo htmlspecialchars($row["Description"]); ?></textarea>
+                </div>
 
-            <input placeholder="Temperature minimum" name="temp_min" id="temp_min" type="text">
-            <input placeholder="Temperature maximum" name="temp_max" id="temp_max" type="text">
-            <input placeholder="Arrosage" name="arrosage" id="arrosage" type="text">
-            <input placeholder="Humidité" name="humidite" id="humidite" type="text">
+                <div class="inser">
+                    <button type="button" id="insert-image-btn" onclick="triggerFileInput()">Insérer une image</button>
+                </div>
 
-            <div class="accept">
-                <a href="menu_site_projet.php">
-                    <button type="submit" name="accepter" id="accepter">Accepter</button>
-                </a>
-            </div>
-            <div class="rretour">
+                <input type="text" name="temp_min" placeholder="Température min" required value="<?php echo htmlspecialchars($row["Temperature_min"]); ?>">
+                <input type="text" name="temp_max" placeholder="Température max" required value="<?php echo htmlspecialchars($row["Temperature_max"]); ?>">
+                <input type="text" name="arrosage" placeholder="Arrosage" required value="<?php echo htmlspecialchars($row["Arrosage"]); ?>">
+                <input type="text" name="humidite" placeholder="Humidité" required value="<?php echo htmlspecialchars($row["Humidité"]); ?>">
+
+                <div class="accept">
+                    <button type="submit" name="modifierPlante" id="accepter">Modifier</button>
+                </div>
+
+                <input type="file" id="file-input" name="image_file" style="display: none;" onchange="previewImage(event)">
+            </form>
+
+            <div class="retour">
                 <a href="menu_site_projet.php">
                     <button class="retour">Retour</button>
                 </a>
             </div>
-            <input type="file" id="file-input" name="file" style="display: none;" onchange="previewImage(event)">
         </div>
-    </form>
+    </div>
 
-    <script src="..\ressources\js\jsAjoutsPlantes.js"></script>
+    <script src="../ressources/js/jsAjoutsPlantes.js"></script>
 </body>
-
 </html>
