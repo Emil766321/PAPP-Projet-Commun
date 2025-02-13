@@ -1,60 +1,24 @@
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
-}
-h1, h2 {
-    color: #4CAF50; /* Green color for headings */
-}
-header, footer {
-    background-color: #4CAF50;
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+h1{
     color: white;
+    font-size:  45px; 
     text-align: center;
-    padding: 1rem 0;
-}
-section {
-    padding: 2rem;
-    max-width: 800px;
-    margin: auto;
-}
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-li {
-    background: #e7f3fe;
-    margin: 0.5rem 0;
-    padding: 0.5rem;
-    border-radius: 5px;
-}
-.position {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 50px;
-}
-footer p {
-    margin: 0;
-}
-.button{
-    background-color: #4CAF50;
-    margin-left: 500px;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    font-family: "Lexend Deca", sans-serif;
 
+}
+body{
+    background-image:url(../images/tableauVert.PNG);
+    min-width: 1280px;
+    min-height: 800px;
+    margin: 0;
+    background-size: cover;
+
+}
+p{
+    color: white;
+    font-size: 39px;
+    text-align: center;
+    font-family: "Lexend Deca", sans-serif;
 }
 .menuLeft{
     display: flex;
@@ -62,8 +26,6 @@ footer p {
     justify-content: flex-end;
     align-items: center;
     gap: 50px;
-    width: 200px;
-    margin-right: 10px;
 }
 #menuContainer{
     display: flex;
@@ -89,13 +51,13 @@ footer p {
 .menuIcon {
     position: absolute;
     display: flex;
-    background-color:#4CAF50;
+    background-color:#09663f;
     width: 50px;
     transform: translateX(100%);
     opacity: 0;
     top: 0;
     left: 0;
-    gap: 10px;
+    gap: 2px;
     z-index: 1;
     transition: all 0.2s ease-in-out;
 }
@@ -108,6 +70,10 @@ footer p {
     
     width: 40px;
     
+    height: 40px;
+}
+#House {
+    width: 25px;
     height: 40px;
 }
 .menuIconActive{
@@ -143,7 +109,7 @@ footer p {
     object-fit: contain;
 }
 .menuBarreIconContainer{
-    background-color:#4CAF50 ;
+    background-color:#13915c ;
     position: absolute;
     top: 0;
     right: 0;

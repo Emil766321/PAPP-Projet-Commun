@@ -85,6 +85,6 @@ if(!isset($_SESSION["user"])){
                 <li>Nagendran Sujithnagendran</li>
                 <li>Lopez Solarte Lucas</li>
             </ul>
-    <script src="..\ressources\js\menu.js"></script>
+    <script src="..\ressources\js\menu_Projet-Commun.js"></script>
 </body>
 </html>
