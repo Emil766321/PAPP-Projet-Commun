@@ -116,13 +116,13 @@ h2 {
     background-color: #32c232;
 }
 
-.inser {
+.image-container {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.inser img {
+.image-container img {
     border-radius: 15px;
 }
 

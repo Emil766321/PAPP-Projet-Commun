@@ -1,5 +1,49 @@
 <?php
-include("db.php");
+$host = "localhost";
+$user = "root";
+$password = "";
+$db = "plantes_db";
+
+require("db.php");
+
+$data = mysqli_connect($host, $user, $password, $db);
+
+if (!$data) {
+    die("Erreur de connexion : " . mysqli_connect_error());
+}
+
+session_start();
+if (!isset($_SESSION["user"])) {
+    header("location:index.php");
+    exit();
+}
+
+$row = null; // Évite les erreurs si aucune plante n'est trouvée
+
+if (isset($_GET['id']) && !empty($_GET['id'])) {
+    $id = intval($_GET['id']);  // Convertir en entier
+
+    // Récupérer les infos de la plante
+    $sql = "SELECT * FROM plante WHERE id=?";
+    $stmt = mysqli_prepare($data, $sql);
+    
+    if ($stmt) {
+        mysqli_stmt_bind_param($stmt, "i", $id);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        $row = mysqli_fetch_assoc($result);
+        mysqli_stmt_close($stmt);
+    } else {
+        die("Erreur de requête : " . mysqli_error($data));
+    }
+
+    if (!$row) {
+        die("Plante introuvable.");
+    }
+} else {
+    die("ID de la plante non spécifié.");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -36,10 +80,9 @@ include("db.php");
             <img width="200px" height="200px" class="image"
                 src="..\ressources\images\plantes.jpg">
             <h1 id="texte" value="<?php echo htmlspecialchars($row["Temperature_min"]); ?>">Nom de plante</h1>
-            <h1 id="type">Type de plante</h1>
             <h1 id="humidité">Humidite </h1>
             <h1 id="arrosage">arrosage</h1>
-            <h1 id="Temp" >Temperateur_min </h1>
+            <h1 id="Temp" >Temperateur_min <?php echo htmlspecialchars($row["Temperature_min"]); ?> </h1>
             <h1 id="Temperateur_max">Temperateur_max</h1>
         </div>
 

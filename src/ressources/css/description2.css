@@ -201,4 +201,8 @@ body {
 .menuBarreActive{
     transform: rotate(90deg);
     transition: transform 0.2s ease;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 1e5043a02a1370946328f25dfafaf86386428b24
