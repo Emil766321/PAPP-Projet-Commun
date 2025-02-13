@@ -19,7 +19,7 @@
                             <a href="creditsVisiteur.php" class="menuItem">
                                 <img id="credits" src="..\ressources\images\Copyright.svg.png">
                             </a>
-                            <a href="histoire.php" class="menuItem">
+                            <a href="histoireVisiteur.php" class="menuItem">
                                 <img id="histoire"src="..\ressources\images\book.png" class="menuItemImage">
                             </a>
                         </div>
