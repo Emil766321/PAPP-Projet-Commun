@@ -88,6 +88,7 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
                                 echo "<h3>" . htmlspecialchars($plante['Nom']) . "</h3>";
                                 // Vérifier si une image existe et l'afficher
                             if (!empty($plante['libelle'])) {
+                                echo "<a class='desc' href='descriptionVisiteur.php'>";
                                 echo '<img src="' . htmlspecialchars($plante['libelle']) . '" alt="Image de la plante" width=180px height=150px>';
                             } else {
                                 echo '<p>Aucune image disponible.</p>';

@@ -52,7 +52,7 @@
                 Il prefere un climat
                 .</h1>
         </div>
-        <script src="..\ressources\js\menu_Projet-Commun.js"></script>
+        <script src="..\ressources\js\menu.js"></script>
 </body>
 
 </html>

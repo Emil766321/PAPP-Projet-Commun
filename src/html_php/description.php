@@ -1,11 +1,49 @@
 <?php
-include("db.php");
-session_start();
 
-if(!isset($_SESSION["user"])){
+$host = "localhost";
+$user = "root";
+$password = "";
+$db = "plantes_db";
+
+include("db.php");
+
+$data = mysqli_connect($host, $user, $password, $db);
+
+if (!$data) {
+    die("Erreur de connexion : " . mysqli_connect_error());
+}
+
+session_start();
+if (!isset($_SESSION["user"])) {
     header("location:index.php");
     exit();
+}
+
+$row = null; // Évite les erreurs si aucune plante n'est trouvée
+
+if (isset($_GET['id']) && !empty($_GET['id'])) {
+    $id = intval($_GET['id']);  // Convertir en entier
+
+    // Récupérer les infos de la plante
+    $sql = "SELECT * FROM plante WHERE id=?";
+    $stmt = mysqli_prepare($data, $sql);
+    
+    if ($stmt) {
+        mysqli_stmt_bind_param($stmt, "i", $id);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        $row = mysqli_fetch_assoc($result);
+        mysqli_stmt_close($stmt);
+    } else {
+        die("Erreur de requête : " . mysqli_error($data));
     }
+
+    if (!$row) {
+        die("Plante introuvable.");
+    }
+} else {
+    die("ID de la plante non spécifié.");
+}
 ?>
 
 <!DOCTYPE html>
@@ -62,7 +100,7 @@ if(!isset($_SESSION["user"])){
                 Il prefere un climat
                 .</h1>
         </div>
-        <script src="..\ressources\js\menu_Projet-Commun.js"></script>
+        <script src="..\ressources\js\menu.js"></script>
 
 </body>
 
