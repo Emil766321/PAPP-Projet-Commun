@@ -83,12 +83,15 @@ if (isset($_POST['add_plante'])) {
         foreach ($plantes as $plante) {
             ?>
             <div class='plante'>
+                <a href="des"></a>
                 <h3><?php echo htmlspecialchars($plante['Nom']); ?></h3>
-                <?php if (!empty($plante['libelle'])): ?>
-                    <img src="<?php echo htmlspecialchars($plante['libelle']); ?>" alt="Image de la plante" width="180px" height="150px">
-                <?php else: ?>
-                    <p>Aucune image disponible.</p>
-                <?php endif; ?>
+                <a href="description.php?id=<?php echo $plante['id']?>"> 
+                    <?php if (!empty($plante['libelle'])): ?>
+                        <img src="<?php echo htmlspecialchars($plante['libelle']); ?>" alt="Image de la plante" width="180px" height="150px">
+                    <?php else: ?>
+                        <p>Aucune image disponible.</p>
+                    <?php endif; ?>
+                </a>
 
                 <div class="crayon">
                     <a href="ModifierPlantes.php?id=<?php echo $plante['id']; ?>">

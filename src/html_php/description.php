@@ -1,69 +1,102 @@
 <?php
-include("db.php");
-session_start();
+$host = "localhost";
+$user = "root";
+$password = "";
+$db = "plantes_db";
 
-if(!isset($_SESSION["user"])){
+include("db.php");
+
+$data = mysqli_connect($host, $user, $password, $db);
+
+if (!$data) {
+    die("Erreur de connexion : " . mysqli_connect_error());
+}
+
+session_start();
+if (!isset($_SESSION["user"])) {
     header("location:index.php");
     exit();
+}
+
+// Vérification de l'ID passé en paramètre
+if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+    $id = intval($_GET['id']); // Sécurisation de l'ID
+
+    // Requête pour récupérer uniquement la plante sélectionnée
+    $sql = "SELECT * FROM plante WHERE id = ?";
+    $stmt = mysqli_prepare($data, $sql);
+    
+    if ($stmt) {
+        mysqli_stmt_bind_param($stmt, "i", $id);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        $plante = mysqli_fetch_assoc($result);
+        mysqli_stmt_close($stmt);
+    } else {
+        die("Erreur de requête : " . mysqli_error($data));
     }
+
+    if (!$plante) {
+        die("Plante introuvable.");
+    }
+} else {
+    die("ID de la plante non spécifié ou invalide.");
+}
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
-    <link rel="stylesheet" href="..\ressources\css\description2.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Description de la plante</title>
+    <link rel="stylesheet" href="../ressources/css/description2.css">
 </head>
 
 <body>
     <div class="menuLeft">
-        
         <div name="petit_vert" class="mini">
-            <!-- petitVert = petit carré en haut à droite et titre = "Répertoire de plantes" -->
             <div class="menuIcon">
                 <a href="creditADMIN.php" class="menuItem">
-                    <img id="credits" src="..\ressources\images\Copyright.svg.png">
+                    <img id="credits" src="../ressources/images/Copyright.svg.png">
                 </a>
                 <a href="histoire.php" class="menuItem">
-                    <img id="histoire"src="..\ressources\images\book.png">
+                    <img id="histoire" src="../ressources/images/book.png">
                 </a>
-                <a href="menu_site_projet.php"class="menuItem">
-                        <img id="House" src="..\ressources\images\maison.png">
+                <a href="menu_site_projet.php" class="menuItem">
+                    <img id="House" src="../ressources/images/maison.png">
                 </a>
             </div>
             <a class="menuBarreIconContainer">
-                <img class="menuBarre" src="..\ressources\images\menuprojet.png">
+                <img class="menuBarre" src="../ressources/images/menuprojet.png">
             </a>
         </div>
     </div>
-    <h1 id="titre">R&#233;pertoir des plantes</h1>
+
+    <h1 id="titre">Répertoire des plantes</h1>
+
     <div id="vert">
         <div id="bulle">
-            <img width="200px" height="200px" class="image"
-                src="..\ressources\images\plantes.jpg">
-            <h1 id="texte">Nom de plante</h1>
-            <h1 id="type">Type de plante</h1>
-            <h1 id="humidité">Humidite </h1>
-            <h1 id="arrosage">arrosage</h1>
-            <h1 id="Temp">Temperateur_min</h1>
-            <h1 id="Temperateur_max">Temperateur_max</h1>
+            <?php if (!empty($plante['libelle'])): ?>
+                <img width="200px" height="200px" class="image" src="<?php echo htmlspecialchars($plante['libelle']); ?>">
+            <?php else: ?>
+                <p>Aucune image disponible.</p>
+            <?php endif; ?>
+
+            <h2 class='texte'>Nom :<?php echo htmlspecialchars($plante['Nom']); ?></h2>
+            <h2 class="texte">Humidité : <?php echo htmlspecialchars($plante['Humidité']); ?>%</h2>
+            <h2 class="texte">Arrosage : <?php echo htmlspecialchars($plante['Arrosage']); ?></h2>
+            <h2 class="texte">Température Min : <?php echo htmlspecialchars($plante['Temperature_min']); ?>°C</h2>
+            <h2 class="texte">Température Max : <?php echo htmlspecialchars($plante['Temperature_max']); ?>°C</h2>
         </div>
 
         <div id="bulle2">
-
-            <h1 class="discription">Le persil (nom scientifique : Petroselinum crispum) appartient a la famille des
-                Apiacees. Il existe principalement deux types de persil : le persil plat (ou persil italien) et le
-                persil frise. Voici une description de la plante :
-                Apparence : Le persil a des feuilles vertes, souvent frisees ou plates selon la variete, et ses tiges
-                sont relativement fines. Les feuilles sont aromatiques et ont une saveur fraiche, legerement piquante.
-                Hauteur : Il peut mesurer entre 20 à 30 cm de haut, bien qu'il puisse atteindre 50 cm dans des
-                conditions idales.
-                Culture : Le persil pousse facilement en sol bien draine, avec une exposition partiellement ensoleillee.
-                Il prefere un climat
-                .</h1>
+            <h2 class="texte"><?php echo nl2br(htmlspecialchars($plante['Description'])); ?></h2>
         </div>
-        <script src="..\ressources\js\menu_Projet-Commun.js"></script>
+    </div>
 
+    <script src="../ressources/js/menu.js"></script>
 </body>
 
 </html>
