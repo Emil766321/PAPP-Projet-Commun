@@ -41,66 +41,64 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
     $stmt = $conn->prepare($query);
     $stmt->bindParam(':id', $id);
     $stmt->execute();
+    
 }
 ?>
 <!DOCTYPE html>
-<html>
-    <head>
-        <!-- css = fichier "menu_site_projet.css" et js = "menu_Projet-Commun.js"-->
-        <link name="css" rel="stylesheet" href="..\ressources\css\menu_site_projet.css"/>
-    </head>
-    <body>  
-        <div name="petitVert_titre" id="title">
-            <div class="menuRight">
-                <h1 name="titre" id="pageTitle">Répertoire de plantes</h1>
-            </div>
-            <div class="menuLeft">
-                <a class="Deconnexion" href="index.php"><h1 class ="decotxt"id ="decoTxt">Connexion</h1></a>
-                <div name="petit_vert" class="mini">
-                    <!-- petitVert = petit carré en haut à droite et titre = "Répertoire de plantes" -->
-                    <div class="menuIcon">
-                        <a href="creditVisiteur.php" class="menuItem">
-                            <img id="credits" src="..\ressources\images\Copyright.svg.png">
-                        </a>
-                        <a href="histoireVisiteur.php" class="menuItem">
-                            <img id="histoire"src="..\ressources\images\book.png" class="menuItemImage">
-                        </a>
-                    </div>
-                    <a href="#" class="menuBarreIconContainer">
-                        <img class="menuBarre" src="..\ressources\images\menuprojet.png">
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Répertoire de plantes</title>
+    <link rel="stylesheet" href="..\ressources\css\menu_site_projet.css"/>
+</head>
+<body>
+    <div id="title">
+        <div class="menuRight">
+            <h1 id="pageTitle">Répertoire de plantes</h1>
+        </div>
+        <div class="menuLeft">
+        <a class="Deconnexion" href="index.php"><h1 class ="decotxt"id ="decoTxt">D&#233;connexion</h1></a>
+            <div class="mini">
+                <div class="menuIcon">
+                    <a href="creditVisiteur.php" class="menuItem">
+                        <img id="credits" src="..\ressources\images\Copyright.svg.png">
+                    </a>
+                    <a href="histoireVisiteur.php" class="menuItem">
+                        <img id="histoire" src="..\ressources\images\book.png" class="menuItemImage">
                     </a>
                 </div>
+                <a href="#" class="menuBarreIconContainer">
+                    <img class="menuBarre" src="..\ressources\images\menuprojet.png">
+                </a>
             </div>
         </div>
-        <!-- div grandVert = fond vert -->
-        <div name="grandVert" class="vert">
+    </div>
 
+    <div class="vert">
         <?php
-                    $query = "SELECT * FROM plante";
-                    $stmt = $conn->query($query);
-                    $plantes = $stmt->fetchAll();
+        $query = "SELECT * FROM plante";
+        $stmt = $conn->query($query);
+        $plantes = $stmt->fetchAll();
 
-                    foreach ($plantes as $plante) {
-                        ?>
-                        <!-- une dive = une carte de plante -->
-                        <?php 
-                            echo "<div class='plante'>";
-                                echo "<h3>" . htmlspecialchars($plante['Nom']) . "</h3>";
-                                // Vérifier si une image existe et l'afficher
-                            if (!empty($plante['libelle'])) {
-                                echo "<a class='desc' href='descriptionVisiteur.php'>";
-                                echo '<img src="' . htmlspecialchars($plante['libelle']) . '" alt="Image de la plante" width=180px height=150px>';
-                            } else {
-                                echo '<p>Aucune image disponible.</p>';
-                            }
-                                ?>
-                                
-                                </a>
-                            </div>
-                        <?php
-                    }
-                ?>
-        </div>
-        <script src="..\ressources\js\menu.js"></script>
-    </body>
+        foreach ($plantes as $plante) {
+            ?>
+            <div class='plante'>
+                <a href="des"></a>
+                <h3><?php echo htmlspecialchars($plante['Nom']); ?></h3>
+                <a href="descriptionVisiteur.php?id=<?php echo $plante['id']?>"> 
+                    <?php if (!empty($plante['libelle'])): ?>
+                        <img src="<?php echo htmlspecialchars($plante['libelle']); ?>" alt="Image de la plante" width="180px" height="150px">
+                    <?php else: ?>
+                        <p>Aucune image disponible.</p>
+                    <?php endif; ?>
+                </a>
+            </div>
+            <?php
+        }
+        ?>
+    </div>
+
+    <script src="..\ressources\js\menu.js"></script>
+</body>
 </html>

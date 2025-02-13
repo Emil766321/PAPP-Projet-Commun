@@ -139,6 +139,7 @@ if (isset($_POST["modifierPlante"])) {
                 <input type="text" name="arrosage" placeholder="Arrosage" required value="<?php echo htmlspecialchars($row["Arrosage"]); ?>">
                 <input type="text" name="humidite" placeholder="Humidité" required value="<?php echo htmlspecialchars($row["Humidité"]); ?>">
 
+
                 <div class="accept">
                     <button type="submit" name="modifierPlante" id="accepter">Modifier</button>
                 </div>

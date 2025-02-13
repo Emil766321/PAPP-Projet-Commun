@@ -144,6 +144,7 @@ if (isset($_POST['accepter'])) {
         </div>
     </div>        
     <script>
+        src="../ressources/js/js.js"
         function triggerFileInput() {
             document.getElementById('file-input').click();
         }
