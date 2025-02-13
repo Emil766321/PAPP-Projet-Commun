@@ -59,10 +59,10 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
                 <div name="petit_vert" class="mini">
                     <!-- petitVert = petit carré en haut à droite et titre = "Répertoire de plantes" -->
                     <div class="menuIcon">
-                        <a href="creditsADMIN.php" class="menuItem">
+                        <a href="creditVisiteur.php" class="menuItem">
                             <img id="credits" src="..\ressources\images\Copyright.svg.png">
                         </a>
-                        <a href="histoire.php" class="menuItem">
+                        <a href="histoireVisiteur.php" class="menuItem">
                             <img id="histoire"src="..\ressources\images\book.png" class="menuItemImage">
                         </a>
                     </div>

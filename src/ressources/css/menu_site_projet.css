@@ -2,6 +2,7 @@
 body {
     background-image:url(../images/feuil.jpg);
     margin:0;
+    background-size: cover;
 }
 
 /* MENU SITE */

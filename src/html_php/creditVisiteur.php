@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../ressources/css/styleCredit.css">
+    <link rel="stylesheet" href="../ressources/css/credits_style.css">
     <title>credits</title>
 </head>
 <body>
@@ -16,10 +16,10 @@
                     <div name="petit_vert" class="mini">
                         <!-- petitVert = petit carré en haut à droite et titre = "Répertoire de plantes" -->
                         <div class="menuIcon">
-                            <a href="creditsVisiteur.html" class="menuItem">
+                            <a href="creditsVisiteur.php" class="menuItem">
                                 <img id="credits" src="..\ressources\images\Copyright.svg.png">
                             </a>
-                            <a href="histoire_Visiteur.html" class="menuItem">
+                            <a href="histoire.php" class="menuItem">
                                 <img id="histoire"src="..\ressources\images\book.png" class="menuItemImage">
                             </a>
                         </div>

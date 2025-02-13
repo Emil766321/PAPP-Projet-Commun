@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="..\ressources\css\style.css">
+    <link rel="stylesheet" href="..\ressources\css\histoirstyle.css">
     <meta charset="utf8">
 </head>
 <body>
@@ -10,14 +10,14 @@
         <div name="petit_vert" class="mini">
             <!-- petitVert = petit carré en haut à droite et titre = "Répertoire de plantes" -->
             <div class="menuIcon">
-                <a href="credits.html" class="menuItem">
-                    <img id="credits" src="..\ressources\images\Copyright.svg.png">
+                <a href="creditVisiteur.php" class="menuItem">
+                    <img id="credits" src="..\ressources\images\Copyright.svg.png" class="menuItemImage">
                 </a>
-                <a href="histoire.html" class="menuItem">
-                    <img id="histoire"src="..\ressources\images\book.png">
+                <a href="histoireVisiteur.php" class="menuItem">
+                    <img id="histoire"src="..\ressources\images\book.png" class="menuItemImage">
                 </a>
-                <a href="menu_guest.php"class="menuItem">
-                        <img id="House" src="..\ressources\images\maison.png">
+                <a href="invite.php"class="menuItem">
+                        <img id="House" src="..\ressources\images\maison.png" class="menuItemImage">
                 </a>
             </div>
             <a class="menuBarreIconContainer">
@@ -32,6 +32,6 @@
         Les ébénistes ont réalisé la structure de la serre.<br>
         Les polymécaniciens ont assuré l'étanchéité de la structure avec des finitions.<br>
         Les électroniciens se sont occupés de tous les systèmes électriques reliés à la serre.
-        <script src="..\ressources\js\menu_Projet-Commun.js"></script>
+        <script src="..\ressources\js\menu.js"></script>
     </body>
 </html>
