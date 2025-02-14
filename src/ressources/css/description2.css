@@ -2,36 +2,28 @@
 
 body {
     background-image: url("../images/feuil.jpg");
-    min-width: 1280px;
-    min-height: 800px;
     margin: 0;
-    background-size: contain;
-    background-size: auto;
-    background-repeat: no-repeat;
 
 }
 
 
 #titre {
     color: white;
-    width: 1280px;
-    margin-left: 60px;
-    margin-top: 60px;
     font-family: 'Lexend Deca';
     font-style: normal;
-    font-weight: 700;
     font-size: 32px;
-    line-height: 100px;
     text-align: left;
     text-decoration-line: underline;
-    margin: 0px;
 }
 
-#vert {
+.vert {
     background-color: #569A73;
-    width: 1280px;
-    height: 700px;
-    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 50px;
+    padding: 25px;
+
 }
 
 .bulle image img {
@@ -42,21 +34,16 @@ body {
 
 #bulle {
     background-color: white;
-    position: absolute;
-    top: 160px;
-    width: 281.92px;
-    height: 625px;
+    width: 270px;
+    height: 600px;
     border-radius: 25px;
 }
 
 #bulle2 {
     background-color: white;
-    position: absolute;
-    top: 160px;
-    width: 965px;
-    height: 625px;
+    width: 700px;
+    height: 600px;
     border-radius: 25px;
-    margin-left: 300px;
 }
 
 #type {
@@ -67,13 +54,10 @@ body {
 
 .discription {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-left: 10px;
 }
 
 .image {
     border-radius: 30px;
-    margin-left: 14%;
-    margin-top: 10px;
 }
 
 #texte {
@@ -186,8 +170,4 @@ body {
 .menuBarreActive{
     transform: rotate(90deg);
     transition: transform 0.2s ease;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 1e5043a02a1370946328f25dfafaf86386428b24

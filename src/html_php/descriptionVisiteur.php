@@ -79,7 +79,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                 <p>Aucune image disponible.</p>
             <?php endif; ?>
 
-            <h2 class='texte'>Nom :<?php echo htmlspecialchars($plante['Nom']); ?></h2>
+            <h2 class='texte'>Nom : <?php echo htmlspecialchars($plante['Nom']); ?></h2>
             <h2 class="texte">Humidité : <?php echo htmlspecialchars($plante['Humidité']); ?>%</h2>
             <h2 class="texte">Arrosage : <?php echo htmlspecialchars($plante['Arrosage']); ?></h2>
             <h2 class="texte">Température Min : <?php echo htmlspecialchars($plante['Temperature_min']); ?>°C</h2>
