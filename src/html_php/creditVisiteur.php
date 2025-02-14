@@ -49,8 +49,7 @@
                 <li>Alexandre Marro</li>
                 <li>Thomas Lucking</li>
                 <li>Mustafa Kamal</li>
-                <li>Juliana Mendes Baptista
-                    </li>
+                <li>Juliana Mendes Baptista</li>
                 <li>Eros Corona</li>
                 <li>Tsybulevskyi Maksym</li>
             </ul>
