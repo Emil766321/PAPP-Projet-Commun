@@ -42,56 +42,56 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Description de la plante</title>
-    <link rel="stylesheet" href="../ressources/css/description2.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Description de la plante</title>
+        <link rel="stylesheet" href="../ressources/css/description2.css">
+    </head>
 
-<body>
-    <div class="menuLeft">
-        <div name="petit_vert" class="mini">
-            <div class="menuIcon">
-                <a href="creditVisiteur.php" class="menuItem">
-                    <img id="credits" src="../ressources/images/Copyright.svg.png">
-                </a>
-                <a href="histoireVisiteur.php" class="menuItem">
-                    <img id="histoire" src="../ressources/images/book.png">
-                </a>
-                <a href="invite.php" class="menuItem">
-                    <img id="House" src="../ressources/images/maison.png">
+    <body>
+        <div class="menuLeft">
+            <div name="petit_vert" class="mini">
+                <div class="menuIcon">
+                    <a href="creditVisiteur.php" class="menuItem">
+                        <img id="credits" src="../ressources/images/Copyright.svg.png">
+                    </a>
+                    <a href="histoireVisiteur.php" class="menuItem">
+                        <img id="histoire" src="../ressources/images/book.png">
+                    </a>
+                    <a href="invite .php" class="menuItem">
+                        <img id="House" src="../ressources/images/maison.png">
+                    </a>
+                </div>
+                <a class="menuBarreIconContainer">
+                    <img class="menuBarre" src="../ressources/images/menuprojet.png">
                 </a>
             </div>
-            <a class="menuBarreIconContainer">
-                <img class="menuBarre" src="../ressources/images/menuprojet.png">
-            </a>
-        </div>
-    </div>
-
-    <h1 id="titre">Répertoire des plantes</h1>
-
-    <div id="vert">
-        <div id="bulle">
-            <?php if (!empty($plante['libelle'])): ?>
-                <img width="200px" height="200px" class="image" src="<?php echo htmlspecialchars($plante['libelle']); ?>">
-            <?php else: ?>
-                <p>Aucune image disponible.</p>
-            <?php endif; ?>
-
-            <h2 class='texte'>Nom : <?php echo htmlspecialchars($plante['Nom']); ?></h2>
-            <h2 class="texte">Humidité : <?php echo htmlspecialchars($plante['Humidité']); ?>%</h2>
-            <h2 class="texte">Arrosage : <?php echo htmlspecialchars($plante['Arrosage']); ?></h2>
-            <h2 class="texte">Température Min : <?php echo htmlspecialchars($plante['Temperature_min']); ?>°C</h2>
-            <h2 class="texte">Température Max : <?php echo htmlspecialchars($plante['Temperature_max']); ?>°C</h2>
         </div>
 
-        <div id="bulle2">
-            <h2 class="texte"><?php echo nl2br(htmlspecialchars($plante['Description'])); ?></h2>
-        </div>
-    </div>
+        <h1 id="titre">Répertoire des plantes</h1>
 
-    <script src="../ressources/js/menu.js"></script>
-</body>
+        <div class="vert">
+            <div id="bulle">
+                <?php if (!empty($plante['libelle'])): ?>
+                    <img width="200px" height="200px" class="image" src="<?php echo htmlspecialchars($plante['libelle']); ?>">
+                <?php else: ?>
+                    <p>Aucune image disponible.</p>
+                <?php endif; ?>
+
+                <h2 class='texte'>Nom : <?php echo htmlspecialchars($plante['Nom']); ?></h2>
+                <h2 class="texte">Humidité : <?php echo htmlspecialchars($plante['Humidité']); ?>%</h2>
+                <h2 class="texte">Arrosage : <?php echo htmlspecialchars($plante['Arrosage']); ?></h2>
+                <h2 class="texte">Température Min : <?php echo htmlspecialchars($plante['Temperature_min']); ?>°C</h2>
+                <h2 class="texte">Température Max : <?php echo htmlspecialchars($plante['Temperature_max']); ?>°C</h2>
+            </div>
+
+            <div id="bulle2">
+                <h2 class="texte"><?php echo nl2br(htmlspecialchars($plante['Description'])); ?></h2>
+            </div>
+        </div>
+
+        <script src="../ressources/js/menu.js"></script>
+    </body>
 
 </html>
