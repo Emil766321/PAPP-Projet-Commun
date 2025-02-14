@@ -87,6 +87,7 @@ if (isset($_POST['accepter'])) {
         header("Location:AjoutsDePlantes.php?message=no");
         exit();
     }
+    
 }
 ?>
 

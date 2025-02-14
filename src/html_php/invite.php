@@ -58,7 +58,7 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
             <h1 id="pageTitle">Répertoire de plantes</h1>
         </div>
         <div class="menuLeft">
-        <a class="Deconnexion" href="index.php"><h1 class ="decotxt"id ="decoTxt">D&#233;connexion</h1></a>
+        <a class="Deconnexion" href="index.php"><h1 class ="decotxt"id ="decoTxt">connexion</h1></a>
             <div class="mini">
                 <div class="menuIcon">
                     <a href="creditVisiteur.php" class="menuItem">

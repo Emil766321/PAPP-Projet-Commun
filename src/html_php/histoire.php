@@ -23,7 +23,7 @@ if(!isset($_SESSION["user"])){
                 <a href="creditADMIN.php" class="menuItem">
                     <img id="credits" src="..\ressources\images\Copyright.svg.png" class="menuItemImage">
                 </a>
-                <a href="histoire.php" class="menuItem">
+                <a href="#" class="menuItem">
                     <img id="histoire"src="..\ressources\images\book.png" class="menuItemImage">
                 </a>
                 <a href="menu_site_projet.php"class="menuItem">
