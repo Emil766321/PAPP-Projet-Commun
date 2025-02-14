@@ -78,12 +78,14 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         <h1 id="titre">Répertoire des plantes</h1>
 
         <div class="vert">
-            <div id="bulle">
-                <?php if (!empty($plante['libelle'])): ?>
-                    <img width="200px" height="200px" class="image" src="<?php echo htmlspecialchars($plante['libelle']); ?>">
-                <?php else: ?>
-                    <p>Aucune image disponible.</p>
-                <?php endif; ?>
+            <div class="bulle">
+                <div class="imgContainer">
+                    <?php if (!empty($plante['libelle'])): ?>
+                        <img width="200px" height="200px" class="image" src="<?php echo htmlspecialchars($plante['libelle']); ?>">
+                    <?php else: ?>
+                        <p>Aucune image disponible.</p>
+                    <?php endif; ?>
+                </div>
 
                 <h2 class='texte'>Nom : <?php echo htmlspecialchars($plante['Nom']); ?></h2>
                 <h2 class="texte">Humidité : <?php echo htmlspecialchars($plante['Humidité']); ?>%</h2>
