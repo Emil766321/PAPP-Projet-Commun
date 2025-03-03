@@ -22,9 +22,9 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-DROP DATABASE IF EXISTS `plantes_db`;
-CREATE DATABASE `plantes_db`;
-USE `plantes_db`;
+DROP DATABASE IF EXISTS `u715650454_cofop_plantes`;
+CREATE DATABASE `u715650454_cofop_plantes`;
+USE `u715650454_cofop_plantes`;
 --
 -- Structure de la table `plante`
 --

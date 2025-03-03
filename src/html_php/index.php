@@ -4,10 +4,10 @@
 session_start();
 include("db.php");
 
-$host="localhost";
-$user="root";
-$password="";
-$db="plantes_db";
+$host="127.0.0.1";
+$user="u715650454_cofop_user";
+$password="L9v7qktjI";
+$db="u715650454_cofop_plantes";
 
 $data=mysqli_connect($host,$user,$password,$db);
 
