@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-head {
-    height: 800;
-    width: 1280;
-}
 
 body {
     background-color: #38a677;
@@ -13,11 +9,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    align-content: center;
 }
 .bulle {
     background-color: #ffffff;
-    width: 800px;
-    height: 700px;
+    max-width: 1000px;
+    max-height: 1000px;
+    width: 100%;
+    height: 100%;
     border-radius: 15px;
     padding: 30px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -34,7 +33,6 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 900px;
 }
 
 .hautdepage h1 {
@@ -48,15 +46,20 @@ body {
 
 
 input {
+    max-width: 772px;
     width: 100%;
     height: 35px;
-    padding: 12px;
-    margin: 10px 0;
+    
     border-radius: 8px;
     border: 1px solid #ccc;
     font-size: 16px;
-    box-sizing: border-box;
+    display: flex;
     box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.5);
+}
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 input::placeholder {
@@ -71,7 +74,8 @@ button {
     border-style: none;
     margin-top: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    justify-items: center;
     align-items: center;
     overflow: hidden;
     cursor: pointer;
@@ -95,7 +99,6 @@ button img {
 h2 {
     color: #333;
     font-size: 24px;
-    margin-bottom: 30px;
 }
 
 .accept button {
@@ -131,21 +134,17 @@ h2 {
     width: 100%;
     height: 70px;
     background-color: #8fb1a0;
-    margin-top: 20px;
     border-radius: 12px;
     border: none;
     padding: 10px;
     box-sizing: border-box;
     box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.5);
 }
-
-input[type="file"] {
-    display: none;
-}
+    
 
 textarea {
     height: 50px;
-    width: 772px;
+    width: 100%;
     border-radius: 10px;
 }
 #plant-form{
@@ -162,11 +161,8 @@ textarea {
 }
 #plant-form{
     text-align: center;
-    margin-top: 8%;
-
     
 }
 .accept {
-    margin-left: 35%;
     
 }

@@ -117,12 +117,14 @@ a {
 #title{
     display: flex;
     flex-direction: row;
+    flex-wrap:wrap-reverse;
     justify-content: space-between;
     padding: 40px;
 }
 .menuRight{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
     gap: 50px;

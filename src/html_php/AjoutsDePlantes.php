@@ -126,11 +126,14 @@ if (isset($_POST['accepter'])) {
                     </button>
                     <input type="file" id="file-input" name="image_file" style="display: none;" onchange="previewImage(event)">
                 </div>
-                <!-- Température, arrosage et humidité de la plante -->
-                <input type="text" name="temp_min" placeholder="Température min" required>
-                <input type="text" name="temp_max" placeholder="Température max" required>
-                <input type="text" name="arrosage" placeholder="Arrosage" required>
-                <input type="text" name="humidite" placeholder="Humidité" required>
+                <div class="inputs">
+                    
+                    <!-- Température, arrosage et humidité de la plante -->
+                    <input type="text" name="temp_min" placeholder="Température min" required>
+                    <input type="text" name="temp_max" placeholder="Température max" required>
+                    <input type="text" name="arrosage" placeholder="Arrosage" required>
+                    <input type="text" name="humidite" placeholder="Humidité" required>
+                </div>
                 <!-- Accepter -->
                 <div class="accept">
                     <button type="submit" name="accepter" id="accepter">Ajouter</button>
