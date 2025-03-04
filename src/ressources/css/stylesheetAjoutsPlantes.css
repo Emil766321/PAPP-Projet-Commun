@@ -4,115 +4,77 @@
 body {
     background-color: #38a677;
     font-family: "Roboto", sans-serif;
-    height: 100vh;
     margin: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    align-content: center;
 }
-.bulle {
-    background-color: #ffffff;
-    max-width: 100%;
-    max-height: 100%;
+
+/**  ---------Ajout de plantes v2-------- **/
+.pageAddContent {
     width: 100%;
     height: 100%;
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.5);
-    padding-bottom: 5%;
-}
-.formm{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
     justify-content: center;
-    max-width:80%;
-    max-height: 80%;
-    height: 100%;
-    width: 100%;
+    padding: 100px 300px 100px 300px;
 }
-.form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    max-width:100%;
+.addFormContent {
     width: 100%;
-    max-height: 100%;
+    padding: 35px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.addForm{
+    width: 100%;
     height: 100%;
 }
 
-.hautdepage h1 {
+.addTitle{
+    width: 100%;
     text-align: center;
-    
-    font-size: 36px;
-    color: #333;
-
 }
 
-
-input {
-    display: flex;
-    max-width: 100%;
-    width: 100%;
-    max-height: 35px;
-    height: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    display: flex;
-    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.5);
-}
-.inputs {
+.addInputs{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    justify-content: start;
+    gap: 30px
 }
 
-input::placeholder {
-    color: #bbb;
-}
-
-button {
-    max-width: 230px;
-    width: 100%;
-    background-color: #8fb1a0;
-    border-radius: 12px;
-    border-style: none;
+.input_add {
     display: flex;
-    justify-content: space-around;
-    justify-items: center;
-    align-items: center;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s, background-color 0.3s;
-    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.5);
+    /* width: 100%; */
+    /* height: 35px; */
+    padding: 10px 10px 10px 10px;
+    border-radius: 8px;
+    border: 1px solid gray;
+    font-size: 16px;
+    /* box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */
+    font-family: "Roboto", sans-serif;
 }
 
-button:hover {
-    transform: scale(1.05);
-    background-color: #7b9e88;
-    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-button img {
+.image-container {
+    display: flex;
+    flex-direction: row;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.5);
+    height: 100px;
+    justify-content: center;
 }
 
-h2 {
-    color: #333;
-    font-size: 24px;
+.image-container img {
+    border-radius: 15px;
 }
 
+.accept{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 .accept button {
+    width: 150px;
     font-size: 18px;
     background-color: #17a017;
     color: rgb(17, 17, 17);
@@ -128,54 +90,141 @@ h2 {
     background-color: #32c232;
 }
 
-.image-container {
-    max-width: 100px;
+.retourButtonContainer{
     width: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: center;
 }
 
-.image-container img {
+.retourButtonLink{
+    text-decoration: none;
+    color: black;
+}
+
+.retourButtonText{
+    background-color: #8fb1a0;
+    border-radius: 8px;
+    border-style: none;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.5);
+    width: 150px;
+    text-align: center;
+    padding: 10px 0 10px 0;
+}
+
+@media (max-width: 1000px) { 
+    .pageAddContent {
+        padding: 100px 30px 100px 30px;
+    }
+}
+
+@media (max-width: 1500px) and (min-width: 1000px) { 
+    .pageAddContent {
+        padding: 100px 150px 100px 150px;
+    }
+}
+/**  ---------Fin ajout de plantes v2-------- **/
+
+.bulle {
+    max-height: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    max-width: 100%;
+    width: 100%;
     border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.formm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width:80%;
+    max-height: 100%;
+    height: 100%;
+    width: 100%;
+    margin-top: 50px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    max-width:100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.hautdepage h1 {
+    text-align: center;
+    
+    font-size: 36px;
+    color: #333;
+
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input::placeholder {
+    color: #bbb;
+}
+
+textarea::placeholder {
+    color: #bbb;
+}
+
+.button {
+   
+    background-color: #8fb1a0;
+    border-radius: 12px;
+    border-style: none;
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 100%;
+    max-height: 400px;
+    height: 100%;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: #7b9e88;
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    color: #333;
+    font-size: 24px;
 }
 
 .description {
+    display: flex;
     font-size: large;
     max-width: 100%;
     max-height: 70px;
-    width: auto;
+    width: 100%;
     height: 100%;
     background-color: #8fb1a0;
     border-radius: 12px;
     border: none;
-    padding: 10px;
     box-sizing: border-box;
     box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.5);
-}
-    
-
-textarea {
-    height: 50px;
-    max-width: 100%;
-    width: 100%;
-    border-radius: 10px;
-}
-#plant-form{
-    display: flex;
-    justify-content: center;
-}
-.retour{
-    margin-top: 8px;
-    max-width: 50px;
-    max-height: 20px;
-    text-decoration: none;
-    
-    
-}
-#plant-form{
-    text-align: center;
-    
-}
-.accept {
-    justify-items: center;
 }

@@ -57,7 +57,7 @@ if (isset($_POST['add_plante'])) {
             </a>
         </div>
         <div class="menuLeft">
-        <a class="Deconnexion" href="index.php"><h1 class ="decotxt"id ="decoTxt">D&#233;connexion</h1></a>
+            <a class="Deconnexion" href="index.php"><h1 class ="decotxt"id ="decoTxt">D&#233;connexion</h1></a>
             <div class="mini">
                 <div class="menuIcon">
                     <a href="creditADMIN.php" class="menuItem">
@@ -69,6 +69,18 @@ if (isset($_POST['add_plante'])) {
                 </div>
                 <a href="#" class="menuBarreIconContainer">
                     <img class="menuBarre" src="..\ressources\images\menuprojet.png">
+                </a>
+            </div>
+        </div>
+        <div class="menuLeftMobile">
+            <a class="Deconnexion" href="index.php"><h1 class ="decotxt"id ="decoTxt">D&#233;connexion</h1></a>
+            <div class="menuGroupeMobile">
+
+                <a href="creditADMIN.php" class="menuMobileItem">
+                    <img id="credits" src="..\ressources\images\Copyright.svg.png">
+                </a>
+                <a href="histoire.php" class="menuMobileItem">
+                    <img id="histoire" src="..\ressources\images\book.png" class="menuItemMobileImage">
                 </a>
             </div>
         </div>
