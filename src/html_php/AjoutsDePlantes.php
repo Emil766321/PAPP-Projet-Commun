@@ -31,11 +31,21 @@ if (isset($_POST['accepter'])) {
         $stmt->execute();
         $existing_image = $stmt->fetchColumn();
     }
+    
 
     // Vérifier si une nouvelle image est envoyée
     if (!empty($_FILES["image_file"]["tmp_name"])) {
         $file_basename = pathinfo($_FILES["image_file"]["name"], PATHINFO_FILENAME);
         $file_extension = pathinfo($_FILES["image_file"]["name"], PATHINFO_EXTENSION);
+
+        $allowed_extensions = ['jpg', 'jpeg', 'png', 'webp', 'gif', 'bmp'];
+
+        $file_extension = pathinfo($_FILES["image_file"]["name"], PATHINFO_EXTENSION);
+        $file_extension = strtolower($file_extension); // Convert to lowercase
+
+        if (!in_array($file_extension, $allowed_extensions)) {
+            exit();
+        }
         $new_image_name = $file_basename . '_' . date("Ymd_His") . '.' . $file_extension;
         $target_path = $target_directory . $new_image_name; // Chemin complet
 
@@ -51,6 +61,8 @@ if (isset($_POST['accepter'])) {
             header("Location:AjoutsDePlantes.php?message=er"); // Erreur d'upload
             exit();
         }
+        
+
     } else {
         // Conserver l'ancienne image ou mettre une image par défaut
         $image_path_db = $existing_image ?: 'image/default.jpg';
