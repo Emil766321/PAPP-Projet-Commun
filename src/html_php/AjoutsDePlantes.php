@@ -105,7 +105,7 @@ if (isset($_POST['accepter'])) {
 <body>
     <div class="formm">
         <div class="bulle">
-            <form method="POST" enctype="multipart/form-data">
+            <form class="form"method="POST" enctype="multipart/form-data">
                 <!-- Nom de la plante -->
                 <div class="hautdepage">
                     <h1>Ajout de Plantes</h1>
