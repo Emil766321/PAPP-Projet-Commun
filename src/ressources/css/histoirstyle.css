@@ -1,57 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
-h1{
-    color: white;
-    font-size:  45px; 
-    text-align: center;
-    font-family: "Lexend Deca", sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
 
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-body{
-    background-image:url(../images/tableauVert.PNG);
-    min-width: 1280px;
-    min-height: 800px;
+
+body {
+    background-image: url("../images/tableauVert.PNG");
+    width: 100%;
+    min-height: 100vh; /* Ensures full height on all devices */
     margin: 0;
     background-size: cover;
-
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-p{
+
+/* Header Styles */
+h1 {
+    color: white;
+    font-size: 45px;
+    text-align: center;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+/* Paragraph Styles */
+p {
     color: white;
     font-size: 39px;
     text-align: center;
     font-family: "Lexend Deca", sans-serif;
 }
-.menuLeft{
+
+/* Navigation Menu */
+.menuLeft {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 30px;
+    padding: 10px;
 }
-#menuContainer{
+
+#menuContainer {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap; /* Prevents overflow on smaller screens */
     justify-content: space-between;
     align-items: center;
-    gap: 50px;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px; /* Limits width for large screens */
 }
+
+/* Mini Menu */
 .mini {
     width: 50px;
     height: 50px;
     z-index: 1;
     border-radius: 3px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: relative;
 }
+
 .miniActive {
     width: 200px;
 }
+
+/* Menu Icon */
 .menuIcon {
     position: absolute;
     display: flex;
-    background-color:#09663f;
+    background-color: #09663f;
     width: 50px;
     transform: translateX(100%);
     opacity: 0;
@@ -62,27 +87,15 @@ p{
     transition: all 0.2s ease-in-out;
 }
 
-#histoire {
-    width: 30px;
-    height: 50px;
-}
-#credits {
-    
-    width: 40px;
-    
-    height: 40px;
-}
-#House {
-    width: 25px;
-    height: 40px;
-}
-.menuIconActive{
+.menuIconActive {
     transform: translateX(0%);
     width: 200px;
     opacity: 1;
     transition: all 0.2s ease-in-out;
 }
-.menuItem{
+
+/* Menu Items */
+.menuItem {
     width: 50px;
     height: 50px;
     display: none;
@@ -90,12 +103,14 @@ p{
     justify-content: center;
     align-items: center;
 }
-.menuItemImage{
+
+.menuItemImage {
     max-width: 50px;
     max-height: 50px;
     object-fit: contain;
 }
-.menuItemButton{
+
+.menuItemButton {
     width: 50px;
     height: 50px;
     display: flex;
@@ -103,13 +118,16 @@ p{
     justify-content: center;
     align-items: center;
 }
-.menuItemButtonImage{
+
+.menuItemButtonImage {
     max-width: 50px;
     max-height: 50px;
     object-fit: contain;
 }
-.menuBarreIconContainer{
-    background-color:#13915c ;
+
+/* Menu Bar */
+.menuBarreIconContainer {
+    background-color: #13915c;
     position: absolute;
     top: 0;
     right: 0;
@@ -117,6 +135,7 @@ p{
     height: 50px;
     z-index: 2;
 }
+
 .menuBarre {
     width: 50px;
     height: 50px;
@@ -124,7 +143,89 @@ p{
     transition: transform 0.2s ease;
     z-index: 2;
 }
-.menuBarreActive{
+
+.menuBarreActive {
     transform: rotate(90deg);
     transition: transform 0.2s ease;
+}
+
+/* Icons */
+#histoire {
+    width: 30px;
+    height: 50px;
+}
+
+#credits {
+    width: 40px;
+    height: 40px;
+}
+
+#House {
+    width: 25px;
+    height: 40px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 38px;
+    }
+
+    p {
+        font-size: 32px;
+    }
+
+    .menuLeft {
+        gap: 20px;
+    }
+
+    #menuContainer {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 26px;
+    }
+
+    body {
+        background-size: contain; /* Ensures the full image fits */
+        background-attachment: scroll; /* Prevents fixed background on small screens */
+    }
+
+    .menuLeft {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #menuContainer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .mini {
+        width: 40px;
+        height: 40px;
+    }
+
+    .menuIcon {
+        width: 40px;
+    }
+
+    .menuItem {
+        width: 40px;
+        height: 40px;
+    }
+
+    .menuItemImage,
+    .menuItemButtonImage {
+        max-width: 40px;
+        max-height: 40px;
+    }
 }
