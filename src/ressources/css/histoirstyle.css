@@ -8,10 +8,8 @@ h1{
 }
 body{
     background-image:url(../images/tableauVert.PNG);
-    min-width: 1280px;
-    min-height: 800px;
+    min-height: 100vh;
     margin: 0;
-    background-size: cover;
 
 }
 p{
@@ -23,7 +21,7 @@ p{
 .menuLeft{
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     gap: 50px;
 }

@@ -109,47 +109,50 @@ if (isset($_POST["modifierPlante"])) {
     <link rel="stylesheet" href="../ressources/css/stylesheetAjoutsPlantes.css">
 </head>
 <body>
-    <div class="formm">
-        <div class="bulle">
-            <form method="POST" enctype="multipart/form-data">
+    <div class="pageAddContent">
+        <div class="addFormContent">
+            <form class="addForm" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                 
-                <div class="hautdepage">
+                <div class="addTitle">
                     <h1>Modifier la plante</h1>
-                    <input type="text" name="nom" placeholder="Nom de la plante" required value="<?php echo htmlspecialchars($row["Nom"]); ?>">
+                </div>
+                <div class="addInputs">
+
+                        <input type="text" class="input_add" name="nom" placeholder="Nom de la plante" required  value="<?php echo htmlspecialchars($row["Nom"]); ?>">
+        
+                        
+                        <input class="input_add"name="description" placeholder="Description" required value="<?php echo htmlspecialchars($row["Description"]); ?>">
+        
+                        <div class="image-container">
+                            <div class="button" id="insert-image-btn" class="image-button" onclick="triggerFileInput()">
+                                <?php if (!empty($row['libelle'])): ?>
+                                    <img id="preview" src="<?php echo $row['libelle']; ?>" alt="Aperçu de l'image">
+                                <?php else: ?>
+                                    Insérer une image
+                                <?php endif; ?>
+                            </div>
+                            <input type="file" id="file-input" name="image_file" style="display: none;" onchange="previewImage(event)">
+                        </div>
+                        
+                        <input type="text" class="input_add" name="temp_min" placeholder="Température min" required value="<?php echo htmlspecialchars($row["Temperature_min"]); ?>">
+                        <input type="text" class="input_add" name="temp_max" placeholder="Température max" required value="<?php echo htmlspecialchars($row["Temperature_max"]); ?>">
+                        <input type="text" class="input_add" name="arrosage" placeholder="Arrosage" required value="<?php echo htmlspecialchars($row["Arrosage"]); ?>">
+                        <input type="text" class="input_add" name="humidite" placeholder="Humidité" required value="<?php echo htmlspecialchars($row["Humidité"]); ?>">
+        
+                        <div class="accept">
+                            <button type="submit" name="modifierPlante" id="accepter">Modifier</button>
+                        </div>
+                    </div>
+                    <div class="retourButtonContainer">
+                        <a class="retourButtonLink" href="menu_site_projet.php">
+                            <p class="retourButtonText">Retour</p>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="description">
-                    <textarea name="description" placeholder="Description" required><?php echo htmlspecialchars($row["Description"]); ?></textarea>
-                </div>
 
-                <div class="image-container">
-                    <button type="button" id="insert-image-btn" class="image-button" onclick="triggerFileInput()">
-                        <?php if (!empty($row['libelle'])): ?>
-                            <img id="preview" src="<?php echo $row['libelle']; ?>" alt="Aperçu de l'image">
-                        <?php else: ?>
-                            Insérer une image
-                        <?php endif; ?>
-                    </button>
-                    <input type="file" id="file-input" name="image_file" style="display: none;" onchange="previewImage(event)">
-                </div>
-
-                <input type="text" name="temp_min" placeholder="Température min" required value="<?php echo htmlspecialchars($row["Temperature_min"]); ?>">
-                <input type="text" name="temp_max" placeholder="Température max" required value="<?php echo htmlspecialchars($row["Temperature_max"]); ?>">
-                <input type="text" name="arrosage" placeholder="Arrosage" required value="<?php echo htmlspecialchars($row["Arrosage"]); ?>">
-                <input type="text" name="humidite" placeholder="Humidité" required value="<?php echo htmlspecialchars($row["Humidité"]); ?>">
-
-
-                <div class="accept">
-                    <button type="submit" name="modifierPlante" id="accepter">Modifier</button>
-                </div>
             </form>
-
-            <div class="retour">
-                <a href="menu_site_projet.php">
-                    <button class="retour">Retour</button>
-                </a>
-            </div>
         </div>
     </div>
 

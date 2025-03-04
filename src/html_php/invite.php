@@ -58,18 +58,31 @@ if (isset($_POST['delete_plante']) && isset($_POST['id'])) {
             <h1 id="pageTitle">Répertoire de plantes</h1>
         </div>
         <div class="menuLeft">
-        <a class="Deconnexion" href="index.php"><h1 class ="decotxt"id ="decoTxt">Connexion</h1></a>
-            <div class="mini">
-                <div class="menuIcon">
-                    <a href="creditVisiteur.php" class="menuItem">
-                        <img id="credits" src="..\ressources\images\Copyright.svg.png">
+            <a class="Deconnexion" href="index.php"><h1 class ="decotxt"id ="decoTxt">Connexion</h1></a>
+                <div class="mini">
+                    <div class="menuIcon">
+                        <a href="creditVisiteur.php" class="menuItem">
+                            <img id="credits" src="..\ressources\images\Copyright.svg.png">
+                        </a>
+                        <a href="histoireVisiteur.php" class="menuItem">
+                            <img id="histoire" src="..\ressources\images\book.png" class="menuItemImage">
+                        </a>
+                    </div>
+                    <a href="#" class="menuBarreIconContainer">
+                        <img class="menuBarre" src="..\ressources\images\menuprojet.png">
                     </a>
-                    <a href="histoireVisiteur.php" class="menuItem">
-                        <img id="histoire" src="..\ressources\images\book.png" class="menuItemImage">
-                    </a>
-                </div>
-                <a href="#" class="menuBarreIconContainer">
-                    <img class="menuBarre" src="..\ressources\images\menuprojet.png">
+            </div>
+        </div>
+        <div class="menuLeftMobile">
+        <a class="Deconnexion" href="index.php"><h1 class ="decotxt"id ="decoTxt">Connexion</h1>
+        </a>
+            <div class="menuGroupeMobile">
+
+                <a href="creditADMIN.php" class="menuMobileItem">
+                    <img id="credits" src="..\ressources\images\Copyright.svg.png">
+                </a>
+                <a href="histoire.php" class="menuMobileItem">
+                    <img id="histoire" src="..\ressources\images\book.png" class="menuItemMobileImage">
                 </a>
             </div>
         </div>

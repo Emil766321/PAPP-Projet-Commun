@@ -111,7 +111,7 @@ if (isset($_POST['accepter'])) {
                 </div>
                 <div class="addInputs">
                     <input type="text" class="input_add" name="nom" placeholder="Nom de la plante" required>
-                    <textarea name="description" class="input_add" placeholder="Description" required></textarea>
+                    <input class="input_add"name="description" placeholder="Description" required></input>
 
                     <div class="image-container">
                         <div class="button" id="insert-image-btn" class="image-button" onclick="triggerFileInput()">
