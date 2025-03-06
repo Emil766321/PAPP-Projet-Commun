@@ -68,7 +68,14 @@ if (isset($_POST["modifierPlante"])) {
 
     if (!empty($_FILES['image_file']['name'])) {
         $upload_dir = "image/";
+        $allowed_extensions = ['jpg', 'jpeg', 'png', 'webp', 'gif', 'bmp'];
 
+        $file_extension = pathinfo($_FILES["image_file"]["name"], PATHINFO_EXTENSION);
+        $file_extension = strtolower($file_extension); // Convert to lowercase
+
+        if (!in_array($file_extension, $allowed_extensions)) {
+            exit();
+        }
         if (!is_dir($upload_dir)) {
             mkdir($upload_dir, 0777, true);
         }
