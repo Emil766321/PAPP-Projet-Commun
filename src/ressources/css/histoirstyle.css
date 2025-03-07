@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image:url(../images/tableauVert.PNG);
+    min-height: 100vh;
+    margin: 0;
+
+}
+
+/* Header Styles */
+h1 {
+    color: white;
+    font-size: 45px;
+    text-align: center;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+/* Paragraph Styles */
+p {
+    color: white;
+    font-size: 39px;
+    text-align: center;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+/* Navigation Menu */
+.menuLeft {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 10px;
+}
+
+#menuContainer {
+    display: flex;
+    flex-wrap: wrap; /* Prevents overflow on smaller screens */
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px; /* Limits width for large screens */
+}
+
+/* Mini Menu */
+.mini {
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.miniActive {
+    width: 200px;
+}
+
+/* Menu Icon */
+.menuIcon {
+    position: absolute;
+    display: flex;
+    background-color: #09663f;
+    width: 50px;
+    transform: translateX(100%);
+    opacity: 0;
+    top: 0;
+    left: 0;
+    gap: 2px;
+    z-index: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+.menuIconActive {
+    transform: translateX(0%);
+    width: 200px;
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Menu Items */
+.menuItem {
+    width: 50px;
+    height: 50px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuItemImage {
+    max-width: 50px;
+    max-height: 50px;
+    object-fit: contain;
+}
+
+.menuItemButton {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuItemButtonImage {
+    max-width: 50px;
+    max-height: 50px;
+    object-fit: contain;
+}
+
+/* Menu Bar */
+.menuBarreIconContainer {
+    background-color: #13915c;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+}
+
+.menuBarre {
+    width: 50px;
+    height: 50px;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease;
+    z-index: 2;
+}
+
+.menuBarreActive {
+    transform: rotate(90deg);
+    transition: transform 0.2s ease;
+}
+
+/* Icons */
+#histoire {
+    width: 30px;
+    height: 50px;
+}
+
+#credits {
+    width: 40px;
+    height: 40px;
+}
+
+#House {
+    width: 25px;
+    height: 40px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 38px;
+    }
+
+    p {
+        font-size: 32px;
+    }
+
+    .menuLeft {
+        gap: 20px;
+    }
+
+    #menuContainer {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 26px;
+    }
+
+    body {
+        background-size: contain; /* Ensures the full image fits */
+        background-attachment: scroll; /* Prevents fixed background on small screens */
+    }
+
+    .menuLeft {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #menuContainer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .mini {
+        width: 40px;
+        height: 40px;
+    }
+
+    .menuIcon {
+        width: 40px;
+    }
+
+    .menuItem {
+        width: 40px;
+        height: 40px;
+    }
+
+    .menuItemImage,
+    .menuItemButtonImage {
+        max-width: 40px;
+        max-height: 40px;
+    }
+}
